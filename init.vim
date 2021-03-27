@@ -34,10 +34,12 @@ Plug 'kien/ctrlp.vim'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'mbbill/undotree' 
 Plug 'arcticicestudio/nord-vim' 
-Plug 'joshdick/onedark.vim'
+Plug 'joshdick/onedark.vim' 
 Plug 'vim-airline/vim-airline'
 Plug 'sheerun/vim-polyglot'
 Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
+Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 
@@ -63,6 +65,9 @@ let g:netrw_banner = 0
 let g:netrw_winsize = 25
 
 let g:ctrlp_use_caching = 0
+
+" NerdTree always change directory
+let g:NERDTreeChDirMode = 2
 
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
