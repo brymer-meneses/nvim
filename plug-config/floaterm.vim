@@ -8,11 +8,11 @@ nnoremap <Leader>rst :FloatermNew --name=cargo cargo test<CR>
 nnoremap <Leader>rs :FloatermNew --name=cargo cargo run<CR>
 
 " Python REPL 
-nnoremap <Leader>pyr :FloatermNew --name=python python<CR> 
+nnoremap <Leader>++py :FloatermNew --name=python python<CR> 
 " Javascript REPL
-nnoremap <Leader>jsr :FloatermNew --name=node node<CR>
+nnoremap <Leader>++js :FloatermNew --name=node node<CR>
 " Julia REPL
-nnoremap <Leader>jlr :FloatermNew --name=julia julia<CR>
+nnoremap <silent>++jl :FloatermNew --name=julia julia<CR>
 
-nnoremap <silent>++ :FloatermNew --name=Terminal<CR>
+nnoremap <silent>++ :FloatermNew --name=terminal <CR>
 

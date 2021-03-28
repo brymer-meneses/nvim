@@ -15,7 +15,6 @@ nnoremap <leader>q :wq! <CR>
 nnoremap <silent><Leader>+ :vertical resize +5<CR>
 nnoremap <silent><Leader>- :vertical resize -5<CR>
 
-
 " Whick Key
-" nnoremap <silent> \ :WhichKey '<Space>'<CR>
+nnoremap <silent> \ :WhichKey '<Space>'<CR>
 

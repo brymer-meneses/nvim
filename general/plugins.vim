@@ -10,11 +10,12 @@ Plug 'joshdick/onedark.vim'
 " Plug 'leafgarland/typescript-vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'rust-lang/rust.vim'
+Plug 'lervag/vimtex'
 
 " Visual
 Plug 'mhinz/vim-startify'
 Plug 'vim-airline/vim-airline'
-" Plug 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
 
 " Autocomplete
 Plug 'ycm-core/YouCompleteMe'
