@@ -14,5 +14,5 @@ nnoremap <Leader>jsr :FloatermNew --name=node node<CR>
 " Julia REPL
 nnoremap <Leader>jlr :FloatermNew --name=julia julia<CR>
 
-nnoremap ; :FloatermNew --name=Terminal<CR>
+nnoremap <silent>++ :FloatermNew --name=Terminal<CR>
 

@@ -7,7 +7,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'joshdick/onedark.vim' 
 
 " Language Support
-Plug 'leafgarland/typescript-vim'
+" Plug 'leafgarland/typescript-vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'rust-lang/rust.vim'
 
