@@ -10,11 +10,14 @@ nnoremap <Leader>ps :Rg<SPACE>
 " Save
 nnoremap <leader>w :w <CR>
 " Quick Save and Quit 
-nnoremap <leader>q :wq! <CR>
+nnoremap <leader>q :wq<CR>
+" Hasty Quit (made it difficult to avoid accidents)
+nnoremap += :q!<CR>
 
 nnoremap <silent><Leader>+ :vertical resize +5<CR>
 nnoremap <silent><Leader>- :vertical resize -5<CR>
 
+nnoremap <leader>so :source %<CR>
 " Whick Key
 nnoremap <silent> \ :WhichKey '<Space>'<CR>
 
