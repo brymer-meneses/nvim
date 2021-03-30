@@ -11,4 +11,5 @@ let g:onedark_termcolors = 1
 let g:onedark_terminal_italics = 1
 
 syntax enable
-set bg=dark
+
+colorscheme gruvbox

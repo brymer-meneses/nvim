@@ -18,8 +18,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'ryanoasis/vim-devicons'
 
 " Autocomplete
-Plug 'ycm-core/YouCompleteMe'
+" Plug 'ycm-core/YouCompleteMe'
 Plug 'kien/ctrlp.vim'
+Plug 'neoclide/coc.nvim', {'branch' : 'release'}
 
 " Functionalities
 Plug 'jiangmiao/auto-pairs'
@@ -28,9 +29,12 @@ Plug 'mbbill/undotree'
 
 " File Navigation
 Plug 'preservim/nerdtree'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " Ease of Life
 Plug 'liuchengxu/vim-which-key'
+Plug 'liuchengxu/vista.vim'
 
 " ETC
 Plug 'jremmen/vim-ripgrep'
