@@ -28,18 +28,18 @@ noremap <leader>y +y
 vnoremap < <gv
 vnoremap > >gv
 
-nnoremap <TAB> :bprevious<CR>
-nnoremap <S-TAB> :bnext<CR>
+nnoremap <silent><tab> :bprevious<cr>
+nnoremap <silent><S-TAB> :bnext<CR>
 
-nnoremap <C-j> :resize -2<CR>
-nnoremap <C-k> :resize +2<CR>
-nnoremap <C-h> :vertical resize -2<CR>
-nnoremap <C-l> :vertical resize +2<CR>
+nnoremap <silent><C-j> :resize -2<CR>
+nnoremap <silent><C-k> :resize +2<CR>
+nnoremap <silent><C-h> :vertical resize -2<CR>
+nnoremap <silent><C-l> :vertical resize +2<CR>
 
 
 " Terminal Remaps
 tnoremap <C-[> <C-\><C-n>
-nnoremap ** :vsplit<CR>:wincmd l<CR>:terminal<CR>
+nnoremap <silent>** :wincmd v<CR>:wincmd l<CR>:terminal<CR>
 
 
 

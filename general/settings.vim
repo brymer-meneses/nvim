@@ -39,7 +39,6 @@ augroup neovim_terminal
     autocmd TermOpen * startinsert
     " Disables number lines on terminal buffers
     autocmd TermOpen * :set nonumber norelativenumber
+    " Resizes the terminal
     autocmd TermOpen * :vertical resize - 15
-    " allows you to use Ctrl-c on terminal window
-    autocmd TermOpen * nnoremap <buffer> <C-[> i<C-c>
 augroup END
