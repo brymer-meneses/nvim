@@ -8,7 +8,7 @@ nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <Leader>ps :Rg<SPACE>
 
 
-nnoremap <leader>so :source %<CR>
+nnoremap <leader>) :source %<CR>
 " Whick Key
 nnoremap <silent> \ :WhichKey '<Space>'<CR>
 " 
@@ -22,7 +22,7 @@ nnoremap += :q!<CR>
 
 " Paste and copy using system clipboard 
 nnoremap <leader>p +p
-nnoremap <leader>y +y
+noremap <leader>y +y
 
 " Better tabbing
 vnoremap < <gv
@@ -36,10 +36,10 @@ nnoremap <C-k> :resize +2<CR>
 nnoremap <C-h> :vertical resize -2<CR>
 nnoremap <C-l> :vertical resize +2<CR>
 
-" inoremap <M-> <C-\><C-n>
+
+" Terminal Remaps
 tnoremap <C-[> <C-\><C-n>
-" Ctrl > 
-nnoremap ** :vsplit<CR>:wincmd l<CR>:terminal<CR>:vertical resize -15<CR>:wincmd h<CR>
+nnoremap ** :vsplit<CR>:wincmd l<CR>:terminal<CR>
 
 
 
