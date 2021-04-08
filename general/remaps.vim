@@ -11,12 +11,13 @@ nnoremap <Leader>ps :Rg<SPACE>
 nnoremap <leader>) :source %<CR>
 " Whick Key
 nnoremap <silent> \ :WhichKey '<Space>'<CR>
-" 
+
+nnoremap <C-/> gcc
 " nnoremap <C-s> :w<Cr>
 " Save
 " nnoremap <C-+> :q!<Cr>
-nnoremap <leader>w :w<cr>
-nnoremap <leader>q :wq<cr>
+nnoremap <C-s> :w <bar>echom "Written Changes"<cr>
+nnoremap <C-Q> :wq<cr>
 " Hasty Quit (made it difficult to avoid accidents)
 nnoremap += :q!<CR>
 

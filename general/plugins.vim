@@ -35,6 +35,8 @@ Plug 'junegunn/fzf.vim'
 " Ease of Life
 Plug 'liuchengxu/vim-which-key'
 Plug 'liuchengxu/vista.vim'
+" Comment 
+Plug 'tpope/vim-commentary'
 
 " ETC
 Plug 'jremmen/vim-ripgrep'
