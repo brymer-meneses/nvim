@@ -29,7 +29,8 @@ set t_ut=""
 " let g:netrw_winsize = 25
 
 " Set Defaul Shell as PowerShell
-set shell=powershell 
+set shell=powershell shellquote=( shellpipe=\| shellredir=> shellxquote=
+set shellcmdflag=-NoLogo\ -NoProfile\ -ExecutionPolicy\ RemoteSigned\ -Command
 
 highlight Normal guifg=#e0e0e0 guibg=#242424 gui=NONE ctermfg=254 ctermbg=235 cterm=NONE
 "highlight NonText guifg=#99968b guibg=#242424 gui=NONE ctermfg=246 ctermbg=235 cterm=NONE
