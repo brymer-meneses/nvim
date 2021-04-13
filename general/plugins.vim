@@ -1,5 +1,5 @@
 
-call plug#begin(expand('~/AppData/Local/nvim/__plugins__'))
+call plug#begin(expand('~/.config/nvim/__plugins__'))
 
 " Themes
 Plug 'morhetz/gruvbox'
@@ -34,7 +34,7 @@ Plug 'junegunn/fzf.vim'
 
 " Ease of Life
 Plug 'liuchengxu/vim-which-key'
-Plug 'liuchengxu/vista.vim'
+" Plug 'liuchengxu/vista.vim'
 " Comment 
 Plug 'tpope/vim-commentary'
 

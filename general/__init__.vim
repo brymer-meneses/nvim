@@ -1,5 +1,5 @@
 
-source ~/AppData/Local/nvim/general/plugins.vim
-source ~/AppData/Local/nvim/general/themes.vim
-source ~/AppData/Local/nvim/general/remaps.vim
-source ~/AppData/Local/nvim/general/settings.vim
+source ~/.config/nvim/general/plugins.vim
+source ~/.config/nvim/general/themes.vim
+source ~/.config/nvim/general/remaps.vim
+source ~/.config/nvim/general/settings.vim

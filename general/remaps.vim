@@ -17,6 +17,9 @@ nnoremap <C-/> gcc
 " Save
 " nnoremap <C-+> :q!<Cr>
 nnoremap <C-s> :w <bar>echom "Written Changes"<cr>
+inoremap <C-s> <Esc>:w<bar>echom "Written Changes"<cr>
+
+
 nnoremap <C-Q> :wq<cr>
 " Hasty Quit (made it difficult to avoid accidents)
 nnoremap += :q!<CR>
@@ -40,7 +43,8 @@ nnoremap <silent><C-l> :vertical resize +2<CR>
 
 " Terminal Remaps
 tnoremap <C-[> <C-\><C-n>
-nnoremap <silent>** :wincmd v<CR>:wincmd l<CR>:terminal<CR>
+nnoremap <C-\> :wincmd v<CR>:wincmd l<CR>:terminal<CR>
+" nnoremap ** :wincmd v<CR>:wincmd l<CR>:terminal<CR>
 
 
 

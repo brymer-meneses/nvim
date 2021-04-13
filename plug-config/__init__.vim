@@ -1,8 +1,10 @@
-source ~/AppData/Local/nvim/plug-config/airline.vim
-source ~/AppData/Local/nvim/plug-config/coc.vim
-source ~/AppData/Local/nvim/plug-config/ctrlp.vim
-source ~/AppData/Local/nvim/plug-config/floaterm.vim
-source ~/AppData/Local/nvim/plug-config/nerdtree.vim
-source ~/AppData/Local/nvim/plug-config/startify.vim
-source ~/AppData/Local/nvim/plug-config/ycm.vim
+
+source ~/.config/nvim/plug-config/airline.vim
+source ~/.config/nvim/plug-config/coc.vim
+source ~/.config/nvim/plug-config/ctrlp.vim
+source ~/.config/nvim/plug-config/floaterm.vim
+source ~/.config/nvim/plug-config/nerdtree.vim
+source ~/.config/nvim/plug-config/startify.vim
+source ~/.config/nvim/plug-config/ycm.vim
+source ~/.config/nvim/plug-config/vim-tex.vim
 

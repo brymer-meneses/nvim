@@ -11,7 +11,7 @@ set nowrap
 set smartcase
 set noswapfile
 set nobackup
-set undodir=~/AppData/Local/nvim/__undodir__/
+set undodir=~/.config/nvim/__undodir__
 set undofile 
 set incsearch
 set termguicolors 
@@ -21,6 +21,8 @@ set laststatus=0
 set cursorline
 set clipboard=unnamedplus
 set formatoptions-=cro
+set cmdheight=1
+
 
 set t_ut=""
 
@@ -29,11 +31,19 @@ set t_ut=""
 " let g:netrw_winsize = 25
 
 " Set Defaul Shell as PowerShell
-set shell=powershell shellquote=( shellpipe=\| shellredir=> shellxquote=
-set shellcmdflag=-NoLogo\ -NoProfile\ -ExecutionPolicy\ RemoteSigned\ -Command
+" set shell=powershell shellquote=( shellpipe=\| shellredir=> shellxquote=
+" set shellcmdflag=-NoLogo\ -NoProfile\ -ExecutionPolicy\ RemoteSigned\ -Command
 
-highlight Normal guifg=#e0e0e0 guibg=#242424 gui=NONE ctermfg=254 ctermbg=235 cterm=NONE
+"highlight Normal guifg=#e0e0e0 guibg=#242424 gui=NONE ctermfg=254 ctermbg=235 cterm=NONE
 "highlight NonText guifg=#99968b guibg=#242424 gui=NONE ctermfg=246 ctermbg=235 cterm=NONE
+
+augroup latex 
+    autocmd! 
+    autocmd FileType tex :set spell
+    autocmd FileType tex :set spelllang=en_us
+    autocmd FileType tex :echom "Welcome test"
+
+augroup END
 
 
 augroup neovim_terminal
