@@ -24,13 +24,13 @@ Plug 'neoclide/coc.nvim', {'branch' : 'release'}
 
 " Functionalities
 Plug 'jiangmiao/auto-pairs'
-Plug '/voldikss/vim-floaterm'
-Plug 'mbbill/undotree' 
+" Plug '/voldikss/vim-floaterm'
+" Plug 'mbbill/undotree' 
 
 " File Navigation
 Plug 'preservim/nerdtree'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf.vim'
 
 " Ease of Life
 Plug 'liuchengxu/vim-which-key'
