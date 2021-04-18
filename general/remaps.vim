@@ -1,7 +1,9 @@
-nnoremap <silent><leader>h :wincmd h<CR>
-nnoremap <silent><leader>j :wincmd j<CR>
-nnoremap <silent><leader>k :wincmd k<CR>
-nnoremap <silent><leader>l :wincmd l<CR>
+
+" Make this more general
+map <silent><leader>h :wincmd h<CR>
+map <silent><leader>j :wincmd j<CR>
+map <silent><leader>k :wincmd k<CR>
+map <silent><leader>l :wincmd l<CR>
 
 nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
@@ -16,8 +18,11 @@ nnoremap <C-/> gcc
 " nnoremap <C-s> :w<Cr>
 " Save
 " nnoremap <C-+> :q!<Cr>
-nnoremap <C-s> :w <bar>echom "Written Changes"<cr>
-inoremap <C-s> <Esc>:w<bar>echom "Written Changes"<cr>
+
+nnoremap <C-s> :w<cr>
+" Close latex error tab
+nnoremap <leader>tc :cclose<cr>
+inoremap <C-s> <Esc>:w<cr>
 
 
 nnoremap <C-Q> :wq<cr>
@@ -25,8 +30,8 @@ nnoremap <C-Q> :wq<cr>
 nnoremap += :q!<CR>
 
 " Paste and copy using system clipboard 
-nnoremap <leader>p +p
-noremap <leader>y +y
+nnoremap <C-v> +p
+noremap <C-c> +y
 
 " Better tabbing
 vnoremap < <gv

@@ -14,5 +14,6 @@
     // rust config
     "rust-analyzer.enable": true,
     "rust-analyzer.checkOnSave.enable": true,
-    "rust-analyzer.hoverActions.linksInHover": true
+    "rust-analyzer.hoverActions.linksInHover": true,
+    "coc.source.vimtex.enable": true
 }
