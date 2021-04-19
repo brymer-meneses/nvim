@@ -21,6 +21,7 @@ set laststatus=0
 set cursorline
 set clipboard=unnamedplus
 set formatoptions-=cro
+
 set cmdheight=1
 
 
