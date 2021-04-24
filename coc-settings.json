@@ -9,11 +9,19 @@
         "json",
         "python"
     ],
-    // pyright config 
     "python.linting.mypyEnabled": true,
-    // rust config
     "rust-analyzer.enable": true,
     "rust-analyzer.checkOnSave.enable": true,
     "rust-analyzer.hoverActions.linksInHover": true,
-    "coc.source.vimtex.enable": true
+    "texlab.path": "/home/brymer-meneses/bin/texlab",
+    "latex.lint.onChange": true,
+    "latex.lint.onSave": true,
+    "latex.build.onSave": true,
+    "latex.forwardSearch.executable": "zathura",
+    "latex.build.args": [
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-synctex=1",
+        "-pvc"
+    ]
 }

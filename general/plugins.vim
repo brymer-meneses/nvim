@@ -8,8 +8,9 @@ Plug 'joshdick/onedark.vim'
 
 " Language Support
 " Plug 'leafgarland/typescript-vim'
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 Plug 'rust-lang/rust.vim'
+
 Plug 'lervag/vimtex'
 
 " Visual
@@ -25,7 +26,7 @@ Plug 'neoclide/coc.nvim', {'branch' : 'release'}
 " Functionalities
 Plug 'jiangmiao/auto-pairs'
 " Plug '/voldikss/vim-floaterm'
-" Plug 'mbbill/undotree' 
+Plug 'mbbill/undotree' 
 
 " File Navigation
 Plug 'preservim/nerdtree'
@@ -36,7 +37,7 @@ Plug 'preservim/nerdtree'
 Plug 'liuchengxu/vim-which-key'
 " Plug 'liuchengxu/vista.vim'
 " Comment 
-Plug 'tpope/vim-commentary'
+Plug 'preservim/nerdcommenter'
 
 " ETC
 Plug 'jremmen/vim-ripgrep'
