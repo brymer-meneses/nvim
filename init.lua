@@ -1,9 +1,12 @@
 
 
-require('plugins')
 require('globals')
+require('plugins')
 require('settings')
 require('colorscheme')
 require('remaps')
 
-require('galaxyline')
+vim.cmd('source ./vimscript/airline.vim')
+
+
+

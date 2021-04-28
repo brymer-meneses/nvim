@@ -17,6 +17,9 @@ return require('packer').startup(function()
     -- Packer plugin to manage itself
     use 'wbthomason/packer.nvim'
 
+    use 'mhinz/vim-startify'
+    use 'vim-airline/vim-airline'
+
     -- For comments
     use 'preservim/nerdcommenter'
 
