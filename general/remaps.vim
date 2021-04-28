@@ -6,12 +6,11 @@ map <silent><leader>k :wincmd k<CR>
 map <silent><leader>l :wincmd l<CR>
 
 nnoremap <C-s> :w<CR>
-nnoremap <C-q> :wq<CR>
-nnoremap <C-+> :q!<CR>
+nnoremap <Tab>q :wq<CR>
+nnoremap <Tab>Q :q!<CR>
 
 inoremap <C-s> <Esc>:w<CR>
 inoremap <C-q> <Esc>:wq<CR>
-inoremap <C-+> <Esc>:q!<CR>
 
 nnoremap <leader>us :UndotreeShow<CR>
 nnoremap <leader>ut :UndotreeToggle<CR>
@@ -20,7 +19,7 @@ nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <Leader>ps :Rg<SPACE>
 
 
-nnoremap <C-)> :source %<CR>
+nnoremap <Tab>] :source %<CR>
 " Whick Key
 nnoremap <silent> \ :WhichKey '<Space>'<CR>
 
@@ -28,12 +27,8 @@ nnoremap <silent> \ :WhichKey '<Space>'<CR>
 nmap <C-_>   <Plug>NERDCommenterToggle
 vmap <C-_>   <Plug>NERDCommenterToggle<CR>gv
 
-nnoremap <C-s> :w<cr>
 " Close latex error tab
-nnoremap <leader>tc :cclose<cr>
-inoremap <C-s> <Esc>:w<cr>
-
-
+nnoremap <Tab>c :cclose<cr>
 
 " Paste and copy using system clipboard 
 nnoremap <C-v> +p

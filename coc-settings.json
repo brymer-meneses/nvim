@@ -16,7 +16,7 @@
     "texlab.path": "/home/brymer-meneses/bin/texlab",
     "latex.lint.onChange": true,
     "latex.lint.onSave": true,
-    "latex.build.onSave": true,
+    "latex.build.onSave": false,
     "latex.forwardSearch.executable": "zathura",
     "latex.build.args": [
         "-pdf",
