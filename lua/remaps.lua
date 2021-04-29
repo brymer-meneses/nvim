@@ -45,3 +45,4 @@ vim.api.nvim_set_keymap('v', '<C-_>',  '<Plug>NERDCommenterToggle<CR>gv', {silen
 
 vim.api.nvim_set_keymap('n', '<C-v>', '+p', {silent=true})
 vim.api.nvim_set_keymap('n', '<C-c>', '+y', {silent=true})
+

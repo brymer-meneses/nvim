@@ -11,18 +11,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
   execute 'packadd packer.nvim'
 end
 
-
--- Change default installation path of packer plugins 
--- https://github.com/wbthomason/packer.nvim
-local packer = nil 
-local function init()
-    if packer == nil then 
-        packer = require('packer')
-        packer.init({ package_root = util.join_paths(vim.fn.stdpath('config'), '.installed-plugins') })
-    end 
-
-    local use = packer.use
-    packer.reset()
+return require('packer').startup(function()
 
     -- Packer plugin to manage itself
     use 'wbthomason/packer.nvim'
@@ -44,14 +33,17 @@ local function init()
 
     -- Lua LSP
     use 'tjdevries/nlua.nvim'
-end
 
-local plugins = setmetatable({}, {
-  __index = function(_, key)
-    init()
-    return packer[key]
-  end
-})
+    -- Telescope
+    use 'nvim-lua/popup.nvim'
+    use 'nvim-lua/plenary.nvim'
+    use 'nvim-telescope/telescope.nvim'
 
-return plugins
+    -- Treesitter
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+
+    -- File Explorer 
+    use 'kyazdani42/nvim-tree.lua'
+end)
+
 
