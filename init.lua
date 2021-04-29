@@ -1,12 +1,12 @@
 
 
 require('globals')
-require('plugins')
+require('plug-config')
 require('settings')
 require('colorscheme')
 require('remaps')
 
-vim.cmd('source ./vimscript/airline.vim')
+
 
 
 
