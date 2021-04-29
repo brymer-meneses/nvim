@@ -1,27 +1,23 @@
 {
-    "coc.preferences.formatOnSaveFiletypes": [
-        "css",
-        "markdown",
-        "javascript",
-        "graphql",
-        "html",
-        "yaml",
-        "json",
-        "python"
-    ],
-    "python.linting.mypyEnabled": true,
-    "rust-analyzer.enable": true,
-    "rust-analyzer.checkOnSave.enable": true,
-    "rust-analyzer.hoverActions.linksInHover": true,
-    "texlab.path": "/home/brymer-meneses/bin/texlab",
-    "latex.lint.onChange": true,
-    "latex.lint.onSave": true,
-    "latex.build.onSave": false,
-    "latex.forwardSearch.executable": "zathura",
-    "latex.build.args": [
-        "-pdf",
-        "-interaction=nonstopmode",
-        "-synctex=1",
-        "-pvc"
-    ]
+"coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "markdown",
+    "javascript",
+    "graphql",
+    "html",
+    "yaml",
+    "json",
+    "python"
+],
+"texlab.path": "/home/brymer-meneses/bin/texlab",
+"latex.lint.onChange": true,
+"latex.lint.onSave": true,
+"latex.build.onSave": false,
+"latex.forwardSearch.executable": "zathura",
+"latex.build.args": [
+    "-pdf",
+    "-interaction=nonstopmode",
+    "-synctex=1",
+    "-pvc"
+]
 }
