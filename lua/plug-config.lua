@@ -17,22 +17,23 @@ return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
 
     use 'mhinz/vim-startify'
-    -- use 'vim-airline/vim-airline'
+    use 'vim-airline/vim-airline'
 
     -- For comments
     use 'preservim/nerdcommenter'
 
-    use {
-        'glepnir/galaxyline.nvim',
-        branch = 'main',
-        requires = {'kyazdani42/nvim-web-devicons', opt = true}
-	}
+    --use {
+        --'glepnir/galaxyline.nvim',
+        --branch = 'main',
+        --requires = {'kyazdani42/nvim-web-devicons', opt = true}
+    --}
 
     -- Nord Theme
     use 'arcticicestudio/nord-vim'
 
     -- Lua LSP
     use 'tjdevries/nlua.nvim'
+    use 'lervag/vimtex'
 
     -- Telescope
     use 'nvim-lua/popup.nvim'
@@ -44,6 +45,17 @@ return require('packer').startup(function()
 
     -- File Explorer 
     use 'kyazdani42/nvim-tree.lua'
+
+    -- LSP
+    use 'neovim/nvim-lspconfig'
+
+    -- Git integration
+    use {"lewis6991/gitsigns.nvim", opt = true}
+    use {"romgrk/barbar.nvim", opt = true}
+
+    use {"kabouzeid/nvim-lspinstall", opt = true}
+    use {'neoclide/coc.nvim', branch = 'release'}
+
 end)
 
 
