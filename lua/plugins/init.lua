@@ -17,16 +17,10 @@ return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
 
     use 'mhinz/vim-startify'
-    use 'vim-airline/vim-airline'
 
     -- For comments
     use 'preservim/nerdcommenter'
 
-    --use {
-        --'glepnir/galaxyline.nvim',
-        --branch = 'main',
-        --requires = {'kyazdani42/nvim-web-devicons', opt = true}
-    --}
 
     -- Nord Theme
     use 'arcticicestudio/nord-vim'
@@ -50,11 +44,35 @@ return require('packer').startup(function()
     use 'neovim/nvim-lspconfig'
 
     -- Git integration
-    use {"lewis6991/gitsigns.nvim", opt = true}
-    use {"romgrk/barbar.nvim", opt = true}
+    use {
+      'lewis6991/gitsigns.nvim',
+      requires = {
+        'nvim-lua/plenary.nvim'
+      }
+    }
+
+    use {'kyazdani42/nvim-web-devicons', opt = true}
 
     use {"kabouzeid/nvim-lspinstall", opt = true}
     use {'neoclide/coc.nvim', branch = 'release'}
+    use {'rhysd/vim-grammarous', opt = true}
+
+    -- Statusline
+    -- use 'Famiu/feline.nvim'
+    -- use 'vim-airline/vim-airline'
+    -- use 'lukas-reineke/indent-blankline.nvim'
+    -- use {
+        --'glepnir/galaxyline.nvim',
+        --branch = 'main',
+        --requires = {'kyazdani42/nvim-web-devicons', opt = true}
+    -- }
+    -- use {"romgrk/barbar.nvim", opt = true}
+
+    use {
+        'hoob3rt/lualine.nvim',
+        requires = {'kyazdani42/nvim-web-devicons', opt=true}
+    }
+
 
 end)
 
