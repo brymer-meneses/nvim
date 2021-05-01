@@ -42,6 +42,8 @@ return require('packer').startup(function()
 
     -- LSP
     use 'neovim/nvim-lspconfig'
+    use 'hrsh7th/nvim-compe'
+    use 'kabouzeid/nvim-lspinstall'
 
     -- Git integration
     use {
@@ -51,23 +53,13 @@ return require('packer').startup(function()
       }
     }
 
-    use {'kyazdani42/nvim-web-devicons', opt = true}
+    --use {'neoclide/coc.nvim', branch = 'release'}
 
-    use {"kabouzeid/nvim-lspinstall", opt = true}
-    use {'neoclide/coc.nvim', branch = 'release'}
-    use {'rhysd/vim-grammarous', opt = true}
-
+    -- More icons
+    use {'kyazdani42/nvim-web-devicons'}
+    -- Bufferline
+    use {"romgrk/barbar.nvim"}
     -- Statusline
-    -- use 'Famiu/feline.nvim'
-    -- use 'vim-airline/vim-airline'
-    -- use 'lukas-reineke/indent-blankline.nvim'
-    -- use {
-        --'glepnir/galaxyline.nvim',
-        --branch = 'main',
-        --requires = {'kyazdani42/nvim-web-devicons', opt = true}
-    -- }
-    -- use {"romgrk/barbar.nvim", opt = true}
-
     use {
         'hoob3rt/lualine.nvim',
         requires = {'kyazdani42/nvim-web-devicons', opt=true}

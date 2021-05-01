@@ -81,9 +81,12 @@ _G.packer_plugins = {
     path = "/home/brymer-meneses/.local/share/nvim/site/pack/packer/start/coc.nvim"
   },
   ["gitsigns.nvim"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/brymer-meneses/.local/share/nvim/site/pack/packer/opt/gitsigns.nvim"
+    loaded = true,
+    path = "/home/brymer-meneses/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/brymer-meneses/.local/share/nvim/site/pack/packer/start/lualine.nvim"
   },
   nerdcommenter = {
     loaded = true,
@@ -114,6 +117,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/brymer-meneses/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
   },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/home/brymer-meneses/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/brymer-meneses/.local/share/nvim/site/pack/packer/start/packer.nvim"
@@ -129,10 +136,6 @@ _G.packer_plugins = {
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/brymer-meneses/.local/share/nvim/site/pack/packer/start/telescope.nvim"
-  },
-  ["vim-airline"] = {
-    loaded = true,
-    path = "/home/brymer-meneses/.local/share/nvim/site/pack/packer/start/vim-airline"
   },
   ["vim-grammarous"] = {
     loaded = false,
