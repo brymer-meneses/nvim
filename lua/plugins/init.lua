@@ -17,16 +17,10 @@ return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
 
     use 'mhinz/vim-startify'
-    use 'vim-airline/vim-airline'
 
     -- For comments
     use 'preservim/nerdcommenter'
 
-    --use {
-        --'glepnir/galaxyline.nvim',
-        --branch = 'main',
-        --requires = {'kyazdani42/nvim-web-devicons', opt = true}
-    --}
 
     -- Nord Theme
     use 'arcticicestudio/nord-vim'
@@ -48,13 +42,29 @@ return require('packer').startup(function()
 
     -- LSP
     use 'neovim/nvim-lspconfig'
+    use 'hrsh7th/nvim-compe'
+    use 'kabouzeid/nvim-lspinstall'
 
     -- Git integration
-    use {"lewis6991/gitsigns.nvim", opt = true}
-    use {"romgrk/barbar.nvim", opt = true}
+    use {
+      'lewis6991/gitsigns.nvim',
+      requires = {
+        'nvim-lua/plenary.nvim'
+      }
+    }
 
-    use {"kabouzeid/nvim-lspinstall", opt = true}
-    use {'neoclide/coc.nvim', branch = 'release'}
+    --use {'neoclide/coc.nvim', branch = 'release'}
+
+    -- More icons
+    use {'kyazdani42/nvim-web-devicons'}
+    -- Bufferline
+    use {"romgrk/barbar.nvim"}
+    -- Statusline
+    use {
+        'hoob3rt/lualine.nvim',
+        requires = {'kyazdani42/nvim-web-devicons', opt=true}
+    }
+
 
 end)
 

@@ -71,9 +71,22 @@ end
 time("try_loadstring definition", false)
 time("Defining packer_plugins", true)
 _G.packer_plugins = {
-  ["galaxyline.nvim"] = {
+  ["barbar.nvim"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/brymer-meneses/.local/share/nvim/site/pack/packer/opt/barbar.nvim"
+  },
+  ["coc.nvim"] = {
     loaded = true,
-    path = "/home/brymer-meneses/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
+    path = "/home/brymer-meneses/.local/share/nvim/site/pack/packer/start/coc.nvim"
+  },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/home/brymer-meneses/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/brymer-meneses/.local/share/nvim/site/pack/packer/start/lualine.nvim"
   },
   nerdcommenter = {
     loaded = true,
@@ -87,6 +100,23 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/brymer-meneses/.local/share/nvim/site/pack/packer/start/nord-vim"
   },
+  ["nvim-lspconfig"] = {
+    loaded = true,
+    path = "/home/brymer-meneses/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+  },
+  ["nvim-lspinstall"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/brymer-meneses/.local/share/nvim/site/pack/packer/opt/nvim-lspinstall"
+  },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/home/brymer-meneses/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
+  },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/brymer-meneses/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/brymer-meneses/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
@@ -94,6 +124,31 @@ _G.packer_plugins = {
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/brymer-meneses/.local/share/nvim/site/pack/packer/start/packer.nvim"
+  },
+  ["plenary.nvim"] = {
+    loaded = true,
+    path = "/home/brymer-meneses/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+  },
+  ["popup.nvim"] = {
+    loaded = true,
+    path = "/home/brymer-meneses/.local/share/nvim/site/pack/packer/start/popup.nvim"
+  },
+  ["telescope.nvim"] = {
+    loaded = true,
+    path = "/home/brymer-meneses/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+  },
+  ["vim-grammarous"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/brymer-meneses/.local/share/nvim/site/pack/packer/opt/vim-grammarous"
+  },
+  ["vim-startify"] = {
+    loaded = true,
+    path = "/home/brymer-meneses/.local/share/nvim/site/pack/packer/start/vim-startify"
+  },
+  vimtex = {
+    loaded = true,
+    path = "/home/brymer-meneses/.local/share/nvim/site/pack/packer/start/vimtex"
   }
 }
 
