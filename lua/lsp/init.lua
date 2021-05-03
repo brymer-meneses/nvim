@@ -3,6 +3,7 @@ vim.fn.sign_define(
     "LspDiagnosticsSignError",
     {texthl = "LspDiagnosticsSignError", text = "", numhl = "LspDiagnosticsSignError"}
 )
+
 vim.fn.sign_define(
     "LspDiagnosticsSignWarning",
     {texthl = "LspDiagnosticsSignWarning", text = "", numhl = "LspDiagnosticsSignWarning"}
@@ -15,7 +16,6 @@ vim.fn.sign_define(
     "LspDiagnosticsSignInformation",
     {texthl = "LspDiagnosticsSignInformation", text = "", numhl = "LspDiagnosticsSignInformation"}
 )
-
 vim.cmd("nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>")
 vim.cmd("nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>")
 vim.cmd("nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>")
@@ -96,8 +96,6 @@ function lsp_config.tsserver_on_attach(client, bufnr)
     client.resolved_capabilities.document_formatting = false
 end
 
--- Use a loop to conveniently both setup defined servers
--- and map buffer local keybindings when the language server attaches
--- local servers = {"pyright", "tsserver"}
--- for _, lsp in ipairs(servers) do nvim_lsp[lsp].setup {on_attach = on_attach} end
+-- change LSP Default colors to match Nord colorscheme
+require('lsp.diagnostic_colors')
 return lsp_config

@@ -1,5 +1,5 @@
 
-
+-- Config
 require('globals')
 require('colorscheme')
 require('plugins')
