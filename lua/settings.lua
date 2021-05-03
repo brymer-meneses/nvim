@@ -2,8 +2,8 @@
 
 vim.o.mouse = "a"
 vim.o.cmdheight = 1
-vim.o.showmode = false 
-vim.o.clipboard = "unnamedplus"                            
+vim.o.showmode = false
+vim.o.clipboard = "unnamedplus"
 vim.o.conceallevel = 0
 -- vim.o.showtabline = 2
 

@@ -1,5 +1,6 @@
 vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', {noremap = true, silent = true})
 
+-- Leader Key
 vim.g.mapleader = ' '
 
 -- Window Navigation
@@ -8,7 +9,7 @@ vim.api.nvim_set_keymap('n', '<leader>h', '<C-w>h', {silent = true})
 vim.api.nvim_set_keymap('n', '<leader>k', '<C-w>k', {silent = true})
 vim.api.nvim_set_keymap('n', '<leader>l', '<C-w>l', {silent = true})
 
--- better indenting
+-- Better indenting
 vim.api.nvim_set_keymap('v', '<', '<gv', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('v', '>', '>gv', {noremap = true, silent = true})
 
@@ -39,9 +40,9 @@ vim.api.nvim_set_keymap('n', '<C-s>', ':w<CR>', {silent=true})
 vim.api.nvim_set_keymap('n', '<Tab>q', ':wq<CR>', {silent=true})
 vim.api.nvim_set_keymap('n', '<Tab>Q', ':q!<CR>', {silent=true})
 
--- Comments 
+-- Comments
 vim.api.nvim_set_keymap('n', '<C-_>', '<Plug>NERDCommenterToggle', {silent=true})
-vim.api.nvim_set_keymap('v', '<C-_>',  '<Plug>NERDCommenterToggle<CR>gv', {silent=true})
+vim.api.nvim_set_keymap('v', '<C-_>', '<Plug>NERDCommenterToggle<CR>gv', {silent=true})
 
 vim.api.nvim_set_keymap('n', '<C-v>', '+p', {silent=true})
 vim.api.nvim_set_keymap('n', '<C-c>', '+y', {silent=true})

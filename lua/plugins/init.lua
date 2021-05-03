@@ -16,7 +16,7 @@ return require('packer').startup(function()
     -- Packer plugin to manage itself
     use 'wbthomason/packer.nvim'
 
-    use 'mhinz/vim-startify'
+    -- use 'mhinz/vim-startify'
 
     -- For comments
     use 'preservim/nerdcommenter'
@@ -37,13 +37,14 @@ return require('packer').startup(function()
     -- Treesitter
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
-    -- File Explorer 
+    -- File Explorer
     use 'kyazdani42/nvim-tree.lua'
 
     -- LSP
     use 'neovim/nvim-lspconfig'
     use 'hrsh7th/nvim-compe'
     use 'kabouzeid/nvim-lspinstall'
+    use "hrsh7th/vim-vsnip"
 
     -- Git integration
     use {
@@ -52,20 +53,15 @@ return require('packer').startup(function()
         'nvim-lua/plenary.nvim'
       }
     }
+	use { 'famiu/feline.nvim',
+    config = function() require 'plugins.feline' end }
 
-    --use {'neoclide/coc.nvim', branch = 'release'}
-
+    use 'glepnir/dashboard-nvim'
     -- More icons
     use {'kyazdani42/nvim-web-devicons'}
     -- Bufferline
     use {"romgrk/barbar.nvim"}
-    -- Statusline
-    use {
-        'hoob3rt/lualine.nvim',
-        requires = {'kyazdani42/nvim-web-devicons', opt=true}
-    }
-
-
-end)
+    use 'lukas-reineke/indent-blankline.nvim'
+    end)
 
 
