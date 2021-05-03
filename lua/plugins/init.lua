@@ -64,10 +64,12 @@ return require('packer').startup(function()
     -- Bufferline
     -- use {"romgrk/barbar.nvim"}
     use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
-    use {'lukas-reineke/indent-blankline.nvim', branch="lua"}
+    -- use {'lukas-reineke/indent-blankline.nvim', branch="lua"}
     use 'windwp/nvim-autopairs'
 
     use 'nvim-treesitter/playground'
+
+    use 'akinsho/nvim-toggleterm.lua'
 
 end)
 

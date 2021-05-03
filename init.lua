@@ -18,6 +18,7 @@ require('plugins.feline')
 require('plugins.vimtex')
 require('plugins.nvim-autopairs')
 require('plugins.nvim-bufferline')
+require('plugins.nvim-toggleterm')
 
 -- LSP
 require('lsp.LaTeX')
