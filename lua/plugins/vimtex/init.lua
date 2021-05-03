@@ -18,6 +18,5 @@ vim.cmd([[
         autocmd FileType tex :hi clear Conceal
     augroup END
         ]])
-
 vim.api.nvim_set_keymap("n", "<Tab>p", ":VimtexCompile<CR>", {noremap = true, silent = true})
 

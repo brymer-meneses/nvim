@@ -53,15 +53,20 @@ return require('packer').startup(function()
         'nvim-lua/plenary.nvim'
       }
     }
+    -- Statusline
 	use { 'famiu/feline.nvim',
     config = function() require 'plugins.feline' end }
 
+    -- Startmenu
     use 'glepnir/dashboard-nvim'
     -- More icons
     use {'kyazdani42/nvim-web-devicons'}
     -- Bufferline
-    use {"romgrk/barbar.nvim"}
+    -- use {"romgrk/barbar.nvim"}
+    use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
     use 'lukas-reineke/indent-blankline.nvim'
-    end)
+    use 'windwp/nvim-autopairs'
+
+end)
 
 

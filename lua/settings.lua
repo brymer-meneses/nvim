@@ -5,9 +5,9 @@ vim.o.cmdheight = 1
 vim.o.showmode = false
 vim.o.clipboard = "unnamedplus"
 vim.o.conceallevel = 0
--- vim.o.showtabline = 2
+vim.o.showtabline = 2
 
-vim.o.tabstop = 4 
+vim.o.tabstop = 4
 vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
 
@@ -22,4 +22,3 @@ vim.wo.number = true
 vim.wo.relativenumber = true
 
 vim.cmd("syntax on")
-vim.cmd('autocmd FileType * set formatoptions-=cro')
