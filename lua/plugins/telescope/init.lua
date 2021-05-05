@@ -5,3 +5,12 @@ vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', {sile
 vim.api.nvim_set_keymap('n', '<leader>fb', '<cmd>Telescope buffers<cr>', {silent = true})
 vim.api.nvim_set_keymap('n', '<leader>fb', '<cmd>Telescope help_tags<cr>', {silent = true})
 vim.api.nvim_set_keymap('n', '<leader>fl', '<cmd>Telescope git_files<cr>', {silent = true})
+
+require('telescope').load_extension('media_files')
+require('telescope').setup {
+    extensions = {
+        media_files = {
+            filetypes = {"png", "jpg", "pdf", "jpeg"}
+        }
+    }
+}

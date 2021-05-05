@@ -16,14 +16,13 @@ return require('packer').startup(function()
     -- Packer plugin to manage itself
     use 'wbthomason/packer.nvim'
 
-    -- use 'mhinz/vim-startify'
-
     -- For comments
     use 'preservim/nerdcommenter'
 
 
     -- Nord Theme
     use 'arcticicestudio/nord-vim'
+    -- use 'ChristianChiarulli/nvcode-color-schemes.vim'
 
     -- Lua LSP
     use 'tjdevries/nlua.nvim'
@@ -33,6 +32,7 @@ return require('packer').startup(function()
     use 'nvim-lua/popup.nvim'
     use 'nvim-lua/plenary.nvim'
     use 'nvim-telescope/telescope.nvim'
+    use "nvim-telescope/telescope-media-files.nvim"
 
     -- Treesitter
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }

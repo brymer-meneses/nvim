@@ -21,4 +21,7 @@ vim.wo.wrap = false
 vim.wo.number = true
 vim.wo.relativenumber = true
 
-vim.cmd("syntax on")
+vim.cmd([[
+    syntax on
+    set hidden
+    ]])

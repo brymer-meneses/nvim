@@ -12,11 +12,12 @@ g.vimtex_compiler_engine = "lualatex"
 vim.cmd([[
     augroup latex 
         autocmd! 
-        autocmd FileType tex :set conceallevel=1
-        autocmd FileType tex :set spell
-        autocmd FileType tex :set spelllang=en_us
-        autocmd FileType tex :hi clear Conceal
+        autocmd FileType tex   :set conceallevel=1
+        autocmd FileType tex   :set spell
+        autocmd FileType tex   :set spelllang=en_us
+        autocmd FileType tex   :hi clear Conceal
+        autocmd BufLeave *.tex :set nospell
+        autocmd FileType tex   :nnoremap silent <Tab>p :VimtexCompile<CR>
     augroup END
         ]])
-vim.api.nvim_set_keymap("n", "<Tab>p", ":VimtexCompile<CR>", {noremap = true, silent = true})
 
