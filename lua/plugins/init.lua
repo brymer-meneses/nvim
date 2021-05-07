@@ -19,9 +19,9 @@ return require('packer').startup(function()
     -- For comments
     use 'preservim/nerdcommenter'
 
-
     -- Nord Theme
-    use 'arcticicestudio/nord-vim'
+    -- use 'arcticicestudio/nord-vim'
+    use 'mrswats/nord-vim'
     -- use 'ChristianChiarulli/nvcode-color-schemes.vim'
 
     -- Lua LSP
@@ -70,6 +70,11 @@ return require('packer').startup(function()
     use 'nvim-treesitter/playground'
 
     use 'akinsho/nvim-toggleterm.lua'
+
+    use "jbyuki/nabla.nvim"
+    use "p00f/nvim-ts-rainbow"
+    use "norcalli/nvim-colorizer.lua"
+    use "mhartington/formatter.nvim"
 
 end)
 

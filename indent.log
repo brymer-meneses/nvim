@@ -1,0 +1,32 @@
+INFO:  latexindent.pl version 3.9.2, 2021-04-06, a script to indent .tex files
+       latexindent.pl lives here: /home/brymer-meneses/.miktex/texmfs/install/scripts/latexindent/
+       Fri May  7 07:37:32 2021
+       Reading input from STDIN
+INFO:  Processing switches:
+INFO:  Directory for backup files and indent.log: .
+INFO:  Perl modules are being loaded from the following directories:
+       /usr/share/perl/5.30/FindBin.pm
+       /usr/local/share/perl/5.30.3/YAML/Tiny.pm
+       /usr/share/perl/5.30/File/Copy.pm
+       /usr/lib/x86_64-linux-gnu/perl-base/File/Basename.pm
+       /usr/lib/x86_64-linux-gnu/perl-base/Getopt/Long.pm
+       /usr/local/share/perl/5.30.3/File/HomeDir.pm
+       /usr/local/lib/x86_64-linux-gnu/perl/5.30.3/Unicode/GCString.pm
+INFO:  Latex Indent perl modules are being loaded from, for example:
+       /home/brymer-meneses/.miktex/texmfs/install/scripts/latexindent/LatexIndent/Document.pm
+INFO:  YAML settings read: defaultSettings.yaml
+        Reading defaultSettings.yaml from /home/brymer-meneses/.miktex/texmfs/install/scripts/latexindent/defaultSettings.yaml
+INFO:  YAML settings read: indentconfig.yaml or .indentconfig.yaml
+       Home directory is /home/brymer-meneses (didn't find either indentconfig.yaml or .indentconfig.yaml)
+       To specify user settings you would put indentconfig.yaml here: /home/brymer-meneses/indentconfig.yaml
+       Alternatively, you can use the hidden file .indentconfig.yaml as: /home/brymer-meneses/.indentconfig.yaml
+INFO:  Phase 1: searching for objects
+       No objects found.
+INFO:  Phase 2: finding surrounding indentation
+INFO:  Phase 3: indenting objects
+INFO:  Phase 4: final indentation check
+INFO:  Output routine:
+       Not outputting to file; see -w and -o switches for more options.
+       --------------
+INFO:  Please direct all communication/issues to:
+        https://github.com/cmhughes/latexindent.pl

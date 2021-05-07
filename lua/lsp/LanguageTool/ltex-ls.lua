@@ -8,13 +8,13 @@ local util = require 'lspconfig/util'
 
 -- Config
 local Dictionary_file = {
-    ["en-US"] = {CONFIG_PATH .. "/spell/dictionary.txt"} -- there is another way to find ~/.config/nvim ?
+    ["en-US"] = {CONFIG_PATH .. "/lua/lsp/LanguageTool/spell/dictionary.txt"} -- there is another way to find ~/.config/nvim ?
 }
 local DisabledRules_file = {
-    ["en-US"] = {CONFIG_PATH .. "/spell/disable.txt"} -- there is another way to find ~/.config/nvim ?
+    ["en-US"] = {CONFIG_PATH .. "/lua/lsp/LanguageTool/spell/disable.txt"} -- there is another way to find ~/.config/nvim ?
 }
 local FalsePositives_file = {
-    ["en-US"] = {CONFIG_PATH .. "/spell/false.txt"} -- there is another way to find ~/.config/nvim ?
+    ["en-US"] = {CONFIG_PATH .. "/lua/lsp/LanguageTool/spell/false.txt"} -- there is another way to find ~/.config/nvim ?
 }
 
 local function readFiles(files)

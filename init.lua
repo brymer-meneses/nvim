@@ -20,10 +20,15 @@ require('plugins.NERDCommenter')
 require('plugins.nvim-autopairs')
 require('plugins.nvim-bufferline')
 require('plugins.nvim-toggleterm')
+require('plugins.nvim-treesitter')
+require('plugins.nvim-ts-rainbow')
+require('plugins.nabla-nvim')
+require('plugins.nvim-colorizer')
 
 -- LSP
 require('lsp.LaTeX')
 require('lsp.Lua')
 require('lsp.Python')
 require('lsp.LanguageTool')
+require('lsp.Formatter')
 

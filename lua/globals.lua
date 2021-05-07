@@ -20,10 +20,13 @@ O = {
     language_tool = {
         language = "en-US",
         mother_tongue = "en-US"
-
     },
 
-    database = {save_location = '~/.config/nvcode_db', auto_execute = 1},
+    latex = {
+        formatter = "latexindent",
+        autoformat = true
+    },
+
     python = {
         linter = '',
         -- @usage can be 'yapf', 'black'
@@ -37,7 +40,7 @@ O = {
     lua = {
         -- @usage can be 'lua-format'
         formatter = '',
-        autoformat = false,
+        autoformat = true,
         diagnostics = {virtual_text = {spacing = 0, prefix = ""}, signs = true, underline = true}
     },
     sh = {
@@ -45,7 +48,7 @@ O = {
         linter = '',
         -- @usage can be 'shfmt'
         formatter = '',
-        autoformat = false,
+        autoformat = true,
         diagnostics = {virtual_text = {spacing = 0, prefix = ""}, signs = true, underline = true}
     },
     tsserver = {
@@ -53,13 +56,13 @@ O = {
         linter = '',
         -- @usage can be 'prettier'
         formatter = '',
-        autoformat = false,
+        autoformat = true,
         diagnostics = {virtual_text = {spacing = 0, prefix = ""}, signs = true, underline = true}
     },
     json = {
         -- @usage can be 'prettier'
-        formatter = '',
-        autoformat = false,
+        formatter = 'prettier',
+        autoformat = true,
         diagnostics = {virtual_text = {spacing = 0, prefix = ""}, signs = true, underline = true}
     },
     tailwindls = {filetypes = {'html', 'css', 'scss', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact'}},

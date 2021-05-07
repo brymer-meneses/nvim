@@ -1,15 +1,14 @@
 
 local readFiles = require("lsp.LanguageTool.ltex-ls")
 
-
 local Dictionary_file = {
-    ["en-US"] = {CONFIG_PATH .. "/spell/dictionary.txt"}
+    ["en-US"] = {CONFIG_PATH .. "/lua/lsp/LanguageTool/spell/dictionary.txt"}
 }
 local DisabledRules_file = {
-    ["en-US"] = {CONFIG_PATH .. "/spell/disable.txt"}
+    ["en-US"] = {CONFIG_PATH .. "/lua/lsp/LanguageTool/spell/disable.txt"}
 }
 local FalsePositives_file = {
-    ["en-US"] = {CONFIG_PATH .. "/spell/false.txt"}
+    ["en-US"] = {CONFIG_PATH .. "/lua/lsp/LanguageTool/spell/false.txt"}
 }
 
 require('lspconfig').ltex.setup {
