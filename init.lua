@@ -1,5 +1,5 @@
-
 -- Config
+require('plugins.rnvimr')
 require('globals')
 require('colorscheme')
 require('plugins')
@@ -21,7 +21,7 @@ require('plugins.nvim-autopairs')
 require('plugins.nvim-bufferline')
 require('plugins.nvim-toggleterm')
 require('plugins.nvim-treesitter')
-require('plugins.nvim-ts-rainbow')
+-- require('plugins.nvim-ts-rainbow')
 require('plugins.nabla-nvim')
 require('plugins.nvim-colorizer')
 

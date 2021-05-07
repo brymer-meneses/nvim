@@ -22,6 +22,14 @@ vim.wo.number = true
 vim.wo.relativenumber = true
 
 vim.cmd([[
+    augroup CursorLine
+      au!
+      au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+      au WinLeave * setlocal nocursorline
+    augroup END
+]])
+
+vim.cmd([[
     syntax on
     set hidden
     ]])

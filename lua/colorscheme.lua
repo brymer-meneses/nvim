@@ -1,5 +1,3 @@
-
-
 vim.cmd('set termguicolors')
 vim.cmd('let g:termcolors=256')
 

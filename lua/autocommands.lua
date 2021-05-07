@@ -1,7 +1,4 @@
-
-
 -- Disables auto-comment when entering a new line.
-
 vim.cmd([[
     augroup general
         autocmd!
@@ -29,5 +26,4 @@ vim.cmd([[
         autocmd BufWinEnter  *.lua :nnoremap <Tab>l :luafile %<CR> :echom "sourced" <CR>
     augroup END
 ]])
-
 
