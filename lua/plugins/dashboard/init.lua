@@ -25,10 +25,12 @@ vim.g.dashboard_custom_section = {
     },
     e = {
         description = {'  Settings           '},
-        command = ':cd ~/.config/nvim/'
+        command = ':cd ~/.config/nvim/ | NvimTreeToggle'
     }
     -- f = {
     -- description = {'  Find Word              '},
     -- command = 'Telescope marks'
     -- }
 }
+
+vim.cmd("highlight DashboardHeader guifg=#434c5e")

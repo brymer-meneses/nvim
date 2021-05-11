@@ -79,6 +79,6 @@ return require('packer').startup(function()
     use "norcalli/nvim-colorizer.lua"
     use "mhartington/formatter.nvim"
 
-    use "kevinhwang91/rnvimr"
+    -- use "kevinhwang91/rnvimr"
 end)
 

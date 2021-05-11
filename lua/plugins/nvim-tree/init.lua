@@ -28,3 +28,27 @@ vim.cmd([[
     highlight NvimTreeRootFolder guifg=#b48ead
 ]])
 
+-- Change directory upon entering a folder
+local M = {}
+
+require'nvim-tree.events'.on_nvim_tree_ready(
+    function() vim.g.nvim_tree_ready = 1 end)
+
+function M.update_cwd()
+    if vim.g.nvim_tree_ready == 1 then
+        local view = require 'nvim-tree.view'
+        local lib = require 'nvim-tree.lib'
+        if view.win_open() then lib.change_dir(vim.fn.getcwd()) end
+    end
+end
+
+vim.api.nvim_exec([[
+  augroup NvimTreeConfig
+    au!
+    au DirChanged * lua NvimTreeConfig.update_cwd()
+  augroup END
+  ]], false)
+
+_G.NvimTreeConfig = M
+return M
+
