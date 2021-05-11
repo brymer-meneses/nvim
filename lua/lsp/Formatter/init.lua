@@ -4,12 +4,26 @@ require('formatter').setup({
         tex = {
             function()
                 return {
-                    exe = O.latex.formatter,
+                    exe = "latexindent",
                     args = {vim.api.nvim_buf_get_name(0)},
                     stdin = true
                 }
             end
         },
+        vue = {
+            -- prettier
+            function()
+                return {
+                    exe = "prettier",
+                    args = {
+                        "--stdin-filepath", vim.api.nvim_buf_get_name(0),
+                        '--single-quote'
+                    },
+                    stdin = true
+                }
+            end
+        },
+
         javascript = {
             -- prettier
             function()
@@ -29,8 +43,8 @@ require('formatter').setup({
                 return {exe = "rustfmt", args = {"--emit=stdout"}, stdin = true}
             end
         },
+        -- luafmt
         lua = {
-            -- luafmt
             function()
                 return {
                     exe = "/usr/local/lib/luarocks/rocks-5.4/luaformatter/scm-1/bin/lua-format",
@@ -38,11 +52,36 @@ require('formatter').setup({
                     stdin = true
                 }
             end
+        },
+        html = {
+            function()
+                return {
+                    exe = "prettier",
+                    args = {
+                        "--stdin-filepath", vim.api.nvim_buf_get_name(0),
+                        '--single-quote'
+                    },
+                    stdin = true
+                }
+            end
+        },
+        css = {
+            function()
+                return {
+                    exe = "prettier",
+                    args = {
+                        "--stdin-filepath", vim.api.nvim_buf_get_name(0),
+                        '--single-quote'
+                    },
+                    stdin = true
+                }
+            end
         }
+
     }
 })
 
--- TODO dynamically create autocommands 
+-- TODO dynamically create autocommands
 -- if O.{language}.autoformat is set to true
 vim.api.nvim_exec([[
     augroup FormatAutogroup

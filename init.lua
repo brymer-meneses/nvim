@@ -1,14 +1,14 @@
 -- Config
-require('plugins.rnvimr')
 require('globals')
-require('colorscheme')
 require('plugins')
+require('colorscheme')
 require('settings')
 require('remaps')
 require('autocommands')
 require('lsp')
 
 -- plugins
+require('plugins.rnvimr')
 require('plugins.telescope')
 require('plugins.nvim-tree')
 require('plugins.gitsigns')
@@ -30,5 +30,11 @@ require('lsp.LaTeX')
 require('lsp.Lua')
 require('lsp.Python')
 require('lsp.LanguageTool')
+require('lsp.Vue')
 require('lsp.Formatter')
+require('lsp.Javascript')
+require('lsp.CSS')
+require('lsp.HTML')
 
+-- Temporary Fix
+require('colorscheme-fix')

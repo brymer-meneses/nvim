@@ -14,7 +14,7 @@ O = {
         ignore_install = {"haskell"},
         highlight = {enabled = true},
         playground = {enabled = true},
-        rainbow = {enabled = false}
+        rainbow = {enabled = true}
     },
 
     language_tool = {language = "en-US", mother_tongue = "en-US"},

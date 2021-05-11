@@ -23,12 +23,12 @@ return require('packer').startup(function()
     use 'preservim/nerdcommenter'
 
     -- Nord Theme
-    use 'arcticicestudio/nord-vim'
-    -- use 'mrswats/nord-vim'
-    -- use 'ChristianChiarulli/nvcode-color-schemes.vim'
+    -- use 'arcticicestudio/nord-vim'
+    -- use {'mrswats/nord-vim', branch = "treesitter-support"}
+    use 'ChristianChiarulli/nvcode-color-schemes.vim'
 
     -- use "tjdevries/colorbuddy.nvim"
-    use "maaslalani/nordbuddy"
+    -- use "maaslalani/nordbuddy"
 
     -- Lua LSP
     use 'tjdevries/nlua.nvim'
