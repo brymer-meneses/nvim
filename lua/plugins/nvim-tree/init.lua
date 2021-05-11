@@ -18,10 +18,13 @@ vim.api.nvim_set_keymap('n', '<leader>tn', ':NvimTreeFindFile<cr>',
 -- vim.cmd("highlight NvimTreeRootFolder guibg=#eceff4 guifg=#2e3440")
 vim.cmd([[
     highlight NvimTreeSpecialFile gui=bold,underline guifg=#ebcb8b 
-    highlight NvimTreeFolderIcon guifg=#3b4252
+    highlight NvimTreeFolderIcon guifg=#434c5e
+    highlight NvimTreeOpenedFolderName gui=bold,italic guifg=#d8dee9
     highlight NvimTreeGitNew guifg=#ebcb8b
-    highlight NvimTreeGitDirty guifg=#a3be8c
+    highlight NvimTreeGitRenamed guifg=#d08770
+    highlight NvimTreeGitDirty guifg=#ebcb8b
     highlight NvimTreeFolderName guifg=#d8dee9
     highlight NvimTreeGitDeleted guifg=#bf616a
+    highlight NvimTreeRootFolder guifg=#b48ead
 ]])
 
