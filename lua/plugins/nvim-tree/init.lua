@@ -15,7 +15,39 @@ vim.api.nvim_set_keymap('n', '<leader>tr', ':NvimTreeRefresh<cr>',
 vim.api.nvim_set_keymap('n', '<leader>tn', ':NvimTreeFindFile<cr>',
                         {silent = true})
 
--- vim.cmd("highlight NvimTreeRootFolder guibg=#eceff4 guifg=#2e3440")
+vim.g.nvim_tree_disable_keybindings = 0
+local tree_cb = require'nvim-tree.config'.nvim_tree_callback
+vim.g.nvim_tree_bindings = {
+    -- default mappings
+    ["<CR>"] = tree_cb("edit"),
+    ["l"] = tree_cb("edit"),
+    ["<2-LeftMouse>"] = tree_cb("edit"),
+    ["<2-RightMouse>"] = tree_cb("cd"),
+    ["<C-m>"] = tree_cb("cd"),
+    ["<C-v>"] = tree_cb("vsplit"),
+    ["<C-x>"] = tree_cb("split"),
+    ["<C-t>"] = tree_cb("tabnew"),
+    ["<"] = tree_cb("prev_sibling"),
+    [">"] = tree_cb("next_sibling"),
+    ["h"] = tree_cb("close_node"),
+    ["<S-CR>"] = tree_cb("close_node"),
+    ["<Tab>"] = tree_cb("preview"),
+    ["I"] = tree_cb("toggle_ignored"),
+    ["H"] = tree_cb("toggle_dotfiles"),
+    ["R"] = tree_cb("refresh"),
+    ["a"] = tree_cb("create"),
+    ["d"] = tree_cb("remove"),
+    ["r"] = tree_cb("rename"),
+    ["<C-r>"] = tree_cb("full_rename"),
+    ["x"] = tree_cb("cut"),
+    ["c"] = tree_cb("copy"),
+    ["p"] = tree_cb("paste"),
+    ["[c"] = tree_cb("prev_git_item"),
+    ["]c"] = tree_cb("next_git_item"),
+    ["<C-n>"] = tree_cb("dir_up"),
+    ["q"] = tree_cb("close")
+}
+
 vim.cmd([[
     highlight NvimTreeSpecialFile gui=bold,underline guifg=#ebcb8b 
     highlight NvimTreeFolderIcon guifg=#434c5e
@@ -25,7 +57,7 @@ vim.cmd([[
     highlight NvimTreeGitDirty guifg=#ebcb8b
     highlight NvimTreeFolderName guifg=#d8dee9
     highlight NvimTreeGitDeleted guifg=#bf616a
-    highlight NvimTreeRootFolder guifg=#b48ead
+    highlight NvimTreeRootFolder guifg=#434c5e
 ]])
 
 -- Change directory upon entering a folder

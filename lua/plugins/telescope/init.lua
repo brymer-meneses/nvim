@@ -12,11 +12,17 @@ vim.api.nvim_set_keymap('n', '<leader>fl', '<cmd>Telescope git_files<cr>',
 vim.api.nvim_set_keymap('n', '<leader>fm', '<cmd>Telescope media_files<cr>',
                         {silent = true})
 
+local actions = require('telescope.actions')
+
 require('telescope').setup {
     extensions = {
         media_files = {
             filetypes = {"png", "jpg", "pdf", "jpeg"},
             find_cmd = "rg"
+        },
+        fzy_native = {
+            override_generic_sorter = false,
+            override_file_sorter = true
         }
     }
 }

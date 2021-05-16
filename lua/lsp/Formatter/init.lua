@@ -1,11 +1,15 @@
+local log_dir = "/home/brymer-meneses/.logs/indent.log "
 require('formatter').setup({
+
     logging = false,
     filetype = {
         tex = {
             function()
                 return {
                     exe = "latexindent",
-                    args = {vim.api.nvim_buf_get_name(0)},
+                    args = {
+                       "-d", vim.api.nvim_buf_get_name(0)
+                    },
                     stdin = true
                 }
             end
@@ -86,6 +90,6 @@ require('formatter').setup({
 vim.api.nvim_exec([[
     augroup FormatAutogroup
       autocmd!
-      autocmd BufWritePost *.tex,*.js,*.rs,*.lua FormatWrite
+      autocmd BufWritePost *.js,*.rs,*.lua FormatWrite
     augroup END
 ]], true)

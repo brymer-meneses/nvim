@@ -24,9 +24,13 @@ vim.g.dashboard_custom_section = {
         command = 'Telescope live_grep'
     },
     e = {
+        description = {'  Documents           '},
+        command = ':cd ~/Documents | NvimTreeToggle'
+    },
+    f = {
         description = {'  Settings           '},
         command = ':cd ~/.config/nvim/ | NvimTreeToggle'
-    }
+    },
     -- f = {
     -- description = {'  Find Word              '},
     -- command = 'Telescope marks'

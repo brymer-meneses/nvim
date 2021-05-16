@@ -1,4 +1,5 @@
-vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', {noremap = true, silent = true})
+vim.api
+    .nvim_set_keymap('n', '<Space>', '<NOP>', {noremap = true, silent = true})
 
 -- Leader Key
 vim.g.mapleader = ' '
@@ -14,8 +15,10 @@ vim.api.nvim_set_keymap('v', '<', '<gv', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('v', '>', '>gv', {noremap = true, silent = true})
 
 -- Move selected line / block of text in visual mode
-vim.api.nvim_set_keymap('x', 'K', ':move \'<-2<CR>gv-gv', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('x', 'J', ':move \'>+1<CR>gv-gv', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('x', 'K', ':move \'<-2<CR>gv-gv',
+                        {noremap = true, silent = true})
+vim.api.nvim_set_keymap('x', 'J', ':move \'>+1<CR>gv-gv',
+                        {noremap = true, silent = true})
 
 -- Resize Windows
 vim.cmd([[
@@ -32,15 +35,18 @@ vim.cmd([[
 ]])
 
 -- Better saving
-vim.api.nvim_set_keymap('n', '<C-s>', ':w<CR>', {silent=true})
-vim.api.nvim_set_keymap('i', '<C-s>', '<Esc>:w<CR>', {silent=true})
-vim.api.nvim_set_keymap('n', '<Tab>q', ':wq<CR>', {silent=true})
-vim.api.nvim_set_keymap('n', '<Tab>Q', ':q!<CR>', {silent=true})
+vim.api.nvim_set_keymap('n', '<C-s>', ':w<CR>', {silent = true})
+vim.api.nvim_set_keymap('v', '<C-s>', '<Esc>:w<CR>', {silent = true})
+vim.api.nvim_set_keymap('n', '<Tab>q', ':wq<CR>', {silent = true})
+vim.api.nvim_set_keymap('i', '<C-s>', '<Esc>:w<CR>', {silent = true})
+vim.api.nvim_set_keymap('n', '<Tab>Q', ':q!<CR>', {silent = true})
 
 -- Comments
-vim.api.nvim_set_keymap('n', '<C-_>', '<Plug>NERDCommenterToggle', {silent=true})
-vim.api.nvim_set_keymap('v', '<C-_>', '<Plug>NERDCommenterToggle<CR>gv', {silent=true})
+vim.api.nvim_set_keymap('n', '<C-_>', '<Plug>NERDCommenterToggle',
+                        {silent = true})
+vim.api.nvim_set_keymap('v', '<C-_>', '<Plug>NERDCommenterToggle<CR>gv',
+                        {silent = true})
 
-vim.api.nvim_set_keymap('n', '<C-v>', '+p', {silent=true})
-vim.api.nvim_set_keymap('n', '<C-c>', '+y', {silent=true})
+vim.api.nvim_set_keymap('n', '<C-v>', '+p', {silent = true})
+vim.api.nvim_set_keymap('n', '<C-c>', '+y', {silent = true})
 

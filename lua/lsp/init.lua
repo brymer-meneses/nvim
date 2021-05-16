@@ -84,4 +84,28 @@ end
 
 -- change LSP Default colors to match Nord colorscheme
 require('lsp.diagnostic_colors')
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] =
+    vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+        underline = true,
+        virtual_text = false,
+        signs = true,
+        update_in_insert = false
+    })
+vim.api.nvim_set_keymap("n", "<Tab>k",
+                        "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
+                        {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Tab>j",
+                        "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>",
+                        {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Tab-k>",
+                        "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
+                        {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Tab-j>",
+                        "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>",
+                        {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Tab><Tab>",
+                        "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>",
+                        {noremap = true, silent = true})
+
 return lsp_config

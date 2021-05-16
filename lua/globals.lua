@@ -110,17 +110,6 @@ O = {
     -- json = {formatter = '', autoformat = false, virtual_text = true}
 }
 
-Theming = {
-    -- Press <space>fc to see all available themes
-    colorscheme = "nord",
-    --[[ Some colorscheme have multiple styles to choose from:
-      @gruvbox = medium, soft, hard ]]
-    colorscheme_style = "soft",
-    -- Options: classic, slant, minimal, vscode, default
-    statusline = "slant",
-    -- Options: gruvbox, nord, dark
-    statusline_color = "nord"
-}
 CONFIG_PATH = os.getenv("HOME") .. "/.config/nvim"
 DATA_PATH = vim.fn.stdpath('data')
 CACHE_PATH = vim.fn.stdpath('cache')

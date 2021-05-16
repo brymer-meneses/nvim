@@ -55,7 +55,8 @@ return require('packer').startup(function()
     -- Git integration
     use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}
     -- Statusline
-    use {'famiu/feline.nvim', config = function() require 'plugins.feline' end}
+    -- use {'famiu/feline.nvim', config = function() require 'plugins.feline' end}
+    -- use {'itchyny/lightline.vim'}
 
     -- Startmenu
     use 'glepnir/dashboard-nvim'
@@ -78,7 +79,13 @@ return require('packer').startup(function()
     -- use "p00f/nvim-ts-rainbow"
     use "norcalli/nvim-colorizer.lua"
     use "mhartington/formatter.nvim"
+    use "glepnir/galaxyline.nvim"
+    use "nvim-lua/lsp-status.nvim"
+    --use "sbdchd/neoformat"
 
     -- use "kevinhwang91/rnvimr"
+
+    -- use 'sirver/ultisnips'
+    -- use 'KeitaNakamura/tex-conceal.vim'
 end)
 
