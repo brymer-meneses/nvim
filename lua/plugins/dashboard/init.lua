@@ -37,4 +37,4 @@ vim.g.dashboard_custom_section = {
     -- }
 }
 
-vim.cmd("highlight DashboardHeader guifg=#434c5e")
+--vim.cmd("highlight DashboardHeader guifg=#434c5e")

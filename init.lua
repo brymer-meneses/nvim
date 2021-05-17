@@ -13,8 +13,6 @@ require('plugins.nvim-tree')
 require('plugins.gitsigns')
 require('plugins.nvim-compe')
 require('plugins.dashboard')
--- require('plugins.feline')
--- vim.cmd('source ~/.config/nvim/lua/plugins/lightline/init.vim')
 require('plugins.vimtex')
 require('plugins.NERDCommenter')
 require('plugins.nvim-autopairs')
@@ -39,5 +37,9 @@ require('lsp.Javascript')
 require('lsp.CSS')
 require('lsp.HTML')
 
--- Temporary Fix
-require('colorscheme-fix')
+-- Neovide Support
+require("extensions.neovide")
+
+
+
+

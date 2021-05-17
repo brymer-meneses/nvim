@@ -1,5 +1,9 @@
-vim.cmd('set termguicolors')
-vim.cmd('let g:termcolors=256')
 
-vim.cmd('colorscheme ' .. O.colorscheme)
+vim.o.termguicolors = true
+vim.g.termcolors = 256
+--vim.g.nord_contrast = true
+vim.g.nord_borders = true
+
+--vim.cmd('colorscheme ' .. 'tokyonight')
+vim.cmd('colorscheme ' .. 'nord')
 

@@ -263,30 +263,30 @@ gls.left[13] = {
         -- separator_highlight = {colors.section_bg, colors.bg}
     }
 }
-gls.left[14] = {
-    LspStatus = {
-        provider = {LspStatus},
-        -- separator = ' ',
-        -- separator_highlight = {colors.bg, colors.bg},
-        highlight = {colors.middlegrey, colors.bg}
-    }
-}
+--gls.left[14] = {
+    --LspStatus = {
+        --provider = {LspStatus},
+        ---- separator = ' ',
+        ---- separator_highlight = {colors.bg, colors.bg},
+        --highlight = {colors.middlegrey, colors.bg}
+    --}
+--}
 
--- Right side
--- gls.right[0] = {
---     ShowLspClient = {
---         provider = 'GetLspClient',
---         condition = function()
---             local tbl = {['dashboard'] = true, [''] = true}
---             if tbl[vim.bo.filetype] then return false end
---             return true
---         end,
---         icon = ' ',
---         highlight = {colors.middlegrey, colors.bg},
---         separator = ' ',
---         separator_highlight = {colors.section_bg, colors.bg}
---     }
--- }
+ --Right side
+ gls.right[0] = {
+     ShowLspClient = {
+         provider = 'GetLspClient',
+         condition = function()
+             local tbl = {['dashboard'] = true, [''] = true}
+             if tbl[vim.bo.filetype] then return false end
+             return true
+         end,
+         icon = ' ',
+         highlight = {colors.middlegrey, colors.bg},
+         separator = ' ',
+         separator_highlight = {colors.section_bg, colors.bg}
+     }
+ }
 gls.right[1] = {
     DiffAdd = {
         provider = 'DiffAdd',

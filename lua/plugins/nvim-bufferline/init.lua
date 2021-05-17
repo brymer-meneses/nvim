@@ -10,7 +10,7 @@ require('bufferline').setup{
             --guibg = "#3b4252"
         --},
         fill = {
-            guibg = "#3b4252"
+            --guibg = "#3b4252"
         }
     }
 }

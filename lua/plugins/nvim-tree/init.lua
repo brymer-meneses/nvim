@@ -48,17 +48,17 @@ vim.g.nvim_tree_bindings = {
     ["q"] = tree_cb("close")
 }
 
-vim.cmd([[
-    highlight NvimTreeSpecialFile gui=bold,underline guifg=#ebcb8b 
-    highlight NvimTreeFolderIcon guifg=#434c5e
-    highlight NvimTreeOpenedFolderName gui=bold,italic guifg=#d8dee9
-    highlight NvimTreeGitNew guifg=#ebcb8b
-    highlight NvimTreeGitRenamed guifg=#d08770
-    highlight NvimTreeGitDirty guifg=#ebcb8b
-    highlight NvimTreeFolderName guifg=#d8dee9
-    highlight NvimTreeGitDeleted guifg=#bf616a
-    highlight NvimTreeRootFolder guifg=#434c5e
-]])
+--vim.cmd([[
+    --highlight NvimTreeSpecialFile gui=bold,underline guifg=#ebcb8b 
+    --highlight NvimTreeFolderIcon guifg=#434c5e
+    --highlight NvimTreeOpenedFolderName gui=bold,italic guifg=#d8dee9
+    --highlight NvimTreeGitNew guifg=#ebcb8b
+    --highlight NvimTreeGitRenamed guifg=#d08770
+    --highlight NvimTreeGitDirty guifg=#ebcb8b
+    --highlight NvimTreeFolderName guifg=#d8dee9
+    --highlight NvimTreeGitDeleted guifg=#bf616a
+    --highlight NvimTreeRootFolder guifg=#434c5e
+--]])
 
 -- Change directory upon entering a folder
 local M = {}

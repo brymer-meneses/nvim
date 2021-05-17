@@ -25,7 +25,9 @@ return require('packer').startup(function()
     -- Nord Theme
     -- use 'arcticicestudio/nord-vim'
     -- use {'mrswats/nord-vim', branch = "treesitter-support"}
-    use 'ChristianChiarulli/nvcode-color-schemes.vim'
+    -- use 'ChristianChiarulli/nvcode-color-schemes.vim'
+    use "shaunsingh/nord.nvim"
+    use 'folke/tokyonight.nvim'
 
     -- use "tjdevries/colorbuddy.nvim"
     -- use "maaslalani/nordbuddy"
