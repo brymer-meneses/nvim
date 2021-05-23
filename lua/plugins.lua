@@ -50,9 +50,9 @@ return require('packer').startup(function()
 
     -- LSP
     use 'neovim/nvim-lspconfig'
-    use 'hrsh7th/nvim-compe'
+     use 'hrsh7th/nvim-compe'
     use 'kabouzeid/nvim-lspinstall'
-    use "hrsh7th/vim-vsnip"
+    --use "nvim-lua/completion-nvim"
 
     -- Git integration
     use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}
@@ -78,7 +78,7 @@ return require('packer').startup(function()
     use 'akinsho/nvim-toggleterm.lua'
 
     use "jbyuki/nabla.nvim"
-    -- use "p00f/nvim-ts-rainbow"
+    use "p00f/nvim-ts-rainbow"
     use "norcalli/nvim-colorizer.lua"
     use "mhartington/formatter.nvim"
     use "glepnir/galaxyline.nvim"
@@ -87,7 +87,7 @@ return require('packer').startup(function()
 
     -- use "kevinhwang91/rnvimr"
 
-    -- use 'sirver/ultisnips'
+    --use 'sirver/ultisnips'
     -- use 'KeitaNakamura/tex-conceal.vim'
 end)
 

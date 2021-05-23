@@ -9,6 +9,7 @@ g.vimtex_quickfix_mode=0
 g.tex_conceal='abdmg'
 g.vimtex_compiler_engine = "lualatex"
 
+
 vim.cmd([[
     augroup latex 
         autocmd! 
@@ -16,6 +17,8 @@ vim.cmd([[
         autocmd FileType tex   :set spelllang=en_us
         autocmd FileType tex   :hi clear Conceal
         autocmd FileType tex   :nnoremap <Tab>p :VimtexCompile<CR>
+        autocmd FileType tex   :silent nnoremap <Tab>n :cclose<CR>
+        autocmd FileType tex   :silent nnoremap <Tab>m :VimtexErrors<CR>
     augroup END
         ]])
 

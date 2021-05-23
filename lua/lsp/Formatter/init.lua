@@ -7,9 +7,7 @@ require('formatter').setup({
             function()
                 return {
                     exe = "latexindent",
-                    args = {
-                       "-d", vim.api.nvim_buf_get_name(0)
-                    },
+                    args = {vim.api.nvim_buf_get_name(0)},
                     stdin = true
                 }
             end
