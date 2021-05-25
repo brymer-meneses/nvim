@@ -30,8 +30,8 @@ vim.cmd([[
 
 -- Terminal Remaps
 vim.cmd([[
-  tnoremap <C-[> <C-\><C-n>
-  nnoremap <C-\> :wincmd v<CR>:wincmd l<CR>:terminal<CR>
+    tnoremap <C-[> <C-\><C-n>
+    tnoremap <C-{> <Esc>
 ]])
 
 -- Better saving
@@ -42,10 +42,15 @@ vim.api.nvim_set_keymap('i', '<C-s>', '<Esc>:w<CR>', {silent = true})
 vim.api.nvim_set_keymap('n', '<Tab>Q', ':q!<CR>', {silent = true})
 
 -- Comments
-vim.api.nvim_set_keymap('n', '<C-_>', '<Plug>NERDCommenterToggle',
-                        {silent = true})
-vim.api.nvim_set_keymap('v', '<C-_>', '<Plug>NERDCommenterToggle<CR>gv',
-                        {silent = true})
+-- For Neovide
+vim.api.nvim_set_keymap("n", "<C-/>", "<Plug>kommentary_line_default", {})
+vim.api.nvim_set_keymap("v", "<C-/>", "<Plug>kommentary_visual_default", {})
+
+-- For Neovim Terminal
+vim.api.nvim_set_keymap("n", "<C-_>", "<Plug>kommentary_line_default", {})
+vim.api.nvim_set_keymap("v", "<C-_>", "<Plug>kommentary_visual_default", {})
+
+vim.api.nvim_set_keymap("n", "<C-?>", "<Plug>kommentary_motion_default", {})
 
 vim.api.nvim_set_keymap('n', '<C-v>', '+p', {silent = true})
 vim.api.nvim_set_keymap('n', '<C-c>', '+y', {silent = true})

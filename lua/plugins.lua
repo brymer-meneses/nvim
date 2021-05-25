@@ -20,17 +20,16 @@ return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
 
     -- For comments
-    use 'preservim/nerdcommenter'
+    -- use 'preservim/nerdcommenter'
+    use 'b3nj5m1n/kommentary'
+
+    -- Change Director Dynamicall
+    use {"ahmedkhalf/lsp-rooter.nvim"}
 
     -- Nord Theme
-    -- use 'arcticicestudio/nord-vim'
-    -- use {'mrswats/nord-vim', branch = "treesitter-support"}
-    -- use 'ChristianChiarulli/nvcode-color-schemes.vim'
     use "shaunsingh/nord.nvim"
     use 'folke/tokyonight.nvim'
-
-    -- use "tjdevries/colorbuddy.nvim"
-    -- use "maaslalani/nordbuddy"
+    use {"npxbr/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
 
     -- Lua LSP
     use 'tjdevries/nlua.nvim'
@@ -81,13 +80,15 @@ return require('packer').startup(function()
     use "p00f/nvim-ts-rainbow"
     use "norcalli/nvim-colorizer.lua"
     use "mhartington/formatter.nvim"
-    use "glepnir/galaxyline.nvim"
     use "nvim-lua/lsp-status.nvim"
-    --use "sbdchd/neoformat"
+    use "cocopon/iceberg.vim"
 
-    -- use "kevinhwang91/rnvimr"
+    -- Avoids plugin conflicts
+    if O.colorscheme == "nord" then
+        use "glepnir/galaxyline.nvim"
+    else 
+        use "hoob3rt/lualine.nvim"
+    end
 
-    --use 'sirver/ultisnips'
-    -- use 'KeitaNakamura/tex-conceal.vim'
 end)
 

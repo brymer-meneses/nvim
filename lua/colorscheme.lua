@@ -1,9 +1,19 @@
 
 vim.o.termguicolors = true
 vim.g.termcolors = 256
---vim.g.nord_contrast = true
-vim.g.nord_borders = true
 
---vim.cmd('colorscheme ' .. 'tokyonight')
-vim.cmd('colorscheme ' .. 'nord')
+vim.cmd('colorscheme ' .. O.colorscheme)
+require("plugins.lualine")
 
+
+if vim.g.colors_name == "nord" then
+    vim.g.nord_borders = true
+    vim.g.nord_contrast = false
+
+    require("plugins.galaxyline")
+
+elseif vim.g.colors_name == "tokyonight" then
+    SetLualineTheme("tokyonight")
+elseif vim.g.colors_name == "gruvbox" then
+    SetLualineTheme("gruvbox")
+end
