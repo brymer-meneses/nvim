@@ -17,8 +17,8 @@ vim.bo.autoindent = true
 vim.o.smarttab = true
 vim.o.smartcase = true
 vim.wo.wrap = false
-vim.wo.number = true
-vim.wo.relativenumber = true
+vim.wo.number = O.number
+vim.wo.relativenumber = O.relative_number
 
 vim.cmd([[
     augroup CursorLine

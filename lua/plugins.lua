@@ -24,7 +24,7 @@ return require('packer').startup(function()
     use 'b3nj5m1n/kommentary'
 
     -- Change Director Dynamicall
-    use {"ahmedkhalf/lsp-rooter.nvim"}
+    -- use {"ahmedkhalf/lsp-rooter.nvim"}
 
     -- Nord Theme
     use "shaunsingh/nord.nvim"
@@ -79,14 +79,13 @@ return require('packer').startup(function()
     use "jbyuki/nabla.nvim"
     use "p00f/nvim-ts-rainbow"
     use "norcalli/nvim-colorizer.lua"
-    use "mhartington/formatter.nvim"
-    use "nvim-lua/lsp-status.nvim"
+     use "nvim-lua/lsp-status.nvim"
     use "cocopon/iceberg.vim"
 
     -- Avoids plugin conflicts
     if O.colorscheme == "nord" then
         use "glepnir/galaxyline.nvim"
-    else 
+    else
         use "hoob3rt/lualine.nvim"
     end
 

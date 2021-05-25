@@ -45,6 +45,9 @@ vim.api.nvim_set_keymap('n', '<Tab>Q', ':q!<CR>', {silent = true})
 -- For Neovide
 vim.api.nvim_set_keymap("n", "<C-/>", "<Plug>kommentary_line_default", {})
 vim.api.nvim_set_keymap("v", "<C-/>", "<Plug>kommentary_visual_default", {})
+-- Pasting stuff on the terminal
+vim.cmd([[tnoremap <C-v> <C-\><C-n>+pa]])
+vim.cmd([[tnoremap <C-c> +y]])
 
 -- For Neovim Terminal
 vim.api.nvim_set_keymap("n", "<C-_>", "<Plug>kommentary_line_default", {})
@@ -55,3 +58,5 @@ vim.api.nvim_set_keymap("n", "<C-?>", "<Plug>kommentary_motion_default", {})
 vim.api.nvim_set_keymap('n', '<C-v>', '+p', {silent = true})
 vim.api.nvim_set_keymap('n', '<C-c>', '+y', {silent = true})
 
+-- ETC
+vim.cmd([[tnoremap <A-l> python <(curl -s "https://raw.githubusercontent.com/brymer-meneses/latex-templates/main/install.py") ]])

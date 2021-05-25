@@ -31,7 +31,7 @@ require('lsp.Lua')
 require('lsp.Python')
 require('lsp.LanguageTool')
 require('lsp.Vue')
--- require('lsp.Formatter')
+require('lsp.EFM')
 require('lsp.Javascript')
 require('lsp.CSS')
 require('lsp.C_CPP')
@@ -39,7 +39,4 @@ require('lsp.HTML')
 
 -- Neovide Support
 require("extensions.neovide")
-
-
-
 
