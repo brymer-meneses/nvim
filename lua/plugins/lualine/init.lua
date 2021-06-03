@@ -1,5 +1,11 @@
 local available_themes = {"gruvbox"}
 
+local toggleterm = {
+    sections = {lualine_a = 'ToggleTerm'},
+    filetypes = {'toggleterm'}
+}
+-- require'lualine'.setup {extensions = {toggleterm}}
+
 function SetLualineTheme(colorscheme)
     do
         local lualine_theme = nil
@@ -18,7 +24,7 @@ function SetLualineTheme(colorscheme)
                 theme = lualine_theme,
                 component_separators = {'', ''},
                 section_separators = {'', ''},
-                disabled_filetypes = {}
+                disabled_filetypes = {'dashboard'}
             },
             sections = {
                 lualine_a = {'mode'},
@@ -41,7 +47,7 @@ function SetLualineTheme(colorscheme)
                 lualine_z = {}
             },
             tabline = {},
-            extensions = {}
+            extensions = {'nvim-tree', 'quickfix'}
         }
     end
 

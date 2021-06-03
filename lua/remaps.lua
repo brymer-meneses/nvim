@@ -22,10 +22,10 @@ vim.api.nvim_set_keymap('x', 'J', ':move \'>+1<CR>gv-gv',
 
 -- Resize Windows
 vim.cmd([[
-  nnoremap <silent> <C-j>  :resize -2<CR>
-  nnoremap <silent> <C-k>  :resize +2<CR>
-  nnoremap <silent> <C-h>  :vertical resize -2<CR>
-  nnoremap <silent> <C-l>  :vertical resize +2<CR>
+  nnoremap <silent> <A-j>  :resize -2<CR>
+  nnoremap <silent> <A-k>  :resize +2<CR>
+  nnoremap <silent> <A-h>  :vertical resize -2<CR>
+  nnoremap <silent> <A-l>  :vertical resize +2<CR>
 ]])
 
 -- Terminal Remaps
@@ -55,8 +55,18 @@ vim.api.nvim_set_keymap("v", "<C-_>", "<Plug>kommentary_visual_default", {})
 
 vim.api.nvim_set_keymap("n", "<C-?>", "<Plug>kommentary_motion_default", {})
 
-vim.api.nvim_set_keymap('n', '<C-v>', '+p', {silent = true})
-vim.api.nvim_set_keymap('n', '<C-c>', '+y', {silent = true})
+vim.api.nvim_set_keymap('i', '<C-v>', '+p', {silent = true})
+vim.api.nvim_set_keymap('v', '<C-c>', '+y', {silent = true})
 
 -- ETC
-vim.cmd([[tnoremap <A-l> python <(curl -s "https://raw.githubusercontent.com/brymer-meneses/latex-templates/main/install.py") ]])
+vim.cmd(
+    [[tnoremap <A-L> python <(curl -s "https://raw.githubusercontent.com/brymer-meneses/latex-templates/main/install.py") ]])
+
+vim.api.nvim_set_keymap("n", "<Tab>d", "<cmd>Dashboard<Cr>", {silent = true})
+vim.api.nvim_set_keymap("n", "<C-b>", "<cmd>bd<Cr>", {silent = true})
+
+-- Switching Buffers
+vim.api.nvim_set_keymap('n', '<C-n>', ':BufferLineCycleNext<CR>',
+                        {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<C-m>', ':BufferLineCyclePrev<CR>',
+                        {noremap = true, silent = true})
