@@ -12,7 +12,7 @@ if vim.g.colors_name == "nord" then
 
 elseif vim.g.colors_name == "tokyonight" then
     SetLualineTheme("tokyonight")
-    -- vim.g.tokyonight_style = "night"
+    -- vim.g.tokyonight_style = "day"
 elseif vim.g.colors_name == "gruvbox" then
     SetLualineTheme("gruvbox")
 end

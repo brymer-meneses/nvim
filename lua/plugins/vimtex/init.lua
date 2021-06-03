@@ -16,9 +16,9 @@ vim.cmd([[
         autocmd FileType tex   :set conceallevel=1
         autocmd FileType tex   :set spelllang=en_us
         autocmd FileType tex   :hi clear Conceal
-        autocmd FileType tex   :nnoremap <Tab>p :VimtexCompile<CR>
-        autocmd FileType tex   :silent nnoremap <Tab>n :cclose<CR>
-        autocmd FileType tex   :silent nnoremap <Tab>m :VimtexErrors<CR>
+        autocmd FileType tex   :nnoremap <Tab>p <cmd>VimtexCompile<CR>
+        autocmd FileType tex   :silent nnoremap <Tab>n <cmd>cclose<CR>
+        autocmd FileType tex   :silent nnoremap <Tab>m <cmd>VimtexErrors<CR>
     augroup END
         ]])
 
