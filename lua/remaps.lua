@@ -58,15 +58,16 @@ vim.api.nvim_set_keymap("n", "<C-?>", "<Plug>kommentary_motion_default", {})
 vim.api.nvim_set_keymap('i', '<C-v>', '+p', {silent = true})
 vim.api.nvim_set_keymap('v', '<C-c>', '+y', {silent = true})
 
--- ETC
+-- For LaTeX
 vim.cmd(
     [[tnoremap <A-L> python <(curl -s "https://raw.githubusercontent.com/brymer-meneses/latex-templates/main/install.py") ]])
 
+-- Access Dashboard
 vim.api.nvim_set_keymap("n", "<Tab>d", "<cmd>Dashboard<Cr>", {silent = true})
-vim.api.nvim_set_keymap("n", "<C-b>", "<cmd>bd<Cr>", {silent = true})
 
 -- Switching Buffers
-vim.api.nvim_set_keymap('n', '<C-n>', ':BufferLineCycleNext<CR>',
+vim.api.nvim_set_keymap('n', '<Tab>n', ':BufferLineCycleNext<CR>',
                         {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<C-m>', ':BufferLineCyclePrev<CR>',
+vim.api.nvim_set_keymap('n', '<Tab>m', ':BufferLineCyclePrev<CR>',
                         {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Tab>b", "<cmd>bd<Cr>", {silent = true})

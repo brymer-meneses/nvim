@@ -23,7 +23,7 @@ require"lspconfig".efm.setup {
 }
 
 vim.api.nvim_set_keymap("n", "<C-f>",
-                        "<cmd>lua vim.lsp.buf.formatting_sync(nil, 1000)<Cr>",
+                        "<cmd>lua vim.lsp.buf.formatting_sync(nil, 2000)<Cr>",
                         {silent = false})
 vim.cmd [[
     augroup FormatAutogroup

@@ -9,14 +9,14 @@ require('bufferline').setup {
             }
         },
         diagnostics = "nvim_lsp"
-    },
-    highlights = {
+    }
+    --[[ highlights = {
         -- background = {
         -- guibg = "#3b4252"
         -- },
         fill = {
             -- guibg = "#3b4252"
         }
-    }
+    } ]]
 }
 

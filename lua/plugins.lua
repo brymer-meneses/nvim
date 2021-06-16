@@ -49,12 +49,13 @@ return require('packer').startup(function()
 
     -- LSP
     use 'neovim/nvim-lspconfig'
-     use 'hrsh7th/nvim-compe'
+    use 'hrsh7th/nvim-compe'
     use 'kabouzeid/nvim-lspinstall'
-    --use "nvim-lua/completion-nvim"
+    -- use "nvim-lua/completion-nvim"
 
     -- Git integration
     use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}
+
     -- Statusline
     -- use {'famiu/feline.nvim', config = function() require 'plugins.feline' end}
     -- use {'itchyny/lightline.vim'}
@@ -79,9 +80,11 @@ return require('packer').startup(function()
     use "jbyuki/nabla.nvim"
     use "p00f/nvim-ts-rainbow"
     use "norcalli/nvim-colorizer.lua"
-     use "nvim-lua/lsp-status.nvim"
+    use "nvim-lua/lsp-status.nvim"
     use "cocopon/iceberg.vim"
 
+    use {"ray-x/lsp_signature.nvim", opt = false}
+    use {"folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim"}
     -- Avoids plugin conflicts
     if O.colorscheme == "nord" then
         use "glepnir/galaxyline.nvim"
@@ -89,5 +92,6 @@ return require('packer').startup(function()
         use "hoob3rt/lualine.nvim"
     end
 
+    use 'JoosepAlviste/nvim-ts-context-commentstring'
 end)
 
