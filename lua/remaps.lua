@@ -22,16 +22,16 @@ vim.api.nvim_set_keymap('x', 'J', ':move \'>+1<CR>gv-gv',
 
 -- Resize Windows
 vim.cmd([[
-  nnoremap <silent> <A-j>  :resize -2<CR>
-  nnoremap <silent> <A-k>  :resize +2<CR>
-  nnoremap <silent> <A-h>  :vertical resize -2<CR>
-  nnoremap <silent> <A-l>  :vertical resize +2<CR>
+  nnoremap <silent> <C-j>  :resize -2<CR>
+  nnoremap <silent> <C-k>  :resize +2<CR>
+  nnoremap <silent> <C-h>  :vertical resize -2<CR>
+  nnoremap <silent> <C-l>  :vertical resize +2<CR>
 ]])
 
 -- Terminal Remaps
 vim.cmd([[
     tnoremap <C-[> <C-\><C-n>
-    tnoremap <C-{> <Esc>
+    tnoremap <C-c> <Esc>
 ]])
 
 -- Better saving
@@ -42,32 +42,30 @@ vim.api.nvim_set_keymap('i', '<C-s>', '<Esc>:w<CR>', {silent = true})
 vim.api.nvim_set_keymap('n', '<Tab>Q', ':q!<CR>', {silent = true})
 
 -- Comments
--- For Neovide
-vim.api.nvim_set_keymap("n", "<C-/>", "<Plug>kommentary_line_default", {})
-vim.api.nvim_set_keymap("v", "<C-/>", "<Plug>kommentary_visual_default", {})
--- Pasting stuff on the terminal
--- vim.cmd([[tnoremap <C-v> <C-\><C-n>+pa]])
--- vim.cmd([[tnoremap <C-c> +y]])
+vim.api.nvim_set_keymap("v", "<leader>r", "<Plug>kommentary_visual_default", {})
+vim.api.nvim_set_keymap("n", "<leader>r", "<Plug>kommentary_line_default", {})
 
 -- For Neovim Terminal
-vim.api.nvim_set_keymap("n", "<C-_>", "<Plug>kommentary_line_default", {})
-vim.api.nvim_set_keymap("v", "<C-_>", "<Plug>kommentary_visual_default", {})
-
 vim.api.nvim_set_keymap("n", "<C-?>", "<Plug>kommentary_motion_default", {})
 
 vim.api.nvim_set_keymap('i', '<C-v>', '+p', {silent = true})
 vim.api.nvim_set_keymap('i', '<C-c>', '<C-c>', {silent = true})
+-- Pasting stuff on the terminal
+-- vim.cmd([[tnoremap <Ctrl>V <C-\><C-n>+pa]])
+-- vim.cmd([[tnoremap <Ctrl>C +y]])
 
 -- For LaTeX
 vim.cmd(
     [[tnoremap <A-L> python <(curl -s "https://raw.githubusercontent.com/brymer-meneses/latex-templates/main/install.py") ]])
 
 -- Access Dashboard
-vim.api.nvim_set_keymap("n", "<Tab>d", "<cmd>Dashboard<Cr>", {silent = true})
+vim.api.nvim_set_keymap("n", "<leader>d", "<cmd>Dashboard<Cr>", {silent = true})
 
 -- Switching Buffers
-vim.api.nvim_set_keymap('n', '<Tab>n', ':BufferLineCycleNext<CR>',
+
+vim.api.nvim_set_keymap('n', '<leader>n', '<cmd>noh<cr>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Tab>m', ':BufferLineCycleNext<CR>',
                         {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Tab>m', ':BufferLineCyclePrev<CR>',
+vim.api.nvim_set_keymap('n', '<Tab>n', ':BufferLineCyclePrev<CR>',
                         {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Tab>b", "<cmd>bd<Cr>", {silent = true})

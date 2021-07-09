@@ -31,11 +31,15 @@ return require('packer').startup(function(use)
     -- Packer plugin to manage itself
     use 'wbthomason/packer.nvim'
 
+    -- Formatting
+    use 'mhartington/formatter.nvim'
+
     -- For comments
     use 'b3nj5m1n/kommentary'
     use {'norcalli/nvim-colorizer.lua', config=function () require('colorizer').setup() end}
+
     -- Change Director Dynamically
-    -- use {"ahmedkhalf/lsp-rooter.nvim"}
+    use {"ahmedkhalf/lsp-rooter.nvim"}
 
     -- Nord Theme
     use "brymer-meneses/nord.nvim"
