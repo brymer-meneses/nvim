@@ -12,27 +12,38 @@ if fn.empty(fn.glob(install_path)) > 0 then
     execute 'packadd packer.nvim'
 end
 
-local use = require('packer').use
+local packer_ok, packer = pcall(require, "packer")
+if not packer_ok then
+  return
+end
 
-return require('packer').startup(function()
+packer.init {
+  git = { clone_timeout = 300 },
+  display = {
+    open_fn = function()
+      return require("packer.util").float { border = "single" }
+    end,
+  },
+}
+
+return require('packer').startup(function(use)
 
     -- Packer plugin to manage itself
     use 'wbthomason/packer.nvim'
 
     -- For comments
-    -- use 'preservim/nerdcommenter'
     use 'b3nj5m1n/kommentary'
-
-    -- Change Director Dynamicall
+    use {'norcalli/nvim-colorizer.lua', config=function () require('colorizer').setup() end}
+    -- Change Director Dynamically
     -- use {"ahmedkhalf/lsp-rooter.nvim"}
 
     -- Nord Theme
-    use "shaunsingh/nord.nvim"
+    use "brymer-meneses/nord.nvim"
     use 'folke/tokyonight.nvim'
     use {"npxbr/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
 
     -- Lua LSP
-    use 'tjdevries/nlua.nvim'
+    -- use 'tjdevries/nlua.nvim'
     use 'lervag/vimtex'
 
     -- Telescope
@@ -65,7 +76,6 @@ return require('packer').startup(function()
     -- More icons
     use {'kyazdani42/nvim-web-devicons'}
     -- Bufferline
-    -- use {"romgrk/barbar.nvim"}
     use {
         'akinsho/nvim-bufferline.lua',
         requires = 'kyazdani42/nvim-web-devicons'
@@ -73,18 +83,21 @@ return require('packer').startup(function()
     -- use {'lukas-reineke/indent-blankline.nvim', branch="lua"}
     use 'windwp/nvim-autopairs'
 
-    use 'nvim-treesitter/playground'
+    -- use 'nvim-treesitter/playground'
 
     use 'akinsho/nvim-toggleterm.lua'
 
-    use "jbyuki/nabla.nvim"
+    -- use "jbyuki/nabla.nvim"
     use "p00f/nvim-ts-rainbow"
-    use "norcalli/nvim-colorizer.lua"
-    use "nvim-lua/lsp-status.nvim"
-    use "cocopon/iceberg.vim"
 
-    use {"ray-x/lsp_signature.nvim", opt = false}
-    use {"folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim"}
+    -- LAGS
+    -- use "norcalli/nvim-colorizer.lua"
+    -- use {"christianchiarulli/nvcode-color-schemes.vim", opt = true}
+    use "nvim-lua/lsp-status.nvim"
+    -- use "cocopon/iceberg.vim"
+
+    -- use {"ray-x/lsp_signature.nvim", opt = false}
+    -- use {"folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim"}
     -- Avoids plugin conflicts
     if O.colorscheme == "nord" then
         use "glepnir/galaxyline.nvim"
@@ -93,5 +106,13 @@ return require('packer').startup(function()
     end
 
     use 'JoosepAlviste/nvim-ts-context-commentstring'
+    use {
+        "karb94/neoscroll.nvim",
+        opt = false,
+        config = function() require('neoscroll').setup() end
+    }
+
+    use {"hrsh7th/vim-vsnip", event = "InsertEnter"}
+    use {"rafamadriz/friendly-snippets", event = "InsertEnter"}
 end)
 

@@ -46,8 +46,8 @@ vim.api.nvim_set_keymap('n', '<Tab>Q', ':q!<CR>', {silent = true})
 vim.api.nvim_set_keymap("n", "<C-/>", "<Plug>kommentary_line_default", {})
 vim.api.nvim_set_keymap("v", "<C-/>", "<Plug>kommentary_visual_default", {})
 -- Pasting stuff on the terminal
-vim.cmd([[tnoremap <C-v> <C-\><C-n>+pa]])
-vim.cmd([[tnoremap <C-c> +y]])
+-- vim.cmd([[tnoremap <C-v> <C-\><C-n>+pa]])
+-- vim.cmd([[tnoremap <C-c> +y]])
 
 -- For Neovim Terminal
 vim.api.nvim_set_keymap("n", "<C-_>", "<Plug>kommentary_line_default", {})
@@ -56,7 +56,7 @@ vim.api.nvim_set_keymap("v", "<C-_>", "<Plug>kommentary_visual_default", {})
 vim.api.nvim_set_keymap("n", "<C-?>", "<Plug>kommentary_motion_default", {})
 
 vim.api.nvim_set_keymap('i', '<C-v>', '+p', {silent = true})
-vim.api.nvim_set_keymap('v', '<C-c>', '+y', {silent = true})
+vim.api.nvim_set_keymap('i', '<C-c>', '<C-c>', {silent = true})
 
 -- For LaTeX
 vim.cmd(

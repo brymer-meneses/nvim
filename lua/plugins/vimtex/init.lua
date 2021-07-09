@@ -5,7 +5,7 @@ g.vimtex_view_general_viewer = "zathura"
 g.tex_flavor = 'latex'
 g.vimtex_view_method = 'zathura'
 g.vimtex_quickfix_mode = 0
-g.tex_conceal = 'abdmg'
+-- g.tex_conceal = 'abdmg'
 g.vimtex_compiler_engine = "lualatex"
 
 vim.cmd([[

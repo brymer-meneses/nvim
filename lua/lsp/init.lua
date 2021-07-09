@@ -83,29 +83,39 @@ function lsp_config.tsserver_on_attach(client, bufnr)
 end
 
 -- change LSP Default colors to match Nord colorscheme
--- require('lsp.diagnostic_colors')
+require('lsp.diagnostic_colors')
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] =
     vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
         underline = true,
         virtual_text = false,
-        signs = true,
-        update_in_insert = false
+        signs = false,
+        update_in_insert = true
     })
+
+vim.lsp.handlers["textDocument/hover"] =
+  vim.lsp.with(
+  vim.lsp.handlers.hover,
+  {
+    border = "single"
+  }
+)
+
+vim.lsp.handlers["textDocument/signatureHelp"] =
+  vim.lsp.with(
+  vim.lsp.handlers.signature_help,
+  {
+    border = "single"
+  }
+)
+
 vim.api.nvim_set_keymap("n", "<Tab>k",
-                        "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
+                        "<cmd>lua vim.lsp.diagnostic.goto_next({ popup_opts = { border = 'single' }})<CR>",
                         {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Tab>j",
-                        "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>",
+                        "<cmd>lua vim.lsp.diagnostic.goto_prev({ popup_opts = { border = 'single' }})<CR>",
                         {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<Tab-k>",
-                        "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
-                        {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<Tab-j>",
-                        "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>",
-                        {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<Tab><Tab>",
-                        "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>",
+vim.api.nvim_set_keymap("n", "<Tab><Tab>", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ border = 'single' })<CR>",
                         {noremap = true, silent = true})
 
 return lsp_config

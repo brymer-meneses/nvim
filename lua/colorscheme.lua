@@ -15,4 +15,6 @@ elseif vim.g.colors_name == "tokyonight" then
     -- vim.g.tokyonight_style = "day"
 elseif vim.g.colors_name == "gruvbox" then
     SetLualineTheme("gruvbox")
+elseif vim.g.colors_name == "lunar" then
+    SetLualineTheme("lunar")
 end

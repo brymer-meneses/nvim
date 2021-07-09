@@ -16,13 +16,14 @@ require"lspconfig".efm.setup {
         languages = {
             lua = {{formatCommand = lua_format, formatStdin = true}},
             javascript = {{formatCommand = prettier, formatStdin = true}},
+            javascriptreact = {{formatCommand = prettier, formatStdin = true}},
             latex = {{formatCommand = latex_indent, formatStdin = true}},
             python = {{formatCommand = black, formatStdin = true}}
         }
     }
 }
 
-vim.api.nvim_set_keymap("n", "<C-f>",
+vim.api.nvim_set_keymap("n", "<Ctrl>F",
                         "<cmd>lua vim.lsp.buf.formatting_sync(nil, 2000)<Cr>",
                         {silent = false})
 vim.cmd [[

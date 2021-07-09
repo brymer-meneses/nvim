@@ -8,13 +8,3 @@ vim.cmd([[
     augroup END
 ]])
 
--- Remap for source
-vim.cmd([[
-    augroup source
-        autocmd!
-        autocmd BufRead      *.lua, *.vim :nnoremap <Tab>l :source %<CR> :echom "sourced" <CR>
-        autocmd BufNewFile   *.lua, *.vim :nnoremap <Tab>l :source %<CR> :echom "sourced" <CR>
-        autocmd BufWinEnter  *.lua, *.vim :nnoremap <Tab>l :source %<CR> :echom "sourced" <CR>
-    augroup END
-]])
-

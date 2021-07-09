@@ -1,7 +1,7 @@
 O = {
     auto_close_tree = 0,
     auto_complete = true,
-    colorscheme = 'tokyonight',
+    colorscheme = 'nord',
     hidden_files = true,
     wrap_lines = false,
     number = true,
@@ -65,9 +65,9 @@ O = {
     },
     tsserver = {
         -- @usage can be 'eslint'
-        linter = '',
+        linter = 'eslint',
         -- @usage can be 'prettier'
-        formatter = '',
+        formatter = 'prettier',
         autoformat = true,
         diagnostics = {
             virtual_text = {spacing = 0, prefix = ""},
