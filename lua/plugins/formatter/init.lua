@@ -45,6 +45,15 @@ require('formatter').setup({
                     stdin = true
                 }
             end
+        },
+        python = {
+            function()
+                return {
+                    exe = "black",
+                    args = {"--stdin-filename", vim.api.nvim_buf_get_name(0)},
+                    stdin = false
+                }
+            end
         }
     }
 })
@@ -52,7 +61,7 @@ require('formatter').setup({
 vim.api.nvim_exec([[
     augroup FormatAutogroup
       autocmd!
-      autocmd BufWritePost *.js,*.rs,*.lua silent! FormatWrite
+      autocmd BufWritePost *.js,*.rs,*.lua,*.py silent! FormatWrite
     augroup END
     nnoremap <silent> <leader>f :Format<CR>
 ]], true)

@@ -94,20 +94,10 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] =
     })
 
 vim.lsp.handlers["textDocument/hover"] =
-  vim.lsp.with(
-  vim.lsp.handlers.hover,
-  {
-    border = "single"
-  }
-)
+    vim.lsp.with(vim.lsp.handlers.hover, {border = "single"})
 
 vim.lsp.handlers["textDocument/signatureHelp"] =
-  vim.lsp.with(
-  vim.lsp.handlers.signature_help,
-  {
-    border = "single"
-  }
-)
+    vim.lsp.with(vim.lsp.handlers.signature_help, {border = "single"})
 
 vim.api.nvim_set_keymap("n", "<Tab>k",
                         "<cmd>lua vim.lsp.diagnostic.goto_next({ popup_opts = { border = 'single' }})<CR>",
@@ -115,7 +105,8 @@ vim.api.nvim_set_keymap("n", "<Tab>k",
 vim.api.nvim_set_keymap("n", "<Tab>j",
                         "<cmd>lua vim.lsp.diagnostic.goto_prev({ popup_opts = { border = 'single' }})<CR>",
                         {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<Tab><Tab>", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ border = 'single' })<CR>",
+vim.api.nvim_set_keymap("n", "<Tab><Tab>",
+                        "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ border = 'single' })<CR>",
                         {noremap = true, silent = true})
 
 return lsp_config

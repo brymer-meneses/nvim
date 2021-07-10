@@ -30,8 +30,8 @@ vim.cmd([[
 
 -- Terminal Remaps
 vim.cmd([[
-    tnoremap <C-[> <C-\><C-n>
-    tnoremap <C-c> <Esc>
+    tnoremap <Esc> <C-\><C-n>
+    tnoremap <C-c> <C-c>
 ]])
 
 -- Better saving
@@ -63,9 +63,13 @@ vim.api.nvim_set_keymap("n", "<leader>d", "<cmd>Dashboard<Cr>", {silent = true})
 
 -- Switching Buffers
 
-vim.api.nvim_set_keymap('n', '<leader>n', '<cmd>noh<cr>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>n', '<cmd>noh<cr>',
+                        {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<Tab>m', ':BufferLineCycleNext<CR>',
                         {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<Tab>n', ':BufferLineCyclePrev<CR>',
                         {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Tab>b", "<cmd>bd<Cr>", {silent = true})
+
+vim.api.nvim_set_keymap("n", "<leader>tl", "<cmd>Trouble<cr>",
+                        {silent = true, noremap = true})

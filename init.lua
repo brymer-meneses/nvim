@@ -4,7 +4,7 @@ require('plugins')
 require('colorscheme')
 require('settings')
 require('autocommands')
-require('lsp') 
+require('lsp')
 require('remaps')
 
 -- plugins
@@ -21,6 +21,8 @@ require('plugins.nvim-treesitter')
 require('plugins.kommentary')
 require('plugins.formatter')
 
+require('plugins.TrueZen')
+
 -- LSP
 require('lsp.LaTeX')
 require('lsp.Lua')
@@ -34,4 +36,3 @@ require('lsp.HTML')
 
 -- Neovide Support
 require("extensions.neovide")
-
