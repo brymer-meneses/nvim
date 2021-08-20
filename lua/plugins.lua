@@ -1,139 +1,114 @@
--- Installs packer.nvim if it is not installed on a system.
-local execute = vim.api.nvim_command
-local fn = vim.fn
+require("utils").init_packer()
+return require("packer").startup(function(use)
+	-- Packer plugin to manage itself
+	use("wbthomason/packer.nvim")
 
-local install_path = fn.stdpath('data') .. '/site/pack/packer/opt/packer.nvim'
+	-- Formatting
+	use("mhartington/formatter.nvim")
 
-if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({
-        'git', 'clone', 'https://github.com/wbthomason/packer.nvim',
-        install_path
-    })
-    execute 'packadd packer.nvim'
-end
+	-- For comments
+	use("b3nj5m1n/kommentary")
+	use({
+		"norcalli/nvim-colorizer.lua",
+		config = function()
+			require("colorizer").setup()
+		end,
+	})
 
-local packer_ok, packer = pcall(require, "packer")
-if not packer_ok then return end
+	-- Change Director Dynamically
+	use({ "ahmedkhalf/lsp-rooter.nvim" })
 
-vim.cmd(
-    "autocmd BufWritePost ~/.config/nvim/lua/plugins.lua :luafile % | PackerSync")
+	-- Nord Theme
+	use("brymer-meneses/nord.nvim")
+	use("folke/tokyonight.nvim")
+	use({ "npxbr/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } })
 
-packer.init {
-    git = {clone_timeout = 300},
-    display = {
-        open_fn = function()
-            return require("packer.util").float {border = "single"}
-        end
-    }
-}
+	use("lervag/vimtex")
 
-return require('packer').startup(function(use)
+	-- Telescope
+	use("nvim-lua/popup.nvim")
+	use("nvim-lua/plenary.nvim")
+	use("nvim-telescope/telescope.nvim")
+	use("nvim-telescope/telescope-media-files.nvim")
 
-    -- Packer plugin to manage itself
-    use 'wbthomason/packer.nvim'
+	-- Treesitter
+	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 
-    -- Formatting
-    use 'mhartington/formatter.nvim'
+	-- File Explorer
+	use("kyazdani42/nvim-tree.lua")
 
-    -- For comments
-    use 'b3nj5m1n/kommentary'
-    use {
-        'norcalli/nvim-colorizer.lua',
-        config = function() require('colorizer').setup() end
-    }
+	-- LSP
+	use("neovim/nvim-lspconfig")
+	use("hrsh7th/nvim-compe")
+	use("kabouzeid/nvim-lspinstall")
 
-    -- Change Director Dynamically
-    use {"ahmedkhalf/lsp-rooter.nvim"}
+	-- Git integration
+	use({ "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } })
 
-    -- Nord Theme
-    use "brymer-meneses/nord.nvim"
-    use 'folke/tokyonight.nvim'
-    use {"npxbr/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
+	-- Statusline
+	-- use {'famiu/feline.nvim', config = function() require 'plugins.feline' end}
+	-- use {'itchyny/lightline.vim'}
 
-    use 'lervag/vimtex'
+	-- Startmenu
+	use("glepnir/dashboard-nvim")
+	-- More icons
+	use({ "kyazdani42/nvim-web-devicons" })
+	-- Bufferline
+	use({
+		"akinsho/nvim-bufferline.lua",
+		requires = "kyazdani42/nvim-web-devicons",
+	})
+	-- use {'lukas-reineke/indent-blankline.nvim', branch="lua"}
+	use("windwp/nvim-autopairs")
 
-    -- Telescope
-    use 'nvim-lua/popup.nvim'
-    use 'nvim-lua/plenary.nvim'
-    use 'nvim-telescope/telescope.nvim'
-    use "nvim-telescope/telescope-media-files.nvim"
+	-- use 'nvim-treesitter/playground'
 
-    -- Treesitter
-    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+	use("akinsho/nvim-toggleterm.lua")
 
-    -- File Explorer
-    use 'kyazdani42/nvim-tree.lua'
+	-- use "jbyuki/nabla.nvim"
+	use("p00f/nvim-ts-rainbow")
 
-    -- LSP
-    use 'neovim/nvim-lspconfig'
-    use 'hrsh7th/nvim-compe'
-    use 'kabouzeid/nvim-lspinstall'
+	-- LAGS
+	-- use "norcalli/nvim-colorizer.lua"
+	-- use {"christianchiarulli/nvcode-color-schemes.vim", opt = true}
+	use("nvim-lua/lsp-status.nvim")
+	-- use "cocopon/iceberg.vim"
 
-    -- Git integration
-    use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}
+	-- use {"ray-x/lsp_signature.nvim", opt = false}
+	use({
+		"folke/todo-comments.nvim",
+		requires = "nvim-lua/plenary.nvim",
+		config = function()
+			require("todo-comments").setup({})
+		end,
+	})
+	use({
+		"hoob3rt/lualine.nvim",
+		opt = false,
+	})
 
-    -- Statusline
-    -- use {'famiu/feline.nvim', config = function() require 'plugins.feline' end}
-    -- use {'itchyny/lightline.vim'}
+	use("JoosepAlviste/nvim-ts-context-commentstring")
+	use({
+		"karb94/neoscroll.nvim",
+		opt = false,
+		config = function()
+			require("neoscroll").setup()
+		end,
+	})
 
-    -- Startmenu
-    use 'glepnir/dashboard-nvim'
-    -- More icons
-    use {'kyazdani42/nvim-web-devicons'}
-    -- Bufferline
-    use {
-        'akinsho/nvim-bufferline.lua',
-        requires = 'kyazdani42/nvim-web-devicons'
-    }
-    -- use {'lukas-reineke/indent-blankline.nvim', branch="lua"}
-    use 'windwp/nvim-autopairs'
-
-    -- use 'nvim-treesitter/playground'
-
-    use 'akinsho/nvim-toggleterm.lua'
-
-    -- use "jbyuki/nabla.nvim"
-    use "p00f/nvim-ts-rainbow"
-
-    -- LAGS
-    -- use "norcalli/nvim-colorizer.lua"
-    -- use {"christianchiarulli/nvcode-color-schemes.vim", opt = true}
-    use "nvim-lua/lsp-status.nvim"
-    -- use "cocopon/iceberg.vim"
-
-    -- use {"ray-x/lsp_signature.nvim", opt = false}
-    use {
-        "folke/todo-comments.nvim",
-        requires = "nvim-lua/plenary.nvim",
-        config = function() require("todo-comments").setup {} end
-    }
-    -- Avoids plugin conflicts
-    if O.colorscheme == "nord" then
-        use "glepnir/galaxyline.nvim"
-    else
-        use "hoob3rt/lualine.nvim"
-    end
-
-    use 'JoosepAlviste/nvim-ts-context-commentstring'
-    use {
-        "karb94/neoscroll.nvim",
-        opt = false,
-        config = function() require('neoscroll').setup() end
-    }
-
-    use {"hrsh7th/vim-vsnip"}
-    use {"rafamadriz/friendly-snippets"}
-    use {"windwp/nvim-ts-autotag"}
-    use {"pocco81/truezen.nvim", opt = false}
-    use {
-        "folke/trouble.nvim",
-        requires = "kyazdani42/nvim-web-devicons",
-        config = function()
-            require("trouble").setup {
-                -- your configuration comes here
-                -- or leave it empty to use the default settings
-                -- refer to the configuration section below
-            }
-        end
-    }
+	use({ "hrsh7th/vim-vsnip" })
+	use({ "rafamadriz/friendly-snippets" })
+	use({ "windwp/nvim-ts-autotag" })
+	use({ "pocco81/truezen.nvim", opt = false })
+	use({
+		"folke/trouble.nvim",
+		requires = "kyazdani42/nvim-web-devicons",
+		config = function()
+			require("trouble").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
+		end,
+	})
 end)

@@ -82,8 +82,6 @@ function lsp_config.tsserver_on_attach(client, bufnr)
     client.resolved_capabilities.document_formatting = false
 end
 
--- change LSP Default colors to match Nord colorscheme
-require('lsp.diagnostic_colors')
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] =
     vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
