@@ -1,8 +1,9 @@
 require("lsp.compe")
+require("lsp.handlers").setup()
+local lspconfig = require("lspconfig")
 
 local M = {}
 
-local lspconfig = require("lspconfig")
 function M.run(lang)
 	local lang_config = require("lang/" .. lang).lsp
 	local lsp_utils = require("lsp.utils")
@@ -42,10 +43,36 @@ function M.run(lang)
 	end
 
 	-- Add to lspconfig
-	local server = lang_config.server_name
+	local server = lang_config.provider
 
-	print(setup.provider)
 	lspconfig[server].setup(setup)
 end
 
+vim.lsp.protocol.CompletionItemKind = {
+	"   (Text) ",
+	"   (Method)",
+	"   (Function)",
+	"   (Constructor)",
+	" ﴲ  (Field)",
+	"[] (Variable)",
+	"   (Class)",
+	" ﰮ  (Interface)",
+	"   (Module)",
+	" 襁 (Property)",
+	"   (Unit)",
+	"   (Value)",
+	" 練 (Enum)",
+	"   (Keyword)",
+	"   (Snippet)",
+	"   (Color)",
+	"   (File)",
+	"   (Reference)",
+	"   (Folder)",
+	"   (EnumMember)",
+	" ﲀ  (Constant)",
+	" ﳤ  (Struct)",
+	"   (Event)",
+	"   (Operator)",
+	"   (TypeParameter)",
+}
 return M

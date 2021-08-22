@@ -1,1 +1,1 @@
-require("lsp.latex")
+require("lsp").run("latex")

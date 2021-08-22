@@ -4,7 +4,6 @@ require("plugins")
 require("colorscheme")
 require("settings")
 require("autocommands")
-require("lsp")
 require("remaps")
 
 -- plugins
@@ -22,5 +21,4 @@ require("plugins.kommentary")
 require("plugins.formatter")
 
 -- Neovide Support
-require("lsp").run("lua")
 require("extensions.neovide")
