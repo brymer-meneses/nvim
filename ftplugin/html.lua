@@ -1,1 +1,1 @@
-require("html.lua")
+require("lsp").run("html")

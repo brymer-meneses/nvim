@@ -12,7 +12,6 @@ require("plugins.lualine")
 require("plugins.telescope")
 require("plugins.tree")
 require("plugins.gitsigns")
-require("plugins.compe")
 require("plugins.dashboard")
 require("plugins.vimtex")
 require("plugins.autopairs")
@@ -23,4 +22,5 @@ require("plugins.kommentary")
 require("plugins.formatter")
 
 -- Neovide Support
+require("lsp").run("lua")
 require("extensions.neovide")

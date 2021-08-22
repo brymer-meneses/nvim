@@ -38,7 +38,7 @@ function M.init_packer()
 		git = { clone_timeout = 300 },
 		display = {
 			open_fn = function()
-				return require("packer.util").float({ border = "single" })
+				return require("packer.util").float({ border = "rounded" })
 			end,
 		},
 	})

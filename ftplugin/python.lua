@@ -1,1 +1,1 @@
-require("lsp.python")
+require("lsp").run("python")

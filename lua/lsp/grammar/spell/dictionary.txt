@@ -1,8 +1,0 @@
-{
-    "en-US" = {
-        "brymer",
-        "meneses",
-        "html",
-        "javascript"
-    }
-}

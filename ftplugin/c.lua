@@ -1,2 +1,1 @@
-require("lsp.clang")
-
+require("lsp").run("clang")

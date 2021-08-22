@@ -45,10 +45,6 @@ return require("packer").startup(function(use)
 	-- Git integration
 	use({ "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } })
 
-	-- Statusline
-	-- use {'famiu/feline.nvim', config = function() require 'plugins.feline' end}
-	-- use {'itchyny/lightline.vim'}
-
 	-- Startmenu
 	use("glepnir/dashboard-nvim")
 	-- More icons
@@ -58,23 +54,13 @@ return require("packer").startup(function(use)
 		"akinsho/nvim-bufferline.lua",
 		requires = "kyazdani42/nvim-web-devicons",
 	})
-	-- use {'lukas-reineke/indent-blankline.nvim', branch="lua"}
 	use("windwp/nvim-autopairs")
-
-	-- use 'nvim-treesitter/playground'
-
 	use("akinsho/nvim-toggleterm.lua")
 
-	-- use "jbyuki/nabla.nvim"
 	use("p00f/nvim-ts-rainbow")
 
-	-- LAGS
-	-- use "norcalli/nvim-colorizer.lua"
-	-- use {"christianchiarulli/nvcode-color-schemes.vim", opt = true}
 	use("nvim-lua/lsp-status.nvim")
-	-- use "cocopon/iceberg.vim"
 
-	-- use {"ray-x/lsp_signature.nvim", opt = false}
 	use({
 		"folke/todo-comments.nvim",
 		requires = "nvim-lua/plenary.nvim",
@@ -104,11 +90,7 @@ return require("packer").startup(function(use)
 		"folke/trouble.nvim",
 		requires = "kyazdani42/nvim-web-devicons",
 		config = function()
-			require("trouble").setup({
-				-- your configuration comes here
-				-- or leave it empty to use the default settings
-				-- refer to the configuration section below
-			})
+			require("trouble").setup({})
 		end,
 	})
 end)
