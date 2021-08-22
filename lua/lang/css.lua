@@ -1,11 +1,11 @@
-local css = {}
-css.lsp = {
-	cmd = {
-		"node",
-		DATA_PATH .. "/lspinstall/css/vscode-css/css-language-features/server/dist/node/cssServerMain.js",
-		"--stdio",
+local lang = nvim.lang
+lang.css = {
+	lsp = {
+		cmd = {
+			"node",
+			DATA_PATH .. "/lspinstall/css/vscode-css/css-language-features/server/dist/node/cssServerMain.js",
+			"--stdio",
+		},
+		provider = "cssls",
 	},
-	provider = "cssls",
 }
-
-return css

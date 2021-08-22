@@ -68,10 +68,6 @@ return require("packer").startup(function(use)
 			require("todo-comments").setup({})
 		end,
 	})
-	use({
-		"hoob3rt/lualine.nvim",
-		opt = false,
-	})
 
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 	use({
@@ -81,6 +77,7 @@ return require("packer").startup(function(use)
 			require("neoscroll").setup()
 		end,
 	})
+	use("glepnir/galaxyline.nvim")
 
 	use({ "hrsh7th/vim-vsnip" })
 	use({ "rafamadriz/friendly-snippets" })

@@ -1,5 +1,6 @@
-O = {
+nvim = {
 	colorscheme = "nord",
+	lang = {},
 }
 
 CONFIG_PATH = os.getenv("HOME") .. "/.config/nvim"

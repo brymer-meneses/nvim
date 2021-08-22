@@ -1,13 +1,12 @@
 -- Config
-require("globals")
+require("globals") 
 require("plugins")
 require("colorscheme")
 require("settings")
-require("autocommands")
+require("autocommands") 
 require("remaps")
-
 -- plugins
-require("plugins.lualine")
+require("plugins.galaxyline")
 require("plugins.telescope")
 require("plugins.tree")
 require("plugins.gitsigns")

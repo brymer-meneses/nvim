@@ -8,3 +8,13 @@ vim.cmd([[
     augroup END
 ]])
 
+vim.api.nvim_exec(
+	[[
+    augroup FormatAutogroup
+      autocmd!
+      autocmd BufWritePost *.js,*.rs,*.lua,*.py silent! FormatWrite
+    augroup END
+    nnoremap <silent> <leader>f :Format<CR>
+]],
+	true
+)

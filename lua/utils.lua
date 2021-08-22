@@ -1,19 +1,13 @@
 local M = {}
 
-function M.is_buffer_empty()
-	-- Check whether the current buffer is empty
-	return vim.fn.empty(vim.fn.expand("%:t")) == 1
+function M.get_file_name()
+	return vim.api.nvim_buf_get_name(0)
 end
 
-function M.has_width_gt(cols)
-	-- Check if the windows width is greater than a given number of columns
-	return vim.fn.winwidth(0) / 2 > cols
-end
-
-function M.init_packer()
-	-- Installs packer.nvim if it is not installed on a system.
-	local execute = vim.api.nvim_command
-	local fn = vim.fn
+function M.init_packer() 
+-- Installs packer.nvim if it is not installed on a system.
+    local execute = vim.api.nvim_command
+    local fn = vim.fn
 
 	local install_path = fn.stdpath("data") .. "/site/pack/packer/opt/packer.nvim"
 

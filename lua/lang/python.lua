@@ -1,17 +1,16 @@
--- npm i -g pyright
-local python = {}
-python.lsp = {
-	provider = "pyright",
-	cmd = { DATA_PATH .. "/lspinstall/python/node_modules/.bin/pyright-langserver", "--stdio" },
-	settings = {
-		python = {
-			analysis = {
-				typeCheckingMode = true,
-				autoSearchPaths = true,
-				useLibraryCodeForTypes = true,
+local lang = nvim.lang
+lang.python = {
+	lsp = {
+		provider = "pyright",
+		cmd = { DATA_PATH .. "/lspinstall/python/node_modules/.bin/pyright-langserver", "--stdio" },
+		settings = {
+			python = {
+				analysis = {
+					typeCheckingMode = true,
+					autoSearchPaths = true,
+					useLibraryCodeForTypes = true,
+				},
 			},
 		},
 	},
 }
-
-return python
