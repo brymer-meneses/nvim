@@ -1,6 +1,5 @@
 local M = {}
 M.setup = function()
-	require("lang")
 	require("lsp.compe")
 	require("lsp.formatting")
 	require("lsp.ui").setup()
@@ -23,6 +22,7 @@ M.setup = function()
 end
 M.run = function(lang)
 	local lspconfig = require("lspconfig")
+	require("lang/" .. lang)
 	local lsp = nvim.lang[lang].lsp
 	local lsp_utils = require("lsp.utils")
 	local provider = lsp.provider

@@ -18,7 +18,6 @@ require("plugins.bufferline")
 require("plugins.toggleterm")
 require("plugins.treesitter")
 require("plugins.kommentary")
-require("plugins.formatter")
 
 -- Neovide Support
 require("extensions.neovide")
