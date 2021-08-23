@@ -78,6 +78,7 @@ return require("packer").startup(function(use)
 		end,
 	})
 	use("glepnir/galaxyline.nvim")
+	use({ "jose-elias-alvarez/null-ls.nvim" })
 
 	use({ "hrsh7th/vim-vsnip" })
 	use({ "rafamadriz/friendly-snippets" })

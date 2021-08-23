@@ -1,10 +1,10 @@
-local formatter = require("null-ls").builtins.formatting
 local format_on_attach = function(client)
 	if client.resolved_capabilities.document_formatting then
 		vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
 	end
 end
 
+local formatter = require("null-ls").builtins.formatting
 require("null-ls").config({
 	sources = {
 		formatter.stylua,

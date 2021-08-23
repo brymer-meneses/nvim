@@ -1,10 +1,11 @@
 -- Config
-require("globals") 
+require("globals")
 require("plugins")
 require("colorscheme")
 require("settings")
-require("autocommands") 
+require("autocommands")
 require("remaps")
+require("lsp").setup()
 -- plugins
 require("plugins.galaxyline")
 require("plugins.telescope")

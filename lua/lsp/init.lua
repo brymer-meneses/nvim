@@ -1,17 +1,29 @@
-
-require("lang")
-
-require("lsp.compe")
-require("lsp.icons")
-require("lsp.formatting")
-require("lsp.handlers").setup()
-
-local lspconfig = require("lspconfig")
-
 local M = {}
+M.setup = function()
+	require("lang")
+	require("lsp.compe")
+	require("lsp.formatting")
+	require("lsp.ui").setup()
 
-function M.run(lang)
-    local lsp = nvim.lang[lang].lsp
+	vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+		signs = {
+			active = true,
+			values = {
+				{ name = "LspDiagnosticsSignError", text = "" },
+				{ name = "LspDiagnosticsSignWarning", text = "" },
+				{ name = "LspDiagnosticsSignHint", text = "" },
+				{ name = "LspDiagnosticsSignInformation", text = "" },
+			},
+		},
+		virtual_text = false,
+		underline = true,
+		update_in_insert = true,
+		severity_sort = true,
+	})
+end
+M.run = function(lang)
+	local lspconfig = require("lspconfig")
+	local lsp = nvim.lang[lang].lsp
 	local lsp_utils = require("lsp.utils")
 	local provider = lsp.provider
 
@@ -27,7 +39,7 @@ function M.run(lang)
 		},
 		capabilities = {
 			enabled = false,
-			value = require("lsp.common").on_attach,
+			value = require("lsp.common").capabilities,
 		},
 	}
 	for key, value in pairs(lsp) do
@@ -49,6 +61,9 @@ function M.run(lang)
 	end
 	-- Add to lspconfig
 	lspconfig[provider].setup(setup)
+	vim.schedule(function()
+		vim.api.nvim_exec("LspStart", false)
+	end)
 end
 
 return M
