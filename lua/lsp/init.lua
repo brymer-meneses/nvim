@@ -25,6 +25,7 @@ M.run = function(lang)
 	require("lang/" .. lang)
 	local lsp = nvim.lang[lang].lsp
 	local lsp_utils = require("lsp.utils")
+
 	local provider = lsp.provider
 
 	if lsp_utils.is_client_active(provider) then
@@ -32,34 +33,20 @@ M.run = function(lang)
 	end
 
 	local setup = {}
-	local common = {
-		on_attach = {
-			enabled = false,
-			value = require("lsp.common").on_attach,
-		},
-		capabilities = {
-			enabled = false,
-			value = require("lsp.common").capabilities,
-		},
-	}
 	for key, value in pairs(lsp) do
-		-- Check if common settings are in the language
-		-- configuration
-		for param, enabled in pairs(common) do
-			if key == param then
-				common[param].enabled = enabled
-			end
-		end
-
 		setup[key] = value
 	end
-	-- Attach common params if not configured
-	for setting, value in pairs(common) do
-		if value.enabled then
-			setup[setting] = value
-		end
+
+	local table_contains = require("utils").table_contains
+
+	if not table_contains(setup, "on_attach") then
+		setup.on_attach = require("lsp.common").on_attach
 	end
-	-- Add to lspconfig
+
+	if not table_contains(setup, "capabilities") then
+		setup.capabilities = require("lsp.common").capabilities
+	end
+
 	lspconfig[provider].setup(setup)
 	vim.schedule(function()
 		vim.api.nvim_exec("LspStart", false)

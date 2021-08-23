@@ -4,6 +4,10 @@ function M.get_file_name()
 	return vim.api.nvim_buf_get_name(0)
 end
 
+function M.table_contains(table, key)
+	return table[key] ~= nil
+end
+
 function M.init_packer()
 	-- Installs packer.nvim if it is not installed on a system.
 	local execute = vim.api.nvim_command
