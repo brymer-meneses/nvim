@@ -39,11 +39,35 @@ M.init_lsp_saga = function()
 	})
 end
 
+--[[
+LspSagaDiagnosticBorder xxx guifg=#7739e3
+LspSagaDiagnosticHeader xxx gui=bold guifg=#d8a657
+LspSagaDiagnosticTruncateLine xxx guifg=#7739e3
+LspDiagnosticsFloatingWarn xxx guifg=#d8a657
+LspDiagnosticsFloatingInfor xxx guifg=#6699cc
+LspSagaShTruncateLine xxx guifg=black
+LspSagaDocTruncateLine xxx guifg=black
+LspSagaCodeActionTitle xxx guifg=#5E81AC
+LspSagaCodeActionTruncateLine xxx guifg=black
+LspSagaCodeActionContent xxx guifg=#81A1C1
+LspSagaRenamePromptPrefix xxx guifg=#98be65
+LspSagaRenameBorder xxx guifg=#A3BE8C
+LspSagaHoverBorder xxx guifg=#5E81AC
+LspSagaSignatureHelpBorder xxx guifg=#EBCB8B
+LspSagaLspFinderBorder xxx guifg=#51afef
+LspSagaCodeActionBorder xxx guifg=#8FBCBB
+LspSagaAutoPreview xxx guifg=#ECBE7B
+LspSagaDefPreviewBorder xxx guifg=#A3BE8C
+LspSagaLightBulb xxx links to LspDiagnosticsSignHint
+ ]]
 M.load_saga_colors = function()
 	vim.api.nvim_exec(
 		[[
     highlight LspSagaDiagnosticBorder guifg=#D8DEE9 guibg=#434C5E
     highlight LspSagaDiagnosticTruncateLine guifg=#D8DEE9
+    highlight LspSagaDiagnosticHeader guifg=#EBCB8B
+    highlight link LspSagaSignatureHelpBorder LspSagaDiagnosticBorder
+    highlight link LspSagaHoverBorder LspSagaDiagnosticBorder
     ]],
 		false
 	)
@@ -72,26 +96,47 @@ M.load_saga_bindings = function(bufnr)
 		"<cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<CR>",
 		opts
 	)
+	-- code action
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "<Tab>i", "<cmd>lua require'lspsaga.code_action'.code_action()<CR>", opts)
+	vim.api.nvim_buf_set_keymap(
+		bufnr,
+		"v",
+		"<Tab>i",
+		"<cmd>lua require'lspsaga.code_action'.range_code_action()<CR>",
+		opts
+	)
+	-- Documentation
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "<Tab>i", "<cmd>lua require('lspsaga.action').render_hover_doc()<cr>", opts)
+	--- Smart Scroll Documentation
+	vim.api.nvim_buf_set_keymap(
+		bufnr,
+		"n",
+		"<C-f>",
+		"<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>",
+		opts
+	)
+	vim.api.nvim_buf_set_keymap(
+		bufnr,
+		"n",
+		"<C-b>",
+		"<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>",
+		opts
+	)
+	-- signature
+	vim.api.nvim_buf_set_keymap(
+		bufnr,
+		"n",
+		"<Tab>o",
+		"<cmd>lua require('lspsaga.signatureHelp').signature_help()<cr>",
+		opts
+	)
+	-- preview definition
+	vim.api.nvim_buf_set_keymap(
+		bufnr,
+		"n",
+		"<Tab>o",
+		"<cmd>lua require('lspsaga.provider').preview_definition()<cr>",
+		opts
+	)
 end
 return M
---[[
-LspSagaDiagnosticBorder xxx guifg=#7739e3
-LspSagaDiagnosticHeader xxx gui=bold guifg=#d8a657
-LspSagaDiagnosticTruncateLine xxx guifg=#7739e3
-LspDiagnosticsFloatingWarn xxx guifg=#d8a657
-LspDiagnosticsFloatingInfor xxx guifg=#6699cc
-LspSagaShTruncateLine xxx guifg=black
-LspSagaDocTruncateLine xxx guifg=black
-LspSagaCodeActionTitle xxx guifg=#5E81AC
-LspSagaCodeActionTruncateLine xxx guifg=black
-LspSagaCodeActionContent xxx guifg=#81A1C1
-LspSagaRenamePromptPrefix xxx guifg=#98be65
-LspSagaRenameBorder xxx guifg=#A3BE8C
-LspSagaHoverBorder xxx guifg=#5E81AC
-LspSagaSignatureHelpBorder xxx guifg=#EBCB8B
-LspSagaLspFinderBorder xxx guifg=#51afef
-LspSagaCodeActionBorder xxx guifg=#8FBCBB
-LspSagaAutoPreview xxx guifg=#ECBE7B
-LspSagaDefPreviewBorder xxx guifg=#A3BE8C
-LspSagaLightBulb xxx links to LspDiagnosticsSignHint
- ]]
