@@ -20,17 +20,7 @@ local on_attach = function(_, bufnr)
 	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
 		border = border,
 	})
-
-	local opts = { noremap = true, silent = true }
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "<Tab>k", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "<Tab>j", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(
-		bufnr,
-		"n",
-		"<Tab><Tab>",
-		"<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>",
-		opts
-	)
+	require("core.lsp.saga").load_saga_bindings(bufnr)
 end
 
 M.capabilities = capabilities

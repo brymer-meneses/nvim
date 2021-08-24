@@ -19,10 +19,8 @@ if not packer_ok then
 	return
 end
 
-vim.cmd([[autocmd BufWritePost ~/.config/nvim/lua/plugins.lua :luafile % | PackerSync]])
-
 packer.init({
-	git = { clone_timeout = 300 },
+	git = { clone_timeout = 1000 },
 	display = {
 		open_fn = function()
 			return require("packer.util").float({ border = "single" })
@@ -32,12 +30,15 @@ packer.init({
 	auto_clean = true,
 })
 
+local table_contains = require("core.utils").table_contains
 return packer.startup(function(use)
 	for _, plugin in ipairs(nvim.core_plugins) do
 		use(plugin)
 	end
 
-	for _, plugin in ipairs(nvim.plugins) do
-		use(plugin)
+	if table_contains(nvim, "plugins") then
+		for _, plugin in ipairs(nvim.plugins) do
+			use(plugin)
+		end
 	end
 end)
