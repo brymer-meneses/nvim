@@ -9,7 +9,7 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
 	},
 }
 
-local border = require("lsp.ui").border
+local border = require("core.lsp.ui").border
 local on_attach = function(_, bufnr)
 	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 

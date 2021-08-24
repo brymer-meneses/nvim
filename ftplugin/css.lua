@@ -1,1 +1,1 @@
-require("lsp").run("css")
+require("core.lsp").run("css")

@@ -1,1 +1,1 @@
-require("lsp").run("rust")
+require("core.lsp").run("rust")

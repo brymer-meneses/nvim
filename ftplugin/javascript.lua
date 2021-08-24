@@ -1,1 +1,1 @@
-require("lsp").run("javascript")
+require("core.lsp").run("javascript")

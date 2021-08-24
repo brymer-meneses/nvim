@@ -1,1 +1,1 @@
-require("lsp").run("lua")
+require("core.lsp").run("lua")

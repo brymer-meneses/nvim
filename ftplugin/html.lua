@@ -1,1 +1,1 @@
-require("lsp").run("html")
+require("core.lsp").run("html")

@@ -1,1 +1,1 @@
-require("lsp").run("latex")
+require("core.lsp").run("latex")

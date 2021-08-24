@@ -1,1 +1,1 @@
-require("lsp").run("vue")
+require("core.lsp").run("vue")
