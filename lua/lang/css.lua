@@ -1,5 +1,4 @@
-local lang = nvim.lang
-lang.css = {
+local css = {
 	lsp = {
 		cmd = {
 			"node",
@@ -9,3 +8,5 @@ lang.css = {
 		provider = "cssls",
 	},
 }
+
+return { css = css }

@@ -1,12 +1,11 @@
 -- https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(Standalone)
 local sumneko_root_path = DATA_PATH .. "/lspinstall/lua"
 local sumneko_binary = sumneko_root_path .. "/sumneko-lua-language-server"
-local runtime_path = vim.split(package.path, ';')
-table.insert(runtime_path, 'lua/?.lua')
-table.insert(runtime_path, 'lua/?/init.lua')
+local runtime_path = vim.split(package.path, ";")
+table.insert(runtime_path, "lua/?.lua")
+table.insert(runtime_path, "lua/?/init.lua")
 
-local lang = nvim.lang
-lang.lua = {
+local lua = {
 	lsp = {
 		provider = "sumneko_lua",
 		cmd = { sumneko_binary, "-E", sumneko_root_path .. "/main.lua" },
@@ -14,7 +13,7 @@ lang.lua = {
 			Lua = {
 				runtime = {
 					version = "LuaJIT",
-					path =  runtime_path,
+					path = runtime_path,
 				},
 				diagnostics = {
 					globals = { "vim" },
@@ -29,3 +28,5 @@ lang.lua = {
 		},
 	},
 }
+
+return { lua = lua }

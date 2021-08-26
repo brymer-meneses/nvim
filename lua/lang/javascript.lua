@@ -1,5 +1,4 @@
-local lang = nvim.lang
-lang.javascript = {
+local javascript = {
 	lsp = {
 		provider = "tsserver",
 		cmd = {
@@ -26,3 +25,4 @@ lang.javascript = {
 		},
 	},
 }
+return { javascript = javascript }

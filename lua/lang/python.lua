@@ -1,5 +1,4 @@
-local lang = nvim.lang
-lang.python = {
+local python = {
 	lsp = {
 		provider = "pyright",
 		cmd = { DATA_PATH .. "/lspinstall/python/node_modules/.bin/pyright-langserver", "--stdio" },
@@ -14,3 +13,5 @@ lang.python = {
 		},
 	},
 }
+
+return { python = python }

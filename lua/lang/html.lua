@@ -1,5 +1,4 @@
-local lang = nvim.lang
-lang.html = {
+local html = {
 	lsp = {
 		cmd = {
 			"node",
@@ -9,3 +8,5 @@ lang.html = {
 		server_name = "html",
 	},
 }
+
+return { html = html }
