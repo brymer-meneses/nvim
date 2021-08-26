@@ -25,4 +25,4 @@ local javascript = {
 		},
 	},
 }
-return { javascript = javascript }
+return javascript

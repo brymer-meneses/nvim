@@ -20,10 +20,10 @@ local M = {}
 M.run = function(lang)
 	local lspconfig = require("lspconfig")
 	require("lang/" .. lang)
-	local lang = require("lang/" .. lang)[lang]
-	local lsp = lang.lsp
+	local config = require("lang/" .. lang)
+	local lsp = config.lsp
 
-	table.insert(nvim.lang, lang.lsp)
+	table.insert(nvim.lang, config.lsp)
 	local lsp_utils = require("core.lsp.utils")
 
 	local provider = lsp.provider

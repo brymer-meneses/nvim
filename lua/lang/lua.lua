@@ -29,4 +29,4 @@ local lua = {
 	},
 }
 
-return { lua = lua }
+return lua

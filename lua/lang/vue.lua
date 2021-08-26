@@ -6,4 +6,4 @@ local vue = {
 	},
 }
 
-return { vue = vue }
+return vue

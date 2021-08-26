@@ -5,4 +5,4 @@ local latex = {
 	},
 }
 
-return { latex = latex }
+return latex

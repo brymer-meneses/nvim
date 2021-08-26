@@ -7,4 +7,4 @@ local rust = {
 	},
 }
 
-return { rust = rust }
+return rust

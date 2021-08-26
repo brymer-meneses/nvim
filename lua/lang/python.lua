@@ -14,4 +14,4 @@ local python = {
 	},
 }
 
-return { python = python }
+return python

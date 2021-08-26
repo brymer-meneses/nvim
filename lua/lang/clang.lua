@@ -4,4 +4,4 @@ local clang = {
 		provider = "clangd",
 	},
 }
-return { clang = clang }
+return clang

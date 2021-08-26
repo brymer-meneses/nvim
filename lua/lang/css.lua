@@ -9,4 +9,4 @@ local css = {
 	},
 }
 
-return { css = css }
+return css

@@ -9,4 +9,4 @@ local html = {
 	},
 }
 
-return { html = html }
+return html
