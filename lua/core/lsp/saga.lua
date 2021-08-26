@@ -60,17 +60,22 @@ LspSagaAutoPreview xxx guifg=#ECBE7B
 LspSagaDefPreviewBorder xxx guifg=#A3BE8C
 LspSagaLightBulb xxx links to LspDiagnosticsSignHint
  ]]
+-- #434C5E
 M.load_saga_colors = function()
 	vim.api.nvim_exec(
 		[[
-    highlight LspSagaDiagnosticBorder guifg=#D8DEE9 guibg=#434C5E
+    highlight LspSagaDiagnosticBorder guifg=#D8DEE9 guibg=#2E3440
     highlight LspSagaDiagnosticTruncateLine guifg=#D8DEE9
     highlight LspSagaDiagnosticHeader guifg=#EBCB8B
     highlight link LspSagaSignatureHelpBorder LspSagaDiagnosticBorder
     highlight link LspSagaHoverBorder LspSagaDiagnosticBorder
+    highlight LspFloatWinNormal guibg=#2E3440
     ]],
 		false
 	)
+	vim.schedule(function()
+		vim.api.nvim_exec("highlight LspFloatWinNormal guibg=#2E3440", false)
+	end)
 end
 
 M.load_saga_bindings = function(bufnr)
