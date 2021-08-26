@@ -34,8 +34,10 @@ return {
 	{
 		"glepnir/lspsaga.nvim",
 		config = function()
-			require("core.lsp.saga").init_lsp_saga()
-			require("core.lsp.saga").load_saga_colors()
+			vim.schedule(function()
+				require("core.lsp.saga").init_lsp_saga()
+				require("core.lsp.saga").load_saga_colors()
+			end)
 		end,
 	},
 	-- lsp
