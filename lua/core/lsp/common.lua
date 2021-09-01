@@ -10,15 +10,14 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
 }
 
 local on_attach = function(_, bufnr)
-	local border = require("core.lsp.ui").border
 	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
 	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-		border = border,
+		border = "single",
 	})
 
 	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-		border = border,
+		border = "single",
 	})
 	require("core.lsp.saga").load_saga_bindings(bufnr)
 	require("core.lsp.signature").attach(bufnr)

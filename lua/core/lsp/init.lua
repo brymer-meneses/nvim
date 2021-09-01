@@ -1,4 +1,4 @@
-require("core.lsp.ui")
+require("core.lsp.icons")
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 	signs = {
@@ -44,6 +44,8 @@ M.run = function(lang)
 		end
 	end
 	lspconfig[provider].setup(setup)
+	-- Required to automatically attach lsp client
+	-- https://github.com/neovim/nvim-lspconfig/issues/970
 	lspconfig[provider].manager.try_add_wrapper()
 end
 

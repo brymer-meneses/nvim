@@ -10,6 +10,7 @@ nvim.plugins = {
 	},
 	{
 		"lervag/vimtex",
+		ft = "tex",
 		config = function()
 			require("plugins.vimtex")
 		end,
