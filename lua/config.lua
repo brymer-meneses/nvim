@@ -23,4 +23,11 @@ nvim.plugins = {
 			require("todo-comments").setup({})
 		end,
 	},
+	{
+		"brymer-meneses/grammar-guard.nvim",
+		config = function()
+			require("grammar-guard").init()
+			require("plugins.grammar_guard")
+		end,
+	},
 }

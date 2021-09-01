@@ -6,4 +6,5 @@ require("core.autocommands")
 require("core.remaps")
 require("core.lsp")
 
--- plugins
+-- logging
+vim.lsp.set_log_level("debug")

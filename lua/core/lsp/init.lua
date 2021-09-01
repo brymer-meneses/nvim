@@ -19,7 +19,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 local M = {}
 M.run = function(lang)
 	local lspconfig = require("lspconfig")
-	require("lang/" .. lang)
 	local config = require("lang/" .. lang)
 	local lsp = config.lsp
 
