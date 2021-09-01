@@ -44,9 +44,7 @@ M.run = function(lang)
 		end
 	end
 	lspconfig[provider].setup(setup)
-	vim.schedule(function()
-		vim.api.nvim_exec("LspStart", false)
-	end)
+	lspconfig[provider].manager.try_add_wrapper()
 end
 
 return M

@@ -18,16 +18,3 @@ vim.o.smarttab = true
 vim.o.smartcase = true
 vim.wo.wrap = false
 vim.wo.relativenumber = false
-
-vim.cmd([[
-    augroup CursorLine
-      au!
-      au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-      au WinLeave * setlocal nocursorline
-    augroup END
-]])
-
-vim.cmd([[
-    syntax on
-    set hidden
-    ]])

@@ -31,6 +31,7 @@ return {
 			require("core.lsp.compe")
 		end,
 	},
+	-- lsp
 	{
 		"glepnir/lspsaga.nvim",
 		config = function()
@@ -40,12 +41,14 @@ return {
 			end)
 		end,
 	},
-	-- lsp
 	{
 		"kabouzeid/nvim-lspinstall",
 		config = function()
 			require("core.lsp.utils").reload_on_install()
 		end,
+	},
+	{
+		"ray-x/lsp_signature.nvim",
 	},
 	-- statusline
 	{

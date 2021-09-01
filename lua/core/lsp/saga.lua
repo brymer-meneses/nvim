@@ -90,57 +90,15 @@ M.load_saga_bindings = function(bufnr)
 	vim.api.nvim_buf_set_keymap(
 		bufnr,
 		"n",
-		"<Tab>k",
+		"<Tab>j",
 		"<cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev()<CR>",
 		opts
 	)
 	vim.api.nvim_buf_set_keymap(
 		bufnr,
 		"n",
-		"<Tab>j",
+		"<Tab>k",
 		"<cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<CR>",
-		opts
-	)
-	-- code action
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "<Tab>i", "<cmd>lua require'lspsaga.code_action'.code_action()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(
-		bufnr,
-		"v",
-		"<Tab>i",
-		"<cmd>lua require'lspsaga.code_action'.range_code_action()<CR>",
-		opts
-	)
-	-- Documentation
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "<Tab>i", "<cmd>lua require('lspsaga.action').render_hover_doc()<cr>", opts)
-	--- Smart Scroll Documentation
-	vim.api.nvim_buf_set_keymap(
-		bufnr,
-		"n",
-		"<C-f>",
-		"<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>",
-		opts
-	)
-	vim.api.nvim_buf_set_keymap(
-		bufnr,
-		"n",
-		"<C-b>",
-		"<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>",
-		opts
-	)
-	-- signature
-	vim.api.nvim_buf_set_keymap(
-		bufnr,
-		"n",
-		"<Tab>o",
-		"<cmd>lua require('lspsaga.signatureHelp').signature_help()<cr>",
-		opts
-	)
-	-- preview definition
-	vim.api.nvim_buf_set_keymap(
-		bufnr,
-		"n",
-		"<Tab>o",
-		"<cmd>lua require('lspsaga.provider').preview_definition()<cr>",
 		opts
 	)
 end
