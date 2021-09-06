@@ -8,13 +8,6 @@ nvim.plugins = {
 			require("neoscroll").setup()
 		end,
 	},
-	{
-		"lervag/vimtex",
-		ft = "tex",
-		config = function()
-			require("plugins.vimtex")
-		end,
-	},
 	{ "JoosepAlviste/nvim-ts-context-commentstring" },
 	{ "rafamadriz/friendly-snippets" },
 	{
@@ -22,6 +15,12 @@ nvim.plugins = {
 		requires = "nvim-lua/plenary.nvim",
 		config = function()
 			require("todo-comments").setup({})
+		end,
+	},
+	{
+		"lervag/vimtex",
+		config = function()
+			require("plugins.vimtex")
 		end,
 	},
 	{

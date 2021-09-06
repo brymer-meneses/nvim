@@ -7,6 +7,7 @@ nvim = {
 			{ "BufRead", "*", "setlocal formatoptions-=c formatoptions-=r formatoptions-=o" },
 			{ "BufNewFile", "*", "setlocal formatoptions-=c formatoptions-=r formatoptions-=o" },
 			{ "BufWinEnter", "*", "setlocal formatoptions-=c formatoptions-=r formatoptions-=o" },
+			{ "FileType", "qf", "nnoremap <silent> <buffer> q :q<CR>" },
 		},
 		_cursorline = {
 			{ "VimEnter,WinEnter,BufWinEnter", "*", "setlocal cursorline" },
@@ -14,6 +15,7 @@ nvim = {
 		},
 		_general_lsp = {
 			{ "FileType", "lspinfo", "nnoremap <silent> <buffer> q :q<CR>" },
+			{ "FileType", "*", "nnoremap <silent> <buffer> <M-l> :LspInfo<CR>" },
 		},
 		_colorscheme = {
 			{ "ColorScheme", "*", "highlight NormalFloat guibg=#2E3440" },

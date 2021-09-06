@@ -1,5 +1,3 @@
-require("core.lsp.icons")
-
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 	signs = {
 		active = false,
@@ -47,6 +45,12 @@ M.run = function(lang)
 	-- Required to automatically attach lsp client
 	-- https://github.com/neovim/nvim-lspconfig/issues/970
 	lspconfig[provider].manager.try_add_wrapper()
+
+	if table_contains(config, "autocommands") then
+		local autocommands = config.autocommands
+		local define_augroup = require("core.lib.autocommands").define_augroup
+		define_augroup(lang, autocommands)
+	end
 end
 
 return M

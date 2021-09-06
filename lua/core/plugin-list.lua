@@ -26,10 +26,17 @@ return {
 	},
 	-- completion
 	{
-		"hrsh7th/nvim-compe",
+		"hrsh7th/nvim-cmp",
 		config = function()
-			require("core.lsp.compe")
+			require("core.lsp.cmp")
 		end,
+		requires = {
+			{ "hrsh7th/cmp-nvim-lsp" },
+			{ "saadparwaiz1/cmp_luasnip" },
+			{ "L3MON4D3/LuaSnip" },
+			{ "onsails/lspkind-nvim" },
+			{ "kdheepak/cmp-latex-symbols" },
+		},
 	},
 	-- lsp
 	{
@@ -65,7 +72,6 @@ return {
 		end,
 		requires = {
 			{ "nvim-telescope/telescope-media-files.nvim" },
-			{ "nvim-lua/popup.nvim" },
 			{ "nvim-lua/plenary.nvim" },
 		},
 	},
