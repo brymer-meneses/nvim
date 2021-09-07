@@ -32,10 +32,11 @@ return {
 		end,
 		requires = {
 			{ "hrsh7th/cmp-nvim-lsp" },
-			{ "saadparwaiz1/cmp_luasnip" },
-			{ "L3MON4D3/LuaSnip" },
-			{ "onsails/lspkind-nvim" },
+			{ "hrsh7th/cmp-path" },
 			{ "kdheepak/cmp-latex-symbols" },
+			{ "saadparwaiz1/cmp_luasnip" },
+			{ "onsails/lspkind-nvim" },
+			{ "L3MON4D3/LuaSnip" },
 		},
 	},
 	-- lsp
