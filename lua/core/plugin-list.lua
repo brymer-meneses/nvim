@@ -34,9 +34,8 @@ return {
 			{ "hrsh7th/cmp-nvim-lsp" },
 			{ "hrsh7th/cmp-path" },
 			{ "kdheepak/cmp-latex-symbols" },
-			{ "saadparwaiz1/cmp_luasnip" },
+			{ "quangnguyen30192/cmp-nvim-ultisnips" },
 			{ "onsails/lspkind-nvim" },
-			{ "L3MON4D3/LuaSnip" },
 		},
 	},
 	-- lsp
@@ -135,5 +134,15 @@ return {
 		config = function()
 			require("core.plugins.dashboard")
 		end,
+	},
+	-- snippets
+	{
+		"SirVer/ultisnips",
+		config = function()
+			vim.g.UltiSnipsRemoveSelectModeMappings = 0
+			vim.g.UltiSnipsSnippetsDirectories = { CONFIG_PATH .. "snippet/" }
+		end,
+		requires = "honza/vim-snippets",
+		opt = false,
 	},
 }

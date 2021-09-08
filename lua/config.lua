@@ -8,6 +8,15 @@ nvim.plugins = {
 			require("neoscroll").setup()
 		end,
 	},
+	{
+		"tamton-aquib/dynamic-cursor.nvim",
+		config = function()
+			require("dynamic-cursor").setup({
+				guicursor = "n-v-c:block-DynamicCursor,i:ver100-DynamicCursor",
+			})
+		end,
+	},
+
 	{ "JoosepAlviste/nvim-ts-context-commentstring" },
 	{ "rafamadriz/friendly-snippets" },
 	{
