@@ -34,7 +34,8 @@ return {
 			{ "hrsh7th/cmp-nvim-lsp" },
 			{ "hrsh7th/cmp-path" },
 			{ "kdheepak/cmp-latex-symbols" },
-			{ "quangnguyen30192/cmp-nvim-ultisnips" },
+			{ "saadparwaiz1/cmp_luasnip" },
+			-- fancy icons
 			{ "onsails/lspkind-nvim" },
 		},
 	},
@@ -137,12 +138,12 @@ return {
 	},
 	-- snippets
 	{
-		"SirVer/ultisnips",
+		"L3MON4D3/LuaSnip",
+		requires = "rafamadriz/friendly-snippets",
 		config = function()
-			vim.g.UltiSnipsRemoveSelectModeMappings = 0
-			vim.g.UltiSnipsSnippetsDirectories = { CONFIG_PATH .. "snippet/" }
+			require("luasnip/loaders/from_vscode").lazy_load({
+				paths = { "~/.local/share/nvim/site/pack/packer/start/friendly-snippets" },
+			})
 		end,
-		requires = "honza/vim-snippets",
-		opt = false,
 	},
 }
