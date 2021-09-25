@@ -40,20 +40,5 @@ nvim.plugins = {
 		end,
 	},
 
-	{
-		"KeitaNakamura/tex-conceal.vim",
-		config = function()
-			vim.cmd([[
-                set conceallevel=1
-                hi Conceal ctermbg=none
-            ]])
-			vim.g.tex_conceal = "abdmg"
-		end,
-	},
-	{
-		"mfussenegger/nvim-jdtls",
-		config = function()
-			require("plugins.jdtls")
-		end,
-	},
+	{ "mfussenegger/nvim-jdtls" },
 }

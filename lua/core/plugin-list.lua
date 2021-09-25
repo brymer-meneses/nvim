@@ -41,15 +41,6 @@ return {
 	},
 	-- lsp
 	{
-		"glepnir/lspsaga.nvim",
-		config = function()
-			vim.schedule(function()
-				require("core.lsp.saga").init_lsp_saga()
-				require("core.lsp.saga").load_saga_colors()
-			end)
-		end,
-	},
-	{
 		"kabouzeid/nvim-lspinstall",
 		config = function()
 			require("core.lsp.utils").reload_on_install()

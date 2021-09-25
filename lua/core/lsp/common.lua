@@ -20,11 +20,21 @@ local on_attach = function(_, bufnr)
 	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
 		border = "single",
 	})
-	require("core.lsp.saga").load_saga_bindings(bufnr)
+
+	local opts = { noremap = true, silent = true }
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", opts)
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>", opts)
+
+	require("core.lsp.ui").attach()
 	require("core.lsp.signature").attach(bufnr)
 end
 
 M.capabilities = capabilities
 M.on_attach = on_attach
+M.format_on_attach = function(client)
+	if client.resolved_capabilities.document_formatting then
+		vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+	end
+end
 
 return M

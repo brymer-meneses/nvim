@@ -5,8 +5,7 @@ require("core.settings")
 require("core.remaps")
 require("core.lsp")
 
--- logging
--- vim.lsp.set_log_level("debug")
+vim.lsp.set_log_level("debug")
 
 -- TODO
 -- automatically show dashboard in an emtpy buffer
