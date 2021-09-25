@@ -12,8 +12,9 @@ local latex_augroup = {
 	{ "FileType", "tex,plaintex", ":set conceallevel=1" },
 	{ "FileType", "tex,plaintex", ":set spelllang=en_us" },
 	{ "FileType", "tex,plaintex", "hi clear Conceal" },
-	{ "FileType", "tex,plaintex", ":nnoremap <leader>tp <cmd>VimtexCompile<CR>" },
-	{ "FileType", "tex,plaintex", ":nnoremap <leader>te <cmd>VimtexErrors<CR>" },
+	{ "FileType", "tex", ":nnoremap <leader>tp <cmd>VimtexCompile<CR>" },
+	{ "FileType", "tex", ":nnoremap <leader>te <cmd>VimtexErrors<CR>" },
+	{ "FileType", "tex", ":nnoremap <leader>tc <cmd>VimtexClean<CR>" },
 }
 
 require("core.lib.autocommands").define_augroup("latex", latex_augroup)

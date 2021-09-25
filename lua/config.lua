@@ -31,6 +31,7 @@ nvim.plugins = {
 		config = function()
 			require("plugins.vimtex")
 		end,
+		ft = "tex",
 	},
 	{
 		"brymer-meneses/grammar-guard.nvim",

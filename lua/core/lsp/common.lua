@@ -25,7 +25,7 @@ local on_attach = function(_, bufnr)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>", opts)
 
-	require("core.lsp.ui").attach()
+	require("core.lsp.ui").attach(bufnr)
 	require("core.lsp.signature").attach(bufnr)
 end
 
