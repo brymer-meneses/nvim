@@ -1,4 +1,12 @@
 local M = {}
+local function setup_signs()
+	local signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }
+
+	for type, icon in pairs(signs) do
+		local hl = "LspDiagnosticsSign" .. type
+		vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+	end
+end
 
 local function setup_icons()
 	local icons = {
@@ -60,5 +68,6 @@ end
 M.attach = function(bufnr)
 	setup_icons()
 	setup_keymaps(bufnr)
+	setup_signs()
 end
 return M
