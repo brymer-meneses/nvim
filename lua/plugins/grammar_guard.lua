@@ -1,9 +1,8 @@
-local util = require("lspconfig/util")
 require("lspconfig").grammar_guard.setup({
-	on_attach = require("core.lsp.common").on_attach,
-	capabilities = require("core.lsp.common").capabilities,
-	root_dir = function(fname)
-		return util.find_git_ancestor(fname) or util.path.dirname(fname)
+	-- on_attach = require("core.lsp.common").on_attach,
+	-- capabilities = require("core.lsp.common").capabilities,
+	root_dir = function()
+		return vim.fn.getcwd()
 	end,
 	settings = {
 		ltex = {

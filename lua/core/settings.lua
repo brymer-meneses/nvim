@@ -18,3 +18,7 @@ vim.o.smarttab = true
 vim.o.smartcase = true
 vim.wo.wrap = false
 vim.wo.relativenumber = false
+
+--settings
+vim.o.guifont = "FiraCode Nerd Font:h12"
+vim.g.neovide_cursor_vfx_mode = "pixiedust"
