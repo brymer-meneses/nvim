@@ -11,6 +11,7 @@ vim.o.shiftwidth = 4
 vim.o.expandtab = true
 
 vim.o.expandtab = true
+vim.o.hidden = true
 vim.o.termguicolors = true
 vim.o.number = true
 vim.bo.autoindent = true

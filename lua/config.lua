@@ -42,4 +42,5 @@ nvim.plugins = {
 	},
 
 	{ "mfussenegger/nvim-jdtls" },
+	{ "nvim-neoclip.lua" },
 }

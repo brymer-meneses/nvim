@@ -14,7 +14,11 @@ local javascript = {
 			"typescript.tsx",
 		},
 		root_dir = require("lspconfig/util").root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
-		settings = { documentFormatting = false },
+		on_attach = function(client)
+			require("core.lsp.common").on_attach()
+			require("core.lsp.common").format_on_attach(client)
+			client.resolved_capabilities.document_formatting = false
+		end,
 		handlers = {
 			["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 				virtual_text = false,
