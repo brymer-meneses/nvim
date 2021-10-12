@@ -38,7 +38,7 @@ nvim.plugins = {
 		config = function()
 			require("grammar-guard").init()
 			require("plugins.grammar_guard")
-			vim.api.nvim_set_keymap("n", "<c-p>", "<cmd>Telescope registers<cr>", {})
+			vim.api.nvim_set_keymap("n", "<c-p>", "<cmd>Telescope neoclip<cr>", {})
 		end,
 	},
 
@@ -46,8 +46,14 @@ nvim.plugins = {
 	{
 		"AckslD/nvim-neoclip.lua",
 		config = function()
-			require("neoclip").setup()
-			require("telescope").load_extension("neoclip")
+			require("plugins.neoclip")
+		end,
+	},
+
+	{
+		"is0n/fm-nvim",
+		config = function()
+			require("fm-nvim").setup({})
 		end,
 	},
 }
