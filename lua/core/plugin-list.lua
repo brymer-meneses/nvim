@@ -13,7 +13,7 @@ return {
 		"brymer-meneses/nord.nvim",
 		-- "shaunsingh/nord.nvim",
 		config = function()
-			vim.g.nord_borders = true
+			vim.g.nord_borders = false
 			vim.g.nord_contrast = false
 			require("core.colorscheme")
 		end,
