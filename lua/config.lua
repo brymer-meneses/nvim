@@ -38,9 +38,16 @@ nvim.plugins = {
 		config = function()
 			require("grammar-guard").init()
 			require("plugins.grammar_guard")
+			vim.api.nvim_set_keymap("n", "<c-p>", "<cmd>Telescope registers<cr>", {})
 		end,
 	},
 
 	{ "mfussenegger/nvim-jdtls" },
-	{ "nvim-neoclip.lua" },
+	{
+		"AckslD/nvim-neoclip.lua",
+		config = function()
+			require("neoclip").setup()
+			require("telescope").load_extension("neoclip")
+		end,
+	},
 }
