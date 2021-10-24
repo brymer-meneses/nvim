@@ -18,7 +18,6 @@ return {
 			require("core.colorscheme")
 		end,
 	},
-	-- file tree
 	{
 		"kyazdani42/nvim-tree.lua",
 		config = function()

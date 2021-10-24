@@ -5,6 +5,7 @@ vim.api.nvim_set_keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { silen
 vim.api.nvim_set_keymap("n", "<leader>fb", "<cmd>Telescope help_tags<cr>", { silent = true })
 vim.api.nvim_set_keymap("n", "<leader>fg", "<cmd>Telescope git_files<cr>", { silent = true })
 vim.api.nvim_set_keymap("n", "<leader>fm", "<cmd>Telescope media_files<cr>", { silent = true })
+vim.api.nvim_set_keymap("n", "<leader>fe", "<cmd>Telescope quickfix<cr>", {})
 
 local actions = require("telescope.actions")
 

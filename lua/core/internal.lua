@@ -28,6 +28,6 @@ require("config")
 require("core.lib.packer").load_plugins()
 require("core.lib.autocommands").load_augroups()
 
-CONFIG_PATH = os.getenv("HOME") .. "/.config/nvim"
+CONFIG_PATH = vim.fn.stdpath("config")
 DATA_PATH = vim.fn.stdpath("data")
 CACHE_PATH = vim.fn.stdpath("cache")
