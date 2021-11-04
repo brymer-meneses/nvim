@@ -1,8 +1,8 @@
-vim.g.nvim_tree_indent_markers = 1
-vim.g.nvim_tree_hide_dotfiles = 1
+--[[ vim.g.nvim_tree_indent_markers = 1
+vim.g.nvim_tree_hide_dotfiles = 1 ]]
 vim.g.nvim_tree_git_hl = 1
 vim.g.nvim_tree_root_folder_modifier = ":~:."
-vim.g.nvim_tree_ignore = { ".git", "node_modules", ".cache" }
+-- vim.g.nvim_tree_ignore = { ".git", "node_modules", ".cache" }
 vim.cmd("let g:nvim_tree_show_icons = {'git': 0, 'folders': 1, 'files': 1}")
 
 vim.api.nvim_set_keymap("n", "<leader>tt", ":NvimTreeToggle<cr>", { silent = true })
@@ -19,6 +19,8 @@ require("nvim-tree").setup({
 	hijack_netrw = true,
 	open_on_setup = false,
 	ignore_ft_on_setup = {},
+	hide_dotfiles = true,
+	ignore = { ".git", "node_modules", ".cache" },
 	auto_close = false,
 	open_on_tab = false,
 	hijack_cursor = true,
@@ -39,7 +41,7 @@ require("nvim-tree").setup({
 			custom_only = false,
 			list = {
 				{ key = { "l", "<Cr>", "<2-LeftMouse>", "o" }, cb = tree_cb("edit") },
-				{ key = { "<2-RightMouse>", "<C-]>", "<C-l>", "O" }, cb = tree_cb("cd") },
+				{ key = { "<2-RightMouse>", "<C-]>", "O" }, cb = tree_cb("cd") },
 				{ key = "<C-v>", cb = tree_cb("vsplit") },
 				{ key = "<C-x>", cb = tree_cb("split") },
 				{ key = "<C-t>", cb = tree_cb("tabnew") },
@@ -66,7 +68,7 @@ require("nvim-tree").setup({
 				{ key = "gy", cb = tree_cb("copy_absolute_path") },
 				{ key = "[c", cb = tree_cb("prev_git_item") },
 				{ key = "]c", cb = tree_cb("next_git_item") },
-				{ key = "<C-h>", cb = tree_cb("dir_up") },
+				{ key = "<C-[>", cb = tree_cb("dir_up") },
 				{ key = "q", cb = tree_cb("close") },
 				{ key = "g?", cb = tree_cb("toggle_help") },
 			},

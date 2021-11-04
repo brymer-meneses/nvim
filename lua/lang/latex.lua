@@ -5,15 +5,18 @@ local latex = {
 
 		filetypes = { "plaintex", "bib", "tex" },
 		settings = {
-			chktex = {
-				onOpenAndSave = true,
-				onEdit = true,
-			},
-			build = {
-				onSave = true,
-			},
-			forwardSearch = {
-				executable = "zathura",
+			texlab = {
+				chktex = {
+					onOpenAndSave = true,
+					onEdit = true,
+				},
+				build = {
+					onSave = false,
+				},
+				forwardSearch = {
+					executable = "zathura",
+				},
+				latexFormatter = "latexindent",
 			},
 		},
 	},

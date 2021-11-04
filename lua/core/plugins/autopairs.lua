@@ -27,13 +27,13 @@ autopairs.add_rules({
 	end),
 })
 
-if package.loaded["cmp"] then
+--[[ if package.loaded["cmp"] then
 	require("nvim-autopairs.completion.cmp").setup({
 		map_cr = true, --  map <CR> on insert mode
 		map_complete = true, -- it will auto insert `(` after select function or method item
 		auto_select = true, -- automatically select the first item
 	})
-end
+end ]]
 
 require("nvim-treesitter.configs").setup({ autopairs = { enable = true } })
 

@@ -17,7 +17,7 @@ vim.o.number = true
 vim.bo.autoindent = true
 vim.o.smarttab = true
 vim.o.smartcase = true
-vim.wo.wrap = false
+vim.wo.wrap = true
 vim.wo.relativenumber = false
 
 --settings

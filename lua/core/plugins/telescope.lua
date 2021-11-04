@@ -6,6 +6,12 @@ vim.api.nvim_set_keymap("n", "<leader>fb", "<cmd>Telescope help_tags<cr>", { sil
 vim.api.nvim_set_keymap("n", "<leader>fg", "<cmd>Telescope git_files<cr>", { silent = true })
 vim.api.nvim_set_keymap("n", "<leader>fm", "<cmd>Telescope media_files<cr>", { silent = true })
 vim.api.nvim_set_keymap("n", "<leader>fe", "<cmd>Telescope quickfix<cr>", {})
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader><leader>",
+	"<Cmd>lua require('telescope').extensions.frecency.frecency()<CR>",
+	{ noremap = true, silent = true }
+)
 
 local actions = require("telescope.actions")
 
@@ -37,3 +43,4 @@ require("telescope").setup({
 	},
 })
 require("telescope").load_extension("media_files")
+require("telescope").load_extension("frecency")

@@ -4,10 +4,10 @@ vim.api.nvim_set_keymap("n", "<Space>", "<NOP>", { noremap = true, silent = true
 vim.g.mapleader = " "
 
 -- Window Navigation
-vim.api.nvim_set_keymap("n", "<leader>j", "<C-w>j", { silent = true })
-vim.api.nvim_set_keymap("n", "<leader>h", "<C-w>h", { silent = true })
-vim.api.nvim_set_keymap("n", "<leader>k", "<C-w>k", { silent = true })
-vim.api.nvim_set_keymap("n", "<leader>l", "<C-w>l", { silent = true })
+vim.api.nvim_set_keymap("n", "<c-j>", "<C-w>j", { silent = true })
+vim.api.nvim_set_keymap("n", "<c-h>", "<C-w>h", { silent = true })
+vim.api.nvim_set_keymap("n", "<c-k>", "<C-w>k", { silent = true })
+vim.api.nvim_set_keymap("n", "<c-l>", "<C-w>l", { silent = true })
 
 -- Better indenting
 vim.api.nvim_set_keymap("v", "<", "<gv", { noremap = true, silent = true })
@@ -19,10 +19,10 @@ vim.api.nvim_set_keymap("x", "J", ":move '>+1<CR>gv-gv", { noremap = true, silen
 
 -- Resize Windows
 vim.cmd([[
-  nnoremap <silent> <C-j>  :resize -2<CR>
-  nnoremap <silent> <C-k>  :resize +2<CR>
-  nnoremap <silent> <C-h>  :vertical resize -2<CR>
-  nnoremap <silent> <C-l>  :vertical resize +2<CR>
+  nnoremap <silent> <M-j>  :resize -2<CR>
+  nnoremap <silent> <M-k>  :resize +2<CR>
+  nnoremap <silent> <M-h>  :vertical resize -2<CR>
+  nnoremap <silent> <M-l>  :vertical resize +2<CR>
 ]])
 
 -- Terminal Remaps
@@ -67,3 +67,7 @@ vim.api.nvim_set_keymap("n", "<Tab>n", ":BufferLineCyclePrev<CR>", { noremap = t
 vim.api.nvim_set_keymap("n", "<Tab>b", "<cmd>bd<Cr>", { silent = true })
 
 vim.api.nvim_set_keymap("n", "<leader>tl", "<cmd>Trouble<cr>", { silent = true, noremap = true })
+
+--Remap for dealing with word wrap
+vim.api.nvim_set_keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
+vim.api.nvim_set_keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })

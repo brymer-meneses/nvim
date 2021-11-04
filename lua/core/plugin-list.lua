@@ -63,6 +63,8 @@ return {
 			require("core.plugins.telescope")
 		end,
 		requires = {
+			{ "nvim-telescope/telescope-frecency.nvim" },
+			{ "tami5/sqlite.lua" },
 			{ "nvim-telescope/telescope-media-files.nvim" },
 			{ "nvim-lua/plenary.nvim" },
 		},
