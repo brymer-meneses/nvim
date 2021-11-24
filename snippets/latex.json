@@ -9,15 +9,30 @@
     "body": ["\\($1\\)$0"],
     "description": "Inline Math"
   },
+  "DisplayStyle": {
+    "prefix": "ds",
+    "body": ["displaystyle"],
+    "description": "Display"
+  },
+  "Fraction": {
+    "prefix": "frac",
+    "body": ["\\frac{$1}{$2}$0"],
+    "description": "Fraction"
+  },
   "AlignAt": {
     "prefix": "aa",
     "body": [
       "\\begin{alignat}{2}",
-      "\t&&\\hspace{1cm} $1  &&= $2",
-      "\t&&\\implies $3 &&= $4",
+      "\t&\\hspace{1cm} $1  &&= $2",
+      "\t&\\implies $3 &&= $4",
       "\\end{alignat}",
       "$0"
     ]
+  },
+  "Implies": {
+    "prefix": "implies",
+    "body": ["\t&\\implies $1 &&= $2", "$0"],
+    "description": "Implies"
   },
   "Image": {
     "prefix": "image",
