@@ -35,6 +35,14 @@ require("nvim-tree").setup({
 		cmd = nil,
 		args = {},
 	},
+	filters = {
+		dotfiles = false,
+		custom = {},
+	},
+	update_focused_file = {
+		enable = true,
+		update_cwd = true,
+	},
 	view = {
 		auto_resize = true,
 		mappings = {
