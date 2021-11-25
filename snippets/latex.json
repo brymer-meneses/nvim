@@ -19,6 +19,11 @@
     "body": ["\\frac{$1}{$2}$0"],
     "description": "Fraction"
   },
+  "DisplayFraction": {
+    "prefix": "dfrac",
+    "body": ["\\dfrac{$1}{$2}$0"],
+    "description": "Display Fraction"
+  },
   "AlignAt": {
     "prefix": "aa",
     "body": [
@@ -28,6 +33,14 @@
       "\\end{alignat}",
       "$0"
     ]
+  },
+  "Align": {
+    "prefix": "ao",
+    "body": ["\\begin{align}", "\t$1 &= $2 \\\\", "\\end{align}", "$0"]
+  },
+  "AlignExtra": {
+    "prefix": "ae",
+    "body": ["\t$1 &= $2 \\\\", "$0"]
   },
   "Implies": {
     "prefix": "implies",
@@ -62,9 +75,10 @@
       "\\documentclass[a4paper]{article}",
       "",
       "\\usepackage{",
-      "\t amsfonts",
+      "\t amsfonts,",
       "\t amsmath,",
       "\t amssymb,",
+      "\t tcolorbox,",
       "\t geometry,",
       "\t enumitem,",
       "\t tikz,",
@@ -80,6 +94,11 @@
       "\\geometry{margin=2cm}",
       "\\title{\\bf $1}",
       "\\author{Brymer Bernard Meneses}",
+      "\\newcommand{\boxconclusion}[1]{",
+      "\\begin{tcolorbox}[colback=blue!5!white,colframe=blue!25!black,title=Conclusion]",
+      "\t#1",
+      "\\end{tcolorbox}",
+      "}",
       "",
       "\\newcolumntype{R}[1]{ >{\\raggedright\\arraybackslash}m{#1} }",
       "\\newcolumntype{C}[1]{ >{\\centering\\arraybackslash}m{#1} }",

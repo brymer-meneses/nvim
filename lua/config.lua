@@ -68,4 +68,10 @@ nvim.plugins = {
 			require("plugins.neoclip")
 		end,
 	},
+	{
+		"oberblastmeister/neuron.nvim",
+		config = function()
+			require("plugins.neuron")
+		end,
+	},
 }

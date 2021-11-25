@@ -39,6 +39,10 @@ cmp.setup({
 			behavior = cmp.ConfirmBehavior.Replace,
 			select = true,
 		}),
+		["<C-d>"] = cmp.mapping.confirm({
+			behavior = cmp.ConfirmBehavior.Replace,
+			select = true,
+		}),
 		["<Tab>"] = function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()

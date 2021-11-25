@@ -6,7 +6,10 @@
   "contributes": {
     "snippets": [
       {
-        "language": "tex",
+        "language": [
+          "tex",
+          "plaintex"
+        ],
         "path": "./latex.json"
       }
     ]
