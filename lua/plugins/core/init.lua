@@ -94,7 +94,15 @@ local core_plugins = {
     { 'neovim/nvim-lspconfig' },
     -- lsp installer
     { 'williamboman/nvim-lsp-installer' },
-
+    { "jose-elias-alvarez/null-ls.nvim" },
+	-- treesitter
+	{
+		"nvim-treesitter/nvim-treesitter",
+		run = ":TSUpdate",
+		config = function()
+			require("plugins.core.treesitter")
+		end,
+	},
 }
 
 return core_plugins
