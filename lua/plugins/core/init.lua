@@ -1,37 +1,37 @@
 local core_plugins = {
-    -- package manager
-	{'wbthomason/packer.nvim'},
-    -- bufferline
-	{ 
-        "akinsho/nvim-bufferline.lua",
-	    requires = "kyazdani42/nvim-web-devicons",
-	    config = function()
-		    require("plugins.core.bufferline")
-	    end,
-	},
-    -- file explorer
-	{ 
-        "kyazdani42/nvim-tree.lua",
+	-- package manager
+	{ "wbthomason/packer.nvim" },
+	-- bufferline
+	{
+		"akinsho/nvim-bufferline.lua",
+		requires = "kyazdani42/nvim-web-devicons",
 		config = function()
-		    require("plugins.core.explorer")
-	    	end, 
+			require("plugins.core.bufferline")
+		end,
 	},
-    -- dashboard
-    {
-        'goolord/alpha-nvim',
-        requires = { 'kyazdani42/nvim-web-devicons' },
-        config = function ()
-            require("plugins.core.dashboard")
-        end
-    },
-    -- theme
+	-- file explorer
+	{
+		"kyazdani42/nvim-tree.lua",
+		config = function()
+			require("plugins.core.explorer")
+		end,
+	},
+	-- dashboard
+	{
+		"goolord/alpha-nvim",
+		requires = { "kyazdani42/nvim-web-devicons" },
+		config = function()
+			require("plugins.core.dashboard")
+		end,
+	},
+	-- theme
 	{
 		"themercorp/themer.lua",
 		config = function()
-		    require("themer").setup({ colorscheme = "everforest"})
-	    	end,
+			require("themer").setup({ colorscheme = "everforest" })
+		end,
 	},
-    -- Git Integration
+	-- Git Integration
 	{
 		"lewis6991/gitsigns.nvim",
 		requires = { "nvim-lua/plenary.nvim" },
@@ -39,14 +39,14 @@ local core_plugins = {
 			require("plugins.core.gitsigns")
 		end,
 	},
-    -- Terminal
+	-- Terminal
 	{
 		"akinsho/nvim-toggleterm.lua",
 		config = function()
 			require("plugins.core.toggleterm")
 		end,
 	},
-    -- treesitter
+	-- treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
@@ -54,7 +54,7 @@ local core_plugins = {
 			require("plugins.core.treesitter")
 		end,
 	},
-    -- icons
+	-- icons
 	{ "kyazdani42/nvim-web-devicons" },
 	-- completion
 	{
@@ -71,12 +71,13 @@ local core_plugins = {
 			{ "onsails/lspkind-nvim" },
 		},
 	},
-    -- statusline
-    { "nvim-lualine/lualine.nvim",
-        config = function()
-            require("plugins.core.lualine")
-        end
-    },
+	-- statusline
+	{
+		"nvim-lualine/lualine.nvim",
+		config = function()
+			require("plugins.core.lualine")
+		end,
+	},
 	-- snippets
 	{
 		"L3MON4D3/LuaSnip",
@@ -90,11 +91,11 @@ local core_plugins = {
 			})
 		end,
 	},
-    -- lsp configuration
-    { 'neovim/nvim-lspconfig' },
-    -- lsp installer
-    { 'williamboman/nvim-lsp-installer' },
-    { "jose-elias-alvarez/null-ls.nvim" },
+	-- lsp configuration
+	{ "neovim/nvim-lspconfig" },
+	-- lsp installer
+	{ "williamboman/nvim-lsp-installer" },
+	{ "jose-elias-alvarez/null-ls.nvim" },
 	-- treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -103,8 +104,32 @@ local core_plugins = {
 			require("plugins.core.treesitter")
 		end,
 	},
+	{
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup()
+		end,
+	},
+	{
+		"nvim-telescope/telescope.nvim",
+		config = function()
+			require("plugins.core.telescope")
+		end,
+		requires = {
+			{ "nvim-telescope/telescope-media-files.nvim" },
+			{ "nvim-lua/plenary.nvim" },
+		},
+	},
+	{
+		"ray-x/lsp_signature.nvim",
+	},
+
+	{
+		"windwp/nvim-autopairs",
+		config = function()
+			require("plugins.core.autopairs")
+		end,
+	},
 }
 
 return core_plugins
-
-

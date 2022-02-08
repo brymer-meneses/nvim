@@ -1,7 +1,28 @@
 vim.g.nvim_tree_git_hl = 1
 vim.g.nvim_tree_root_folder_modifier = ":~:."
-vim.cmd("let g:nvim_tree_show_icons = {'git': 0, 'folders': 1, 'files': 1}")
-
+vim.g.nvim_tree_icons = {
+	default = "",
+	symlink = "",
+	git = {
+		unstaged = "",
+		staged = "S",
+		unmerged = "",
+		renamed = "➜",
+		deleted = "",
+		untracked = "U",
+		ignored = "◌",
+	},
+	folder = {
+		-- arrow_open = " ",
+		-- arrow_closed = "",
+		default = "",
+		open = "",
+		empty = "",
+		empty_open = "",
+		symlink = "",
+	},
+}
+vim.g.nvim_tree_show_icons = { git = 0, folders = 1, files = 1 }
 vim.api.nvim_set_keymap("n", "<leader>tt", ":NvimTreeToggle<cr>", { silent = true })
 vim.api.nvim_set_keymap("n", "<leader>tr", ":NvimTreeRefresh<cr>", { silent = true })
 vim.api.nvim_set_keymap("n", "<leader>tn", ":NvimTreeFindFile<cr>", { silent = true })
@@ -33,9 +54,23 @@ require("nvim-tree").setup({
 		dotfiles = false,
 		custom = {},
 	},
-	update_focused_file = {
+	diagnostics = {
 		enable = true,
-		update_cwd = true,
+		icons = {
+			hint = "",
+			info = "",
+			warning = "",
+			error = "",
+		},
+		git = {
+			enable = true,
+			ignore = true,
+			timeout = 500,
+		},
+		trash = {
+			cmd = "trash",
+			require_confirm = true,
+		},
 	},
 	view = {
 		auto_resize = true,
