@@ -42,8 +42,8 @@ require("nvim-tree").setup({
 	update_cwd = true,
 	-- lsp_diagnostics = true,
 	update_focused_file = {
-		enable = true,
-		update_cwd = true,
+		enable = false,
+		update_cwd = false,
 		ignore_list = {},
 	},
 	system_open = {
@@ -55,7 +55,7 @@ require("nvim-tree").setup({
 		custom = {},
 	},
 	diagnostics = {
-		enable = true,
+		enable = false,
 		icons = {
 			hint = "",
 			info = "",
@@ -63,7 +63,7 @@ require("nvim-tree").setup({
 			error = "",
 		},
 		git = {
-			enable = true,
+			enable = false,
 			ignore = true,
 			timeout = 500,
 		},

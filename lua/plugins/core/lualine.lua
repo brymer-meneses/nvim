@@ -1,4 +1,7 @@
-
 require("lualine").setup({
-  options = {theme="everforest"}
+	options = {
+		theme = "auto",
+		icons_enabled = true,
+		globalstatus = true,
+	},
 })

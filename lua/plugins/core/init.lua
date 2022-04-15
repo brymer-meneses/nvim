@@ -1,34 +1,19 @@
-local core_plugins = {
-	-- package manager
-	{ "wbthomason/packer.nvim" },
+return {
 	-- bufferline
 	{
-		"akinsho/nvim-bufferline.lua",
-		requires = "kyazdani42/nvim-web-devicons",
+		"akinsho/bufferline.nvim",
 		config = function()
 			require("plugins.core.bufferline")
 		end,
 	},
-	-- file explorer
-	{
-		"kyazdani42/nvim-tree.lua",
-		config = function()
-			require("plugins.core.explorer")
-		end,
-	},
+	-- explorer
+	{ "nvim-telescope/telescope-file-browser.nvim" },
 	-- dashboard
 	{
 		"goolord/alpha-nvim",
 		requires = { "kyazdani42/nvim-web-devicons" },
 		config = function()
 			require("plugins.core.dashboard")
-		end,
-	},
-	-- theme
-	{
-		"themercorp/themer.lua",
-		config = function()
-			require("themer").setup({ colorscheme = "everforest" })
 		end,
 	},
 	-- Git Integration
@@ -49,6 +34,10 @@ local core_plugins = {
 	-- treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
+		requires = {
+			"nvim-treesitter/nvim-treesitter-textobjects",
+			"p00f/nvim-ts-rainbow",
+		},
 		run = ":TSUpdate",
 		config = function()
 			require("plugins.core.treesitter")
@@ -78,32 +67,11 @@ local core_plugins = {
 			require("plugins.core.lualine")
 		end,
 	},
-	-- snippets
-	{
-		"L3MON4D3/LuaSnip",
-		requires = "rafamadriz/friendly-snippets",
-		config = function()
-			require("luasnip/loaders/from_vscode").lazy_load({
-				paths = {
-					"~/.local/share/nvim/site/pack/packer/start/friendly-snippets",
-					"~/.config/nvim/snippets",
-				},
-			})
-		end,
-	},
 	-- lsp configuration
 	{ "neovim/nvim-lspconfig" },
 	-- lsp installer
 	{ "williamboman/nvim-lsp-installer" },
 	{ "jose-elias-alvarez/null-ls.nvim" },
-	-- treesitter
-	{
-		"nvim-treesitter/nvim-treesitter",
-		run = ":TSUpdate",
-		config = function()
-			require("plugins.core.treesitter")
-		end,
-	},
 	{
 		"numToStr/Comment.nvim",
 		config = function()
@@ -131,5 +99,3 @@ local core_plugins = {
 		end,
 	},
 }
-
-return core_plugins

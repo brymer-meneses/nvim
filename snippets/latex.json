@@ -9,6 +9,11 @@
     "body": ["\\($1\\)$0"],
     "description": "Inline Math"
   },
+  "Limit": {
+    "prefix": "lim",
+    "body": ["\\lim_{$1 \\to $2}$0"],
+    "description": "Inline Math"
+  },
   "DisplayStyle": {
     "prefix": "ds",
     "body": ["displaystyle"],
@@ -94,7 +99,7 @@
       "\\geometry{margin=2cm}",
       "\\title{\\bf $1}",
       "\\author{Brymer Bernard Meneses}",
-      "\\newcommand{\boxconclusion}[1]{",
+      "\\newcommand{\\boxconclusion}[1]{",
       "\\begin{tcolorbox}[colback=blue!5!white,colframe=blue!25!black,title=Conclusion]",
       "\t#1",
       "\\end{tcolorbox}",

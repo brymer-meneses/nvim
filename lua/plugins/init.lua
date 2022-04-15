@@ -1,17 +1,21 @@
 local packer = require("plugins.core.packer")
-local utils = require("utils")
 
-local plugins = {}
+local auto_sync_packer = require("config").auto_sync_packer
 
 local core = require("plugins.core")
-local opt = require("plugins.opt")
-
-utils.merge(plugins, core)
-utils.merge(plugins, opt)
+local opts = require("plugins.opt")
 
 packer.startup(function(use)
-    for _, plugin in ipairs(plugins) do
-        use(plugin)
-    end
-end)
 
+	for _, plugin in ipairs(core) do
+		use(plugin)
+	end
+
+	for _, plugin in ipairs(opts) do
+		use(plugin)
+	end
+
+	if packer.bootstrap and auto_sync_packer then
+		packer.sync()
+	end
+end)

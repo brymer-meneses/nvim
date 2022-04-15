@@ -1,18 +1,13 @@
-vim.api.nvim_set_keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { silent = true })
-vim.api.nvim_set_keymap("n", "<leader>fl", "<cmd>Telescope live_grep<cr>", { silent = true })
-vim.api.nvim_set_keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { silent = true })
-vim.api.nvim_set_keymap("n", "<leader>fb", "<cmd>Telescope help_tags<cr>", { silent = true })
-vim.api.nvim_set_keymap("n", "<leader>fg", "<cmd>Telescope git_files<cr>", { silent = true })
-vim.api.nvim_set_keymap("n", "<leader>fm", "<cmd>Telescope media_files<cr>", { silent = true })
-vim.api.nvim_set_keymap("n", "<leader>fe", "<cmd>Telescope quickfix<cr>", {})
-vim.api.nvim_set_keymap(
-	"n",
-	"<leader><leader>",
-	"<Cmd>lua require('telescope').extensions.frecency.frecency()<CR>",
-	{ noremap = true, silent = true }
-)
-
 local actions = require("telescope.actions")
+local fb_actions = require("telescope").extensions.file_browser.actions
+
+-- vim.cmd([[
+--   augroup ReplaceNetrw
+--       autocmd VimEnter * silent! autocmd! FileExplorer
+--       autocmd StdinReadPre * let s:std_in=1
+--       autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | call "Telescope file_browser<cr>", argv()[0]) | endif
+--   augroup END
+-- ]])
 
 require("telescope").setup({
 	extensions = {
@@ -23,10 +18,27 @@ require("telescope").setup({
 			override_generic_sorter = false,
 			override_file_sorter = true,
 		},
+		file_browser = {
+			previewer = false,
+			theme = "dropdown",
+			-- separate files from folders
+			grouped = true,
+			initial_mode = "normal",
+			mappings = {
+				["i"] = {},
+				["n"] = {
+					["h"] = fb_actions.goto_parent_dir,
+					["<c-h>"] = fb_actions.toggle_hidden,
+					["<c-l>"] = fb_actions.change_cwd,
+					["l"] = actions.select_default,
+				},
+			},
+		},
 	},
 	defaults = {
 		mappings = {
 			i = {
+				["<C-l>"] = actions.select_default,
 				["<C-j>"] = actions.move_selection_next,
 				["<C-k>"] = actions.move_selection_previous,
 				["<C-c>"] = actions.close,
@@ -34,6 +46,7 @@ require("telescope").setup({
 				["<CR>"] = actions.select_default + actions.center,
 			},
 			n = {
+				["l"] = actions.select_default,
 				["<C-n>"] = actions.move_selection_next,
 				["<C-p>"] = actions.move_selection_previous,
 				["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
@@ -42,3 +55,4 @@ require("telescope").setup({
 	},
 })
 require("telescope").load_extension("media_files")
+require("telescope").load_extension("file_browser")
