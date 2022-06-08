@@ -6,8 +6,6 @@ return {
 			require("plugins.core.bufferline")
 		end,
 	},
-	-- explorer
-	{ "nvim-telescope/telescope-file-browser.nvim" },
 	-- dashboard
 	{
 		"goolord/alpha-nvim",
@@ -75,7 +73,7 @@ return {
 	{
 		"numToStr/Comment.nvim",
 		config = function()
-			require("Comment").setup()
+			require("plugins.core.comment")
 		end,
 	},
 	{
@@ -86,6 +84,8 @@ return {
 		requires = {
 			{ "nvim-telescope/telescope-media-files.nvim" },
 			{ "nvim-lua/plenary.nvim" },
+			-- explorer
+			{ "nvim-telescope/telescope-file-browser.nvim" },
 		},
 	},
 	{

@@ -6,8 +6,8 @@ local core = require("plugins.core")
 local opts = require("plugins.opt")
 
 packer.startup(function(use)
-
 	for _, plugin in ipairs(core) do
+		plugin.opt = false
 		use(plugin)
 	end
 

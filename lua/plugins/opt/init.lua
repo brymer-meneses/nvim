@@ -24,7 +24,7 @@ return {
 		"L3MON4D3/LuaSnip",
 		requires = "rafamadriz/friendly-snippets",
 		config = function()
-			require("plugins.opt.luasnip")
+			require("snippets")
 			-- require("luasnip/loaders/from_vscode").lazy_load({
 			-- 	paths = {
 			-- 		"~/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -33,5 +33,4 @@ return {
 			-- })
 		end,
 	},
-	-- { "qpkorr/vim-bufkill" },
 }

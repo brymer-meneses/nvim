@@ -14,16 +14,12 @@ require("telescope").setup({
 		media_files = {
 			filetypes = { "png", "jpg", "pdf", "jpeg" },
 		},
-		fzy_native = {
-			override_generic_sorter = false,
-			override_file_sorter = true,
-		},
 		file_browser = {
+			initial_mode = "normal",
 			previewer = false,
 			theme = "dropdown",
 			-- separate files from folders
 			grouped = true,
-			initial_mode = "normal",
 			mappings = {
 				["i"] = {},
 				["n"] = {

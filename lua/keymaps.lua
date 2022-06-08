@@ -1,103 +1,71 @@
-local config = { noremap = true, silent = true }
-
+-- stylua: ignore start
 vim.g.mapleader = " "
 
-vim.keymap.set("n", "<Space>", "<NOP>")
--- vim.api.nvim_set_keymap("n", "<Space>", "<NOP>", { noremap = true, silent = true })
+local opts = { noremap = true, silent = true }
 
 -- Leader Key
 
--- Window Navigation
-vim.keymap.set("n", "<c-j>", "<C-w>j", config)
-vim.keymap.set("n", "<c-h>", "<C-w>h", config)
-vim.keymap.set("n", "<c-k>", "<C-w>k", config)
-vim.keymap.set("n", "<c-l>", "<C-w>l", config)
+vim.keymap.set("n", "<Space>", "<NOP>", opts)
 
--- Split
---- vertical split
-vim.keymap.set("n", "<c-e>", ":vsplit<cr>", config)
---- horizontal split
-vim.keymap.set("n", "<c-r>", ":split<cr>", { noremap = false })
---- remove split
-vim.keymap.set("n", "<c-p>", "<C-w>q", config)
+-- Window Navigation
+vim.keymap.set("n", "<c-j>", "<C-w>j", opts)
+vim.keymap.set("n", "<c-h>", "<C-w>h", opts)
+vim.keymap.set("n", "<c-k>", "<C-w>k", opts)
+vim.keymap.set("n", "<c-l>", "<C-w>l", opts)
+
+--- SPLITS
+vim.keymap.set("n", "<c-i>", "<cmd>vsplit<cr>", { noremap = false })                   -- veritical split
+vim.keymap.set("n", "<c-o>", "<cmd>split<cr>", { noremap = false })     -- horizontal split
+vim.keymap.set("n", "<c-p>", "<C-w>q", opts)                        -- delete split
 
 -- Better indentin
-vim.keymap.set("v", "<", "<gv", config)
-vim.keymap.set("v", ">", ">gv", config)
+vim.keymap.set("v", "<", "<gv", opts)
+vim.keymap.set("v", ">", ">gv", opts)
 
 -- Move selected line / block of text in visual mode
-vim.keymap.set("x", "K", "<cmd>move '<-2<CR>gv-gv", config)
-vim.keymap.set("x", "J", "<cmd>move '>+1<CR>gv-gv", config)
+vim.keymap.set("x", "K", "<cmd>move '<-2<CR>gv-gv", opts)
+vim.keymap.set("x", "J", "<cmd>move '>+1<CR>gv-gv", opts)
 
 -- Resize Windows
+vim.keymap.set("n", "<M-j>", "<cmd>resize -2<CR>", opts)
+vim.keymap.set("n", "<M-k>", "<cmd>resize +2<CR>", opts)
+vim.keymap.set("n", "<M-h>", "<cmd>vertical resize -2<CR>", opts)
+vim.keymap.set("n", "<M-l>", "<cmd>vertical resize +2<CR>", opts)
 
-vim.keymap.set("n", "<M-j>", "<cmd>resize -2<CR>", config)
-vim.keymap.set("n", "<M-k>", "<cmd>resize +2<CR>", config)
-vim.keymap.set("n", "<M-h>", "<cmd>vertical resize -2<CR>", config)
-vim.keymap.set("n", "<M-l>", "<cmd>vertical resize +2<CR>", config)
+-- Better saving
+vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<cmd>w<CR>", opts)
 
--- better saving
-vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<cmd>w<CR>", config)
-
-vim.keymap.set("n", "<leader>n", "<cmd>noh<cr>", config)
-vim.keymap.set("n", "<Tab>m", "<cmd>BufferLineCycleNext<CR>", config)
-vim.keymap.set("n", "<Tab>n", "<cmd>BufferLineCyclePrev<CR>", config)
-vim.keymap.set("n", "<Tab>b", "<cmd>bd<Cr>", config)
+-- vim.keymap.set("n", "<leader>n", "<cmd>noh<cr>", opts)
+vim.keymap.set("n", "<Tab>m", "<cmd>BufferLineCycleNext<CR>", opts)
+vim.keymap.set("n", "<Tab>n", "<cmd>BufferLineCyclePrev<CR>", opts)
+vim.keymap.set("n", "<Tab>b", "<cmd>bd<Cr>", opts)
 
 -- Telescope keymaps
-vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", config)
-vim.keymap.set("n", "<leader>fl", "<cmd>Telescope live_grep<cr>", config)
-vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", config)
-vim.keymap.set("n", "<leader>fb", "<cmd>Telescope help_tags<cr>", config)
-vim.keymap.set("n", "<leader>fg", "<cmd>Telescope git_files<cr>", config)
-vim.keymap.set("n", "<leader>fm", "<cmd>Telescope media_files<cr>", config)
-vim.keymap.set("n", "<leader>fe", "<cmd>Telescope quickfix<cr>", config)
-vim.keymap.set("n", "<leader>e", "<cmd>Telescope file_browser<cr>", config)
+vim.keymap.set("n", "<leader><leader>", "<cmd>Telescope find_files<cr>", opts)
+
+vim.keymap.set("n", "<leader>fl", "<cmd>Telescope live_grep<cr>", opts)
+vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
+vim.keymap.set("n", "<leader>fb", "<cmd>Telescope help_tags<cr>", opts)
+vim.keymap.set("n", "<leader>fg", "<cmd>Telescope git_files<cr>", opts)
+vim.keymap.set("n", "<leader>fm", "<cmd>Telescope media_files<cr>", opts)
+vim.keymap.set("n", "<leader>fe", "<cmd>Telescope quickfix<cr>", opts)
+vim.keymap.set("n", "<leader>e", "<cmd>Telescope file_browser<cr>", opts)
 
 -- Git Signs Keymaps
-vim.keymap.set("n", "[c", function()
-	require("gitsigns.actions").next_hunk()
-end, config)
-vim.keymap.set("n", "]c", function()
-	require("gitsigns.actions").prev_hunk()
-end, config)
+local gs = require("gitsigns")
+local gsa = require("gitsigns.actions")
 
-vim.keymap.set("n", "<leader>hs", '<cmd>lua require"gitsigns".stage_hunk()<CR>', config)
-vim.keymap.set(
-	"v",
-	"<leader>hs",
-	'<cmd>lua require"gitsigns".stage_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>',
-	config
-)
+vim.keymap.set("n", "[c", function() gsa.next_hunk() end, opts)
+vim.keymap.set("n", "]c", function() gsa.prev_hunk() end, opts)
+vim.keymap.set("n", "<leader>hs", function() gs.stage_hunk() end, opts)
+vim.keymap.set("v", "<leader>hs", function() gs.stage_hunk({vim.fn.line("."), vim.fn.line("v")}) end, opts)
+vim.keymap.set("n", "<leader>hu", function() gs.undo_stage_hunk() end, opts)
+vim.keymap.set("n", "<leader>hr", function() gs.reset_hunk() end, opts)
+vim.keymap.set("v", "<leader>hr", function() gs.reset_hunk({ vim.fn.line("."), vim.fn.line("v") }) end, opts)
+vim.keymap.set("n", "<leader>hR", function() gs.reset_buffer() end, opts)
+vim.keymap.set("n", "<leader>hp", function() gs.preview_hunk() end, opts)
+vim.keymap.set("n", "<leader>hb", function() gs.blame_line(true) end, opts)
+vim.keymap.set("n", "<leader>hS", function() gs.stage_buffer() end, opts)
+vim.keymap.set("n", "<leader>hU", function() gs.reset_buffer_index() end, opts)
 
-vim.keymap.set("n", "<leader>hu", function()
-	require("gitsigns").undo_stage_hunk()
-end, config)
-
-vim.keymap.set("n", "<leader>hr", function()
-	require("gitsigns").reset_hunk()
-end, config)
-
-vim.keymap.set("v", "<leader>hr", function()
-	require("gitsigns").reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
-end, config)
-
-vim.keymap.set("n", "<leader>hR", function()
-	require("gitsigns").reset_buffer()
-end, config)
-
-vim.keymap.set("n", "<leader>hp", function()
-	require("gitsigns").preview_hunk()
-end, config)
-
-vim.keymap.set("n", "<leader>hb", function()
-	require("gitsigns").blame_line(true)
-end, config)
-
-vim.keymap.set("n", "<leader>hS", function()
-	require("gitsigns").stage_buffer()
-end, config)
-
-vim.keymap.set("n", "<leader>hU", function()
-	require("gitsigns").reset_buffer_index()
-end, config)
+-- vim.keymap.set("n", "<leader><leader>s", "<cmd>source ~/.config/nvim/after/plugin/luasnip.lua<cr>")

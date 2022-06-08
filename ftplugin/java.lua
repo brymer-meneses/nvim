@@ -19,7 +19,7 @@ end
 local root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }
 local root_dir = require("jdtls.setup").find_root(root_markers)
 if root_dir == "" then
-	    return
+	return
 end
 
 local extendedClientCapabilities = jdtls.extendedClientCapabilities

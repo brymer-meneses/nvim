@@ -9,7 +9,6 @@ null_ls.setup({
 		formatter.prettierd,
     formatter.rustfmt,
 		formatter.black,
-		formatter.latexindent,
 	},
 	on_attach = function(client)
 		if client.resolved_capabilities.document_formatting then
