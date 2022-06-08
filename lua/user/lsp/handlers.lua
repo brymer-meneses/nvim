@@ -95,15 +95,15 @@ handlers.setup = function()
 	})
 end
 
-local server_formatting_blacklist = require("config").server_formatting_blacklist
+-- local server_formatting_blacklist = require("config").server_formatting_blacklist
 
 handlers.on_attach = function(client, bufnr)
 	-- prevents other servers from interfering with the null-ls formatting
-	for _, server in ipairs(server_formatting_blacklist) do
-		if client.name == server then
-			client.resolved_capabilities.document_formatting = false
-		end
-	end
+	-- for _, server in ipairs(server_formatting_blacklist) do
+	--	if client.name == server then
+	--		client.resolved_capabilities.document_formatting = false
+	--	end
+	--end
 
 	lsp_keymaps(bufnr)
 	lsp_highlight_document(client)

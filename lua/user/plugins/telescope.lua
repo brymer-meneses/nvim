@@ -1,14 +1,6 @@
 local actions = require("telescope.actions")
 local fb_actions = require("telescope").extensions.file_browser.actions
 
--- vim.cmd([[
---   augroup ReplaceNetrw
---       autocmd VimEnter * silent! autocmd! FileExplorer
---       autocmd StdinReadPre * let s:std_in=1
---       autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | call "Telescope file_browser<cr>", argv()[0]) | endif
---   augroup END
--- ]])
-
 require("telescope").setup({
 	extensions = {
 		media_files = {
@@ -52,3 +44,4 @@ require("telescope").setup({
 })
 require("telescope").load_extension("media_files")
 require("telescope").load_extension("file_browser")
+

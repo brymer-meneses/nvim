@@ -20,7 +20,7 @@ local options = {
   splitright = true,                       -- force all vertical splits to go to the right of current window
   swapfile = false,                        -- creates a swapfile
   termguicolors = true,                    -- set term gui colors (most terminals support this)
-  timeoutlen = 100,                        -- time to wait for a mapped sequence to complete (in milliseconds)
+  timeoutlen = 500,                        -- time to wait for a mapped sequence to complete (in milliseconds)
   undofile = true,                         -- enable persistent undo
   updatetime = 300,                        -- faster completion (4000ms default)
   writebackup = false,                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
@@ -45,7 +45,10 @@ vim.g.loaded_netrwPlugin = 1
 vim.g.neovide_cursor_vfx_mode = "pixiedust"
 
 vim.opt.shortmess:append("c")
+vim.cmd("colorscheme themer_everforest")
 
 for k, v in pairs(options) do
 	vim.opt[k] = v
 end
+
+
