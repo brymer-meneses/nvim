@@ -3,14 +3,26 @@ if not status_ok then
 	return
 end
 
+local server_formatting_blacklist = {
+	"sumneko_lua",
+}
+
 lsp_installer.on_server_ready(function(server)
 	local opts = {
-		on_attach = require("lsp.handlers").on_attach,
-		capabilities = require("lsp.handlers").capabilities,
+		on_attach = require("user.lsp.handlers").on_attach,
+		capabilities = require("user.lsp.handlers").capabilities,
 	}
 
+	-- prevents other servers from interfering with the null-ls formatting
+	for _, server_name in ipairs(server_formatting_blacklist) do
+		if server.name == server_name then
+			opts.on_attach = require("user.lsp.handlers").on_attach
+		end
+	end
+
+	-- override default server settings
 	if server.name == "sumneko_lua" then
-		local sumneko_opts = require("lsp.settings.sumneko_lua")
+		local sumneko_opts = require("user.lsp.settings.sumneko_lua")
 		opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
 	end
 

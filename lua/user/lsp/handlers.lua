@@ -11,7 +11,7 @@ local function lsp_highlight_document(client)
         autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
       augroup END
     ]],
-			false
+			       false
 		)
 	end
 end
@@ -95,16 +95,13 @@ handlers.setup = function()
 	})
 end
 
--- local server_formatting_blacklist = require("config").server_formatting_blacklist
-
 handlers.on_attach = function(client, bufnr)
-	-- prevents other servers from interfering with the null-ls formatting
-	-- for _, server in ipairs(server_formatting_blacklist) do
-	--	if client.name == server then
-	--		client.resolved_capabilities.document_formatting = false
-	--	end
-	--end
+	lsp_keymaps(bufnr)
+	lsp_highlight_document(client)
+end
 
+handlers.on_attach_no_format = function(client, bufnr)
+	server.resolved_capabilities.document_formatting = false
 	lsp_keymaps(bufnr)
 	lsp_highlight_document(client)
 end

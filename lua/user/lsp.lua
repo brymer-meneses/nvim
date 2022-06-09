@@ -1,4 +1,4 @@
-require("lsp.handlers").setup()
-require("lsp.installer")
--- require("lsp.formatting")
--- require("lsp.signature")
+require("user.lsp.handlers").setup()
+require("user.lsp.installer")
+require("user.lsp.formatting")
+-- require("user.lsp.signature")

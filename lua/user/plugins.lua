@@ -79,7 +79,7 @@ return packer.startup(function(use)
 
   -- ease of use
   use "windwp/nvim-autopairs"
-  use "numToStr/Comment.nvim"
+  use "numToStr/Comment.nvim"                         -- comment plugin
   use  "JoosepAlviste/nvim-ts-context-commentstring"
   use "lewis6991/impatient.nvim"
 
