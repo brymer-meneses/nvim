@@ -5,6 +5,7 @@ end
 
 local server_formatting_blacklist = {
 	"sumneko_lua",
+  "rust_analyzer"
 }
 
 lsp_installer.on_server_ready(function(server)
@@ -16,7 +17,7 @@ lsp_installer.on_server_ready(function(server)
 	-- prevents other servers from interfering with the null-ls formatting
 	for _, server_name in ipairs(server_formatting_blacklist) do
 		if server.name == server_name then
-			opts.on_attach = require("user.lsp.handlers").on_attach
+			opts.on_attach = require("user.lsp.handlers").on_attach_no_format
 		end
 	end
 

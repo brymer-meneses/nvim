@@ -101,7 +101,7 @@ handlers.on_attach = function(client, bufnr)
 end
 
 handlers.on_attach_no_format = function(client, bufnr)
-	server.resolved_capabilities.document_formatting = false
+	client.resolved_capabilities.document_formatting = false
 	lsp_keymaps(bufnr)
 	lsp_highlight_document(client)
 end

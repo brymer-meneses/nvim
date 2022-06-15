@@ -37,8 +37,8 @@ packer.init {
     end,
   },
 }
-return packer.startup(function(use) 
-  -- core 
+return packer.startup(function(use)
+  -- core
   use "wbthomason/packer.nvim"                -- package manager
   use "nvim-lua/plenary.nvim"                 -- neovim library
   use { "nvim-treesitter/nvim-treesitter",    -- syntax highlighting
@@ -64,24 +64,23 @@ return packer.startup(function(use)
 	use "neovim/nvim-lspconfig"                       -- premade lsp configurations
   use "williamboman/nvim-lsp-installer"             -- lsp server installer
   use "jose-elias-alvarez/null-ls.nvim"             -- mainly used for formatting
+  use "ray-x/lsp_signature.nvim"                    -- lsp signatures
 
   -- completion
   use { "hrsh7th/nvim-cmp",
 		requires = {
-			{ "hrsh7th/cmp-nvim-lsp" },
-			{ "hrsh7th/cmp-path" },
-			{ "kdheepak/cmp-latex-symbols" },
-			{ "saadparwaiz1/cmp_luasnip" },
-			-- fancy icons
-			{ "onsails/lspkind-nvim" },
+			{ "hrsh7th/cmp-nvim-lsp" },                   -- lsp
+			{ "hrsh7th/cmp-path" },                       -- path
+			{ "kdheepak/cmp-latex-symbols" },             -- latex
+			{ "saadparwaiz1/cmp_luasnip" },               -- luasnip integration
+			{ "onsails/lspkind-nvim" },                   -- fancy icons
 		},
 	}
-
   -- ease of use
-  use "windwp/nvim-autopairs"
+  use "windwp/nvim-autopairs"                         -- autopairs
   use "numToStr/Comment.nvim"                         -- comment plugin
-  use  "JoosepAlviste/nvim-ts-context-commentstring"
-  use "lewis6991/impatient.nvim"
+  use  "JoosepAlviste/nvim-ts-context-commentstring"  -- comment tsx, jsx files properly
+  use "lewis6991/impatient.nvim"                      -- improve startup time
 
   -- file specific plugins
   use "mfussenegger/nvim-jdtls"                       -- java

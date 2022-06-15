@@ -51,7 +51,9 @@ vim.keymap.set("n", "<leader>fb", "<cmd>Telescope help_tags<cr>", opts)
 vim.keymap.set("n", "<leader>fg", "<cmd>Telescope git_files<cr>", opts)
 vim.keymap.set("n", "<leader>fm", "<cmd>Telescope media_files<cr>", opts)
 vim.keymap.set("n", "<leader>fe", "<cmd>Telescope quickfix<cr>", opts)
-vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
+vim.keymap.set("n", "<leader>ff", function ()
+  require("telescope.builtin").find_files()
+end, opts)
 
 -- Bufferline
 vim.keymap.set("n", "<Tab>m", "<cmd>BufferLineCycleNext<CR>", opts)
