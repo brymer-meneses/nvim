@@ -3,6 +3,7 @@ if not status_ok then
 	return
 end
 
+
 configs.setup({
 	ensure_installed = "all",
 	sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)

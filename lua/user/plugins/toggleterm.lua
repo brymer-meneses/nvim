@@ -10,7 +10,7 @@ require("toggleterm").setup({
 	persist_size = true,
 	direction = "float",
 	close_on_exit = false, -- close the terminal window when the process exits
-	shell = vim.o.shell, -- change the default shell
+	shell = "/bin/fish", -- change the default shell
 	-- This field is only relevant if direction is set to 'float'
 	float_opts = {
 		-- The border key is *almost* the same as 'nvim_win_open'

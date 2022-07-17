@@ -49,8 +49,20 @@ return packer.startup(function(use)
   use "kyazdani42/nvim-web-devicons"
 	use "akinsho/bufferline.nvim"
 	use "goolord/alpha-nvim"
-	use "ThemerCorp/themer.lua"
   use "nvim-lualine/lualine.nvim"
+  use {
+    "j-hui/fidget.nvim",
+    config=function() require("fidget").setup{} end
+  }
+  use "matbme/JABS.nvim"
+  use {
+    "SmiteshP/nvim-navic",
+    requires = "neovim/nvim-lspconfig",
+  }
+  -- color themes
+	use "ThemerCorp/themer.lua"
+  use "lunarvim/darkplus.nvim"
+  use { 'LunarVim/onedarker.nvim', commit = 'b00dd21' }
 
   -- integrations
   use "nvim-telescope/telescope.nvim"               -- all around grep/search plugin
@@ -58,13 +70,24 @@ return packer.startup(function(use)
   use "nvim-telescope/telescope-file-browser.nvim"  -- file browser
   use "akinsho/nvim-toggleterm.lua"                 -- terminal
   use "lewis6991/gitsigns.nvim"                     -- gitsigns
+  use "tpope/vim-fugitive"                          -- git
   use "L3MON4D3/LuaSnip"                            -- snippet
+  use {                                             -- motion plugin
+    'phaazon/hop.nvim',
+    branch = 'v2',
+    config = function()
+      require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+    end
+  }
 
   -- lsp
 	use "neovim/nvim-lspconfig"                       -- premade lsp configurations
   use "williamboman/nvim-lsp-installer"             -- lsp server installer
   use "jose-elias-alvarez/null-ls.nvim"             -- mainly used for formatting
   use "ray-x/lsp_signature.nvim"                    -- lsp signatures
+
+  -- debugger
+  use 'mfussenegger/nvim-dap'                       -- debugger
 
   -- completion
   use { "hrsh7th/nvim-cmp",
@@ -76,14 +99,22 @@ return packer.startup(function(use)
 			{ "onsails/lspkind-nvim" },                   -- fancy icons
 		},
 	}
+  use {
+    'kyazdani42/nvim-tree.lua',
+    tag = 'nightly' -- optional, updated every week. (see issue #1193)
+  }
   -- ease of use
   use "windwp/nvim-autopairs"                         -- autopairs
   use "numToStr/Comment.nvim"                         -- comment plugin
   use  "JoosepAlviste/nvim-ts-context-commentstring"  -- comment tsx, jsx files properly
   use "lewis6991/impatient.nvim"                      -- improve startup time
 
+  use "rafamadriz/friendly-snippets"                              -- predefined snippets
+
   -- file specific plugins
   use "mfussenegger/nvim-jdtls"                       -- java
   use "lervag/vimtex"                                 -- latex
+  use "Shatur/neovim-cmake"                           -- cmake
+
 
 end)

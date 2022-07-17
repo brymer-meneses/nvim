@@ -2,7 +2,7 @@ local handlers = {}
 
 local function lsp_highlight_document(client)
 	-- Set autocommands conditional on server_capabilities
-	if client.resolved_capabilities.document_highlight then
+	if client.server_capabilities.document_highlight then
 		vim.api.nvim_exec(
 			[[
       augroup lsp_document_highlight
@@ -14,6 +14,15 @@ local function lsp_highlight_document(client)
 			       false
 		)
 	end
+end
+
+local function attach_navic(client, bufnr)
+  vim.g.navic_silence = true
+  local status_ok, navic = pcall(require, "nvim-navic")
+  if not status_ok then
+    return
+  end
+  navic.attach(client, bufnr)
 end
 
 local function lsp_keymaps(bufnr)
@@ -98,12 +107,14 @@ end
 handlers.on_attach = function(client, bufnr)
 	lsp_keymaps(bufnr)
 	lsp_highlight_document(client)
+  attach_navic(client, bufnr)
 end
 
 handlers.on_attach_no_format = function(client, bufnr)
-	client.resolved_capabilities.document_formatting = false
+	client.server_capabilities.document_formatting = false
 	lsp_keymaps(bufnr)
 	lsp_highlight_document(client)
+  attach_navic(client, bufnr)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
