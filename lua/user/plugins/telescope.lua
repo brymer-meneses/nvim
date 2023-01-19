@@ -41,6 +41,7 @@ require("telescope").setup({
 				["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
 			},
 		},
+    file_ignore_patterns = { "node_modules" }
 	},
 })
 require("telescope").load_extension("media_files")

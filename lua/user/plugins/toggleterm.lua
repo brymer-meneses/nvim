@@ -23,4 +23,19 @@ require("toggleterm").setup({
 		winblend = 3,
 		highlights = { border = "Normal", background = "Normal" },
 	},
+  winbar = {
+    enable = true,
+    name_formatter = function (term)
+      return term.name
+    end
+  },
+  highlights = {
+    NormalFloat = {
+      link = 'Normal'
+    },
+    FloatBorder = {
+      link = "FloatBorder",
+    },
+  },
 })
+

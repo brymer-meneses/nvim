@@ -54,21 +54,24 @@ return packer.startup(function(use)
     "j-hui/fidget.nvim",
     config=function() require("fidget").setup{} end
   }
-  use "matbme/JABS.nvim"
-  use {
-    "SmiteshP/nvim-navic",
-    requires = "neovim/nvim-lspconfig",
-  }
+  use {'rcarriga/nvim-notify'}
+
+  -- use {'lukas-reineke/indent-blankline.nvim', 
+  --   config=function () require('indent_blankline.commands').disable() end
+  -- }
+
+
   -- color themes
 	use "ThemerCorp/themer.lua"
   use "lunarvim/darkplus.nvim"
   use { 'LunarVim/onedarker.nvim', commit = 'b00dd21' }
+  use 'kvrohit/substrata.nvim'
 
   -- integrations
   use "nvim-telescope/telescope.nvim"               -- all around grep/search plugin
   use "nvim-telescope/telescope-media-files.nvim"   -- allows to see media files
   use "nvim-telescope/telescope-file-browser.nvim"  -- file browser
-  use "akinsho/nvim-toggleterm.lua"                 -- terminal
+  use {"akinsho/nvim-toggleterm.lua"}                 -- terminal
   use "lewis6991/gitsigns.nvim"                     -- gitsigns
   use "tpope/vim-fugitive"                          -- git
   use "L3MON4D3/LuaSnip"                            -- snippet
@@ -79,15 +82,28 @@ return packer.startup(function(use)
       require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
     end
   }
+  use "matbme/JABS.nvim"
+  use {
+    "SmiteshP/nvim-navic",
+    requires = "neovim/nvim-lspconfig",
+  }
 
   -- lsp
-	use "neovim/nvim-lspconfig"                       -- premade lsp configurations
+	use {"neovim/nvim-lspconfig" }                       -- premade lsp configurations
   use "williamboman/nvim-lsp-installer"             -- lsp server installer
   use "jose-elias-alvarez/null-ls.nvim"             -- mainly used for formatting
   use "ray-x/lsp_signature.nvim"                    -- lsp signatures
 
   -- debugger
-  use 'mfussenegger/nvim-dap'                       -- debugger
+  use {'mfussenegger/nvim-dap',                     -- debugger
+    requires = {
+      "theHamsta/nvim-dap-virtual-text",
+      "rcarriga/nvim-dap-ui",
+      "nvim-telescope/telescope-dap.nvim",
+    }
+  }
+  use "andweeb/presence.nvim"
+
 
   -- completion
   use { "hrsh7th/nvim-cmp",
