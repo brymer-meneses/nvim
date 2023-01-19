@@ -18,11 +18,13 @@
   "nvim-tree.lua": { "branch": "master", "commit": "16a0e3ce1d9d2e982c788b3cee66fcffe5c10c43" },
   "nvim-treesitter": { "branch": "master", "commit": "42c3a3c51e8fef027655e7facd293aae7c6984bb" },
   "nvim-treesitter-context": { "branch": "master", "commit": "cacee4828152dd3a83736169ae61bbcd29a3d213" },
+  "nvim-ts-context-commentstring": { "branch": "main", "commit": "a0f89563ba36b3bacd62cf967b46beb4c2c29e52" },
   "nvim-web-devicons": { "branch": "master", "commit": "6c38926351372ea87034dec26182b62c835ff3bc" },
   "plenary.nvim": { "branch": "master", "commit": "1c7e3e6b0f4dd5a174fcea9fda8a4d7de593b826" },
   "poimandres.nvim": { "branch": "main", "commit": "be4ea8d437cd963550d102d90415962e9734f909" },
   "telescope-file-browser.nvim": { "branch": "master", "commit": "304508fb7bea78e3c0eeddd88c4837501e403ae8" },
   "telescope-media-files.nvim": { "branch": "master", "commit": "513e4ee385edd72bf0b35a217b7e39f84b6fe93c" },
   "telescope.nvim": { "branch": "master", "commit": "2f32775405f6706348b71d0bb8a15a22852a61e4" },
-  "themer.lua": { "branch": "main", "commit": "ec1e098eb81b8fe33befa40ddfd78b98fc6455d4" }
+  "themer.lua": { "branch": "main", "commit": "ec1e098eb81b8fe33befa40ddfd78b98fc6455d4" },
+  "vim-fugitive": { "branch": "master", "commit": "2febbe1f00be04f16daa6464cb39214a8566ec4b" }
 }

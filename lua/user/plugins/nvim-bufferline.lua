@@ -1,17 +1,21 @@
 return {
   "akinsho/bufferline.nvim",
-  config = {
-    options = {
-      separator_syle = "thin",
-      numbers = "none",
-      offsets = {
-        {
-          filetype = "NvimTree",
-          text = "Files",
-          text_align = "center",
+  config = function ()
+    vim.keymap.set("n", "<TAB>n", "<cmd>BufferLineMovePrev<cr>", {silent=true, noremap=true})
+    vim.keymap.set("n", "<TAB>m", "<cmd>BufferLineMoveNext<cr>", {silent=true, noremap=true})
+    require("bufferline").setup({
+      options = {
+        separator_syle = "thin",
+        numbers = "none",
+        offsets = {
+          {
+            filetype = "NvimTree",
+            text = "Files",
+            text_align = "center",
+          },
         },
+        diagnostics = "nvim_lsp",
       },
-      diagnostics = "nvim_lsp",
-    },
-  }
+    })
+  end
 }

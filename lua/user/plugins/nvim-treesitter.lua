@@ -1,7 +1,9 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   dependencies = {
-    'nvim-treesitter/nvim-treesitter-context'
+    'nvim-treesitter/nvim-treesitter-context',
+    -- for commenting tsx or jsx files
+    'JoosepAlviste/nvim-ts-context-commentstring'
   },
   config = function()
 
