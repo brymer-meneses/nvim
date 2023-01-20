@@ -1,6 +1,5 @@
 
 local lsp_config = require "lspconfig"
-
 local handlers = require "user.lsp.handlers"
 
 require("mason-lspconfig").setup_handlers({
@@ -8,8 +7,9 @@ require("mason-lspconfig").setup_handlers({
       local server_config = require "user.lsp.settings" [server_name]
 
       -- if there is no predefined config then load the default config from nvim-lspconfig
+      -- also pass the handlers
       if server_config == nil then
-        lsp_config[server_name].setup({})
+        lsp_config[server_name].setup(handlers)
         return
       end
 

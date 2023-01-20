@@ -3,6 +3,7 @@ return {
 	"ThemerCorp/themer.lua",
   "olivercederborg/poimandres.nvim",
 
+  -- utility functions
   "nvim-lua/plenary.nvim",
 
   {

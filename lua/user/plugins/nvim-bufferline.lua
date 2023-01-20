@@ -1,8 +1,8 @@
 return {
   "akinsho/bufferline.nvim",
   config = function ()
-    vim.keymap.set("n", "<TAB>n", "<cmd>BufferLineMovePrev<cr>", {silent=true, noremap=true})
-    vim.keymap.set("n", "<TAB>m", "<cmd>BufferLineMoveNext<cr>", {silent=true, noremap=true})
+    vim.keymap.set("n", "<TAB>n", "<cmd>BufferLineCyclePrev<cr>", {silent=true, noremap=true})
+    vim.keymap.set("n", "<TAB>m", "<cmd>BufferLineCycleNext<cr>", {silent=true, noremap=true})
     require("bufferline").setup({
       options = {
         separator_syle = "thin",
