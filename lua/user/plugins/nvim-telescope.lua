@@ -5,17 +5,22 @@ return {
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope-file-browser.nvim"
   },
-  config = function ()
+  init = function ()
     local telescope = require "telescope"
-    local actions = require("telescope.actions")
-    local fb_actions = require("telescope").extensions.file_browser.actions
-
     local opts = { noremap = true, silent = true }
     vim.keymap.set("n", "<leader>fb", "<cmd>Telescope file_browser<cr>", opts)
     vim.keymap.set("n", "<leader>fl", "<cmd>Telescope live_grep<cr>", opts)
     vim.keymap.set("n", "<leader>fm", "<cmd>Telescope media_files<cr>", opts)
     vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
     vim.keymap.set("n", "<leader>fh", "<cmd>Telescope current_buffer_fuzzy_find fuzzy=false case_mode=ignore_case<cr>", opts)
+
+    telescope.load_extension("media_files")
+    telescope.load_extension("file_browser")
+  end,
+  config = function ()
+    local telescope = require "telescope"
+    local actions = require("telescope.actions")
+    local fb_actions = require("telescope").extensions.file_browser.actions
 
     telescope.setup({
       extensions = {
@@ -59,9 +64,6 @@ return {
         file_ignore_patterns = { "node_modules" }
       },
     })
-
-    telescope.load_extension("media_files")
-    telescope.load_extension("file_browser")
   end
 
 

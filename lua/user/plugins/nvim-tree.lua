@@ -8,7 +8,6 @@ return {
       -- keymaps
       local opts = { noremap = true, silent = true }
       vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opts)
-      vim.keymap.set("n", "<Tab>b", "<cmd>bd<Cr>", opts)
 
       local nvim_tree_config = require "nvim-tree.config"
 	    local tree_cb = nvim_tree_config.nvim_tree_callback

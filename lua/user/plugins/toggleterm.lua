@@ -1,6 +1,6 @@
 return {
   "akinsho/nvim-toggleterm.lua",
-  config = {
+  opts = {
     size = 20,
     open_mapping = [[<C-\>]],
     hide_numbers = true, -- hide the number column in toggleterm buffers

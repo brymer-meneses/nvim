@@ -5,6 +5,9 @@ require("user.settings")
 -- core keymaps
 require("user.keymaps")
 
+-- core autocommands
+require("user.autocommands")
+
 -- boostrap package manager
 require("user.package_manager")
 

@@ -122,6 +122,10 @@ return {
         documentation = {
           border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
         },
+       completion = {
+          border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+          winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
+        },
       },
       experimental = {
         ghost_text = false,

@@ -7,21 +7,26 @@ require("mason-lspconfig").setup_handlers({
       local server_config = require "user.lsp.settings" [server_name]
 
       -- if there is no predefined config then load the default config from nvim-lspconfig
-      -- also pass the handlers
+      -- with the handlers
       if server_config == nil then
         lsp_config[server_name].setup(handlers)
         return
       end
 
-      -- we can pass a function or a table for the configuration
+      -- handle the case when a function is passed
       if type(server_config) == "function" then
         server_config()
-      elseif type(server_config) == "table" then
+        return
+      end
+
+      -- handle the case when a table is passed
+      if type(server_config) == "table" then
         local opts = vim.tbl_deep_extend("force", server_config, handlers)
         lsp_config[server_name].setup(opts)
-      else
-        print("ERROR: expected function or table for lsp setting")
+        return
       end
+
+      vim.api.nvim_err_writeln("ERROR(user.lsp): Expected a function or table to be passed for the configuration of " .. server_name .. " got type: " .. type(server_config))
     end,
 })
 

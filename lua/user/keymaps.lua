@@ -1,12 +1,10 @@
 
 -- stylua: ignore start
-
--- // CORE KEYMAPS //
-
 local opts = { noremap = true, silent = true }
 
 -- Leader Key
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 vim.keymap.set("n", "<Space>", "<NOP>", opts)
 
@@ -16,12 +14,12 @@ vim.keymap.set("n", "<c-h>", "<C-w>h", opts)
 vim.keymap.set("n", "<c-k>", "<C-w>k", opts)
 vim.keymap.set("n", "<c-l>", "<C-w>l", opts)
 
---- SPLITS
-vim.keymap.set("n", "<c-RIGHT>", "<cmd>vsplit<cr>", { noremap = false })                   -- veritical split
+--- Splits
+vim.keymap.set("n", "<c-RIGHT>", "<cmd>vsplit<cr>", { noremap = false })                  -- veritical split
 vim.keymap.set("n", "<c-DOWN>", "<cmd>split<cr>", { noremap = false })                    -- horizontal split
 vim.keymap.set("n", "<c-x>", "<C-w>q", opts)                                              -- delete split
 
--- Better indentin
+-- Better indentation
 vim.keymap.set("v", "<", "<gv", opts)
 vim.keymap.set("v", ">", ">gv", opts)
 

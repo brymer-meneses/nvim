@@ -1,5 +1,6 @@
 
-local colorscheme = "poimandres"
+-- poimandres, radium
+local colorscheme = "themer_radium"
 
 vim.cmd("colorscheme " .. colorscheme)
 
