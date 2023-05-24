@@ -17,3 +17,5 @@ require("user.lsp")
 -- theme
 require("user.theme")
 
+vim.cmd("SetTheme gruvbox-material")
+

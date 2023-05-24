@@ -4,6 +4,24 @@ return {
 	"ThemerCorp/themer.lua",
   "olivercederborg/poimandres.nvim",
   "kvrohit/substrata.nvim",
+  "ellisonleao/gruvbox.nvim",
+  "sainnhe/gruvbox-material",
+
+  {
+    "utilyre/barbecue.nvim",
+    name = "barbecue",
+    version = "*",
+    dependencies = {
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons", -- optional dependency
+    },
+    opts = {
+      -- configurations go here
+    },
+  },
+
+  -- smooth scroll
+  { "karb94/neoscroll.nvim", opts = {}},
 
   -- utility functions
   "nvim-lua/plenary.nvim",

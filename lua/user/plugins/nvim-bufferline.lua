@@ -6,6 +6,7 @@ return {
     vim.keymap.set("n", "<TAB>m", "<cmd>BufferLineCycleNext<cr>", opts)
     vim.keymap.set("n", "<TAB>b", "<cmd>bdelete<cr>", opts)
   end,
+  enabled=false,
   opts = {
     options = {
       separator_syle = "thin",

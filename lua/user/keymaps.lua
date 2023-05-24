@@ -36,3 +36,9 @@ vim.keymap.set("n", "<M-l>", "<cmd>vertical resize +2<CR>", opts)
 -- Better saving
 vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<cmd>w<CR>", opts)
 
+-- Better switching to normal mode on terminal
+vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], opts)
+
+-- Buffer Deletion
+vim.keymap.set("n", "<leader>d", "<cmd>bdelete", opts)
+

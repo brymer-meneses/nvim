@@ -8,7 +8,7 @@ return {
   init = function ()
     local telescope = require "telescope"
     local opts = { noremap = true, silent = true }
-    vim.keymap.set("n", "<leader>fb", "<cmd>Telescope file_browser<cr>", opts)
+    vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
     vim.keymap.set("n", "<leader>fl", "<cmd>Telescope live_grep<cr>", opts)
     vim.keymap.set("n", "<leader>fm", "<cmd>Telescope media_files<cr>", opts)
     vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
@@ -42,6 +42,20 @@ return {
               ["l"] = actions.select_default,
             },
           },
+        },
+      },
+      pickers = {
+        buffers = {
+          initial_mode = 'normal',
+          previewer = false,
+          theme = 'dropdown',
+          sort_mru = true,
+          ignore_current_buffer=true,
+          mappings = {
+            n = {
+              ["<leader>d"] = actions.delete_buffer
+            }
+          }
         },
       },
       defaults = {
