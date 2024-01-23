@@ -18,4 +18,5 @@ require("user.lsp")
 require("user.theme")
 
 vim.cmd("SetTheme gruvbox-material")
+-- vim.cmd("SetTheme catppuccin-macchiato")
 

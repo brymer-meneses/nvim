@@ -1,14 +1,14 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   dependencies = {
-    'nvim-treesitter/nvim-treesitter-context',
+    -- 'nvim-treesitter/nvim-treesitter-context',
     -- for commenting tsx or jsx files
     'JoosepAlviste/nvim-ts-context-commentstring'
   },
   config = function ()
-   require'treesitter-context'.setup{ }
+   -- require'treesitter-context'.setup{ }
    require'nvim-treesitter.configs'.setup {
-    ensure_installed = "all",
+    ensure_installed = {"lua", "python", "rust", "cpp", "c", "javascript", "typescript"},
     sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
     ignore_install = { "" }, -- List of parsers to ignore installing
     autopairs = {
@@ -20,10 +20,6 @@ return {
       additional_vim_regex_highlighting = false,
     },
     indent = { enable = true, disable = { "yaml" } },
-    context_commentstring = {
-      enable = true,
-      enable_autocmd = false,
-    },
     rainbow = {
       enable = true,
       extended_mode = false,

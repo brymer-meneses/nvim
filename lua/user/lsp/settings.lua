@@ -1,18 +1,31 @@
 
 local settings = {}
 
-settings.sumneko_lua =  {
+settings.rust_analyzer = {
+   settings = {
+    ["rust-analyzer"] = {
+      checkOnSave = {
+        allTargets = false,
+      }
+    }
+  }
+}
+
+settings.lua_ls =  {
   settings = {
     Lua = {
+      runtime = {
+        version = "LuaJIT",
+      },
       diagnostics = {
-        globals = { "vim" },
+        globals = { "vim", "require" },
       },
       workspace = {
-        library = {
-          [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-          [vim.fn.stdpath("config") .. "/lua"] = true,
-        },
+        library = vim.api.nvim_get_runtime_file("", true)
       },
+      telemetry = {
+        enable = false
+      }
     },
   },
 }

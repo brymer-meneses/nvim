@@ -79,7 +79,7 @@ local function initialize_lsp_capabilities()
       "additionalTextEdits",
     },
   }
-  capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+  -- capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
   return capabilities
 end
 

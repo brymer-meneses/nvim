@@ -6,6 +6,7 @@ return {
   "kvrohit/substrata.nvim",
   "ellisonleao/gruvbox.nvim",
   "sainnhe/gruvbox-material",
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 
   {
     "utilyre/barbecue.nvim",
@@ -20,8 +21,7 @@ return {
     },
   },
 
-  -- smooth scroll
-  { "karb94/neoscroll.nvim", opts = {}},
+  { 'lervag/vimtex'},
 
   -- utility functions
   "nvim-lua/plenary.nvim",
@@ -38,9 +38,23 @@ return {
   -- indentation guies
   {
     'lukas-reineke/indent-blankline.nvim',
+    main = "ibl",
     opts = {
-      show_trailing_blankline_indent = false,
-      char = '┊',
+      indent = {
+        char = '┊',
+      },
+
+      whitespace = {
+        highlight = {
+          "CursorColumn",
+          "Whitespace",
+        },
+        remove_blankline_trail = false,
+      },
+
+      scope = {
+        enabled = false,
+      }
     }
   }
 

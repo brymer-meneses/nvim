@@ -28,10 +28,10 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Resize Windows
-vim.keymap.set("n", "<M-j>", "<cmd>resize -2<CR>", opts)
-vim.keymap.set("n", "<M-k>", "<cmd>resize +2<CR>", opts)
-vim.keymap.set("n", "<M-h>", "<cmd>vertical resize -2<CR>", opts)
-vim.keymap.set("n", "<M-l>", "<cmd>vertical resize +2<CR>", opts)
+vim.keymap.set("n", "<A-j>", "<cmd>resize -2<CR>", opts)
+vim.keymap.set("n", "<A-k>", "<cmd>resize +2<CR>", opts)
+vim.keymap.set("n", "<A-h>", "<cmd>vertical resize -2<CR>", opts)
+vim.keymap.set("n", "<A-l>", "<cmd>vertical resize +2<CR>", opts)
 
 -- Better saving
 vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<cmd>w<CR>", opts)
